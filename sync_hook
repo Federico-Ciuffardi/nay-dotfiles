@@ -13,7 +13,6 @@ echo ":: Sync vim pluggins"
 nvim -c " PlugUpgrade | PlugClean | PlugUpdate | PlugInstall | qa"
 printf "\n"
 
-
 # install tmux tpm pluggins
 echo ":: Sync tmux pluggins"
 $HOME/.tmux/plugins/tpm/bin/clean_plugins
