@@ -1,0 +1,4 @@
+# install vim plug pluggins
+echo ":: Sync vim pluggins"
+nvim -c " PlugUpgrade | PlugClean | PlugUpdate | PlugInstall | qa"
+printf "\n"
