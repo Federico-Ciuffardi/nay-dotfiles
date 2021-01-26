@@ -1,0 +1,246 @@
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+# initialization
+
+
+# Wallpaper
+exec nitrogen --set-auto ~/Pictures/5-55779_green-nature-dual-monitor-desktop-desktop-images-wallpaper.jpg &
+
+# Compositor
+exec picom 
+
+## Network
+exec nm-applet 
+
+## Audio
+exec start-pulseaudio-x11 
+
+## Disk Automount
+exec udiskie 
+
+## Screensaver
+exec xscreensaver -no-splash 
+
+## Notification
+exec dunst 
+
+## Guake
+exec guake 
+
+##update panel
+exec exec i3-msg restart
+
+
+
+# Set modifier to Alt
+set $mod Mod1
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font pango:noto 10
+
+## Set ws on screen
+workspace 1 output HDMI-0
+workspace 2 output HDMI-0
+workspace 3 output HDMI-0
+workspace 4 output DVI-I-1
+workspace 5 output DVI-I-1
+workspace 6 output DVI-I-1
+
+
+# Gaps and border
+for_window [class="^.*"] border pixel 2
+#gaps inner 10
+#gaps outer 10
+
+## Focus follows mouse
+#focus_follows_mouse no
+
+# Mouse warping
+#mouse_warping none
+
+# No float
+for_window [class="pavucontrol"] floating disable
+
+# Automatic back-and-forth when switching to the current workspace
+workspace_auto_back_and_forth yes
+
+# printscreen
+bindsym Print exec lximage-qt --screenshot 
+
+# The middle button over a titlebar kills the window
+bindsym --release button2 kill
+
+# W+E to open fm
+#bindsym Mod4+E exec pcmanfm-qt
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# kill focused window
+bindsym $mod+q kill
+
+# leave
+#bindsym $mod+Shift+q exec lxqt-leave
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# gaps control
+bindsym $mod+Shift+s gaps inner all set 10, gaps outer all set 4
+bindsym $mod+s gaps inner all set 1, gaps outer all set 2
+#bindsym $mod+s gaps inner current plus 5
+#bindsym $mod+Shift+s gaps inner current minus 5
+
+# start dmenu (a program launcher)
+#bindsym $mod+d exec dmenu_run
+bindsym $mod+p exec --no-startup-id i3-dmenu-desktop
+
+# emoji menu 
+bindsym $mod+m exec dmenu_unicode
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# resize focused window 
+bindsym $mod+Shift+Control+j resize grow width 10 px or 10 ppt
+bindsym $mod+Shift+Control+k resize shrink height 10 px or 10 ppt
+bindsym $mod+Shift+Control+l resize grow height 10 px or 10 ppt
+bindsym $mod+Shift+Control+semicolon resize shrink width 10 px or 10 ppt
+
+bindsym $mod+Shift+Control+Left resize grow width 10 px or 10 ppt
+bindsym $mod+Shift+Control+Down resize shrink height 10 px or 10 ppt
+bindsym $mod+Shift+Control+Up resize grow height 10 px or 10 ppt
+bindsym $mod+Shift+Control+Right resize shrink width 10 px or 10 ppt
+
+# move workspace
+bindsym $mod+Ctrl+h move workspace to output left
+bindsym $mod+Ctrl+j move workspace to output down
+bindsym $mod+Ctrl+k move workspace to output up
+bindsym $mod+Ctrl+l move workspace to output right
+
+bindsym $mod+Ctrl+Left move workspace to output left
+bindsym $mod+Ctrl+Up move workspace to output down
+bindsym $mod+Ctrl+Down move workspace to output up
+bindsym $mod+Ctrl+Right move workspace to output right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# lock (disable shortcuts)
+bindsym $mod+Shift+f mode "$lock"
+set $lock Locked (mod+f to unlock)
+mode "$lock" { bindsym $mod+Shift+f mode "default"
+}
+
+# change container layout (stacked, tabbed, toggle split)
+#bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+Shift+e split toggle
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
+
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        font pango:noto 11
+	status_command i3blocks
+	position top
+	mode dock
+	modifier None
+        tray_output primary
+}
+
+
+

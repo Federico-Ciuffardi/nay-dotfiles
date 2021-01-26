@@ -1,0 +1,94 @@
+*.background: #121212
+*.foreground: #D2D2D2
+
+!black
+*color0: #383c4a
+*color8: #404552
+
+!red
+*color1: #9A4138
+*color9: #E7766B
+
+!green
+*color2: #4BEC90
+*color10: #3CBF75
+
+!yellow
+*color3: #D8D782
+*color11: #CFCD63
+
+!blue
+*color4: #5294e2
+*color12: #268bd2
+
+!magenta
+*color5: #CE50DD
+*color13: #E7766B
+
+!cyan
+*color6: #6BE5E7
+*color14: #90FDFF
+
+!white
+*color7: #CCCCCC
+*color15: #FFFFFF
+
+! ******************
+! urxvt config
+! ******************
+
+! Transparency
+URxvt.depth: 32 
+!URxvt.background: [95]#1d2021
+URxvt.background: [90]#1E1E1E
+
+! Scrollback position
+!! do not scroll with output
+URxvt*scrollTtyOutput: false
+
+!! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer: true
+
+!! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress: true
+
+!Scrollback buffer in secondary screen
+!URxvt.secondaryScreen: 1
+!URxvt.secondaryScroll: 0
+!URxvt.secondaryWheel: 0
+
+! Disable printing the terminal contents when pressing PrintScreen.
+URxvt.print-pipe: "cat > /dev/null"
+
+! Font spacing
+!URxvt.font: xft:Droid Sans Mono:size=12:antialias=true
+URxvt.font: xft:Source Code Pro:style=Medium:size=13:antialias=true
+!URxvt.font: xft:Fira Code:size=12
+!urURxvt.font: xft:DejaVu Sans Mono:size=12
+!urURxvt.font: xft:Inconsolata Nerd Font:size=12
+URxvt.letterSpace: -1
+
+! Cut and paste
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+!URxvt.clipboard.autocopy: true
+!URxvt.keysym.Shift-Control-C: perl:clipboard-osc:copy
+!URxvt.keysym.Shift-Control-V: perl:clipboard-osc:paste
+
+! No scrollbar
+URxvt.scrollBar: false
+
+! disable iso 14755 mode
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+!resize fonts
+ URxvt.keysym.Shift-Control-J: resize-font:smaller
+ URxvt.keysym.Shift-Control-K: resize-font:bigger
+
+! Extensions
+URxvt.perl-ext-common:default,vtewheel,resize-font,matcher
+
+! clickeable links
+URxvt.url-launcher: firefox
+URxvt.matcher.button: 1

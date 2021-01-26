@@ -1,0 +1,325 @@
+; vim:ft=dosini
+;=====================================================
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains alot of information
+;
+;=====================================================
+
+[colors]
+black = ${xrdb:color0:#1d2021}
+darkred = ${xrdb:color1:#cc241d}
+darkgreen = ${xrdb:color2:#98971a}
+darkyellow = ${xrdb:color3:#d79921}
+darkblue = ${xrdb:color4:#458588}
+darkmagenta = ${xrdb:color5:#b16286}
+darkcyan = ${xrdb:color6:#689d6a}
+lightgray = ${xrdb:color7:#a89984}
+gray = ${xrdb:color8:#928374}
+red = ${xrdb:color9:#fb4934}
+green = ${xrdb:color10:#b8bb26}
+yellow = ${xrdb:color11:#fabd2f}
+blue = ${xrdb:color12:#268bd2}
+magenta = ${xrdb:color13:#d3869b}
+cyan = ${xrdb:color14:#8ec07c}
+white = ${xrdb:color15:#ebdbb2}
+background = ${xrdb:color256:#1d2021}
+foreground = ${xrdb:color257:#ebdbb2}
+
+[bar/xmonad]
+monitor = ${env:MONITOR:HDMI-0}
+enable-ipc = true
+width = 100%
+height = 24
+;offset-x = 1%
+;offset-y = 1%
+;radius = 6.0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = {$xrdb:red}
+
+border-size = 0
+border-color = ${colors.white}
+
+padding-left = 0
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+
+font-0 = Roboto Mono:style=Medium:antialias=true:size=10;1
+font-1 = Mono:pixelsize=9;1
+font-2 = Noto Color Emoji:scale=10:style=Regular;2
+font-3 = Mono:pixelsize=10;1
+
+
+; Other modules: xkeyboard filesystem xbacklight backlight-acpi cu memory temperature powermenu weather
+modules-left = bspwm bspwm_mode xwindow
+;modules-center =
+modules-right = mpd news news_update pacpackages pacpackages_update volume corona corona_update weather weather_update date battery 
+
+tray-position = right
+tray-padding = 1
+
+wm-restack = bspwm
+
+
+[bar/bspwm]
+monitor = ${env:MONITOR:HDMI-0}
+enable-ipc = true
+width = 100%
+height = 24
+;offset-x = 1%
+;offset-y = 1%
+;radius = 6.0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = {$xrdb:red}
+
+border-size = 0
+border-color = ${colors.white}
+
+padding-left = 0
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+
+font-0 = Roboto Mono:style=Medium:antialias=true:size=10;1
+font-1 = Mono:pixelsize=9;1
+font-2 = Noto Color Emoji:scale=10:style=Regular;2
+font-3 = Mono:pixelsize=10;1
+
+
+; Other modules: xkeyboard filesystem xbacklight backlight-acpi cu memory temperature powermenu weather
+modules-left = bspwm bspwm_mode xwindow
+;modules-center =
+modules-right = mpd news news_update pacpackages pacpackages_update volume corona corona_update weather weather_update date battery 
+
+tray-position = right
+tray-padding = 1
+
+wm-restack = bspwm
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+[module/bspwm_mode]
+type = custom/ipc
+hook-0 = echo "[NORMAL]" &
+hook-1 = echo "[BALANCED]" &
+hook-2 = echo "[SPIRAL]" &
+hook-3 = echo "[DINAMIC]" &
+hook-4 = echo "bug" &
+hook-5 = echo "[`cat $BSPWM_BIN/mode/current_mode | tr [:lower:] [:upper:]`]" &
+format-foreground = ${colors.lightgray}
+initial = 6
+
+[module/date]
+type = custom/script
+exec = echo "`$STATUSBAR_BIN/clock`"
+interval = 30 
+format-underline = #268bd2
+
+[module/corona]
+type = custom/ipc
+hook-0 = echo "`$STATUSBAR_BIN/coronavirus`" &
+hook-1 = echo `$STATUSBAR_BIN/coronavirus 2` &
+click-middle = polybar-msg hook corona 2 &>/dev/null  &
+format-underline = ${colors.blue}
+[module/corona_update]
+type = custom/script
+exec = polybar-msg hook corona 1 &>/dev/null &
+interval = 36000 
+
+[module/weather]
+type = custom/ipc
+hook-0 = echo `$STATUSBAR_BIN/weather` &
+hook-1 = echo `$STATUSBAR_BIN/weather 2` &
+click-middle = polybar-msg hook weather 2 &>/dev/null &
+format-underline = ${colors.blue}
+[module/weather_update]
+type = custom/script
+exec = polybar-msg hook weather 1 &>/dev/null  &
+interval = 9800
+
+[module/news]
+type = custom/ipc
+hook-0  = echo "`$STATUSBAR_BIN/news 0`"  &
+format-underline = #268bd2
+click-left = echo "`$STATUSBAR_BIN/news 1`"  &
+click-right = echo "`$STATUSBAR_BIN/news 3`"  &
+;initial = 1
+[module/news_update]
+type = custom/script
+exec = sleep `shuf -i 10-20 -n 1` ; polybar-msg hook news 1 &>/dev/null  &
+interval = 3600 
+
+[module/pacpackages]
+type = custom/ipc
+hook-0 = echo "`$STATUSBAR_BIN/pacpackages 0`"  &
+format-underline = #268bd2
+click-left = echo "`$STATUSBAR_BIN/pacpackages 1`"  &
+;initial = 1
+[module/pacpackages_update]
+type = custom/script
+exec = sleep `shuf -i 10-20 -n 1` ;  polybar-msg hook pacpackages 1 &>/dev/null  &
+interval = 3600 
+
+[module/volume]
+type = custom/ipc
+hook-0 = echo "`$STATUSBAR_BIN/volume 0`"
+format-underline = ${colors.blue}
+click-left = echo "`$STATUSBAR_BIN/volume 1`"
+click-middle = echo "`$STATUSBAR_BIN/volume 2`"
+click-right = echo "`$STATUSBAR_BIN/volume 3`"
+scroll-up = echo "`$STATUSBAR_BIN/volume 4`"
+scroll-down = echo "`$STATUSBAR_BIN/volume 5`"
+double-click-left = echo "`$STATUSBAR_BIN/volume 6`"
+double-click-right = echo "`$STATUSBAR_BIN/volume 7`"
+
+initial = 1
+
+[module/xwindow]
+type = internal/xwindow
+label = %title%
+label-maxlen = 50
+format-foreground = ${colors.lightgray}
+
+[module/mpd]
+type = internal/mpd
+
+host = 127.0.0.1
+port = 6600
+
+click-left = $TERMINAL -e ncmpcpp
+click-right = mpc toggle
+; Seconds to sleep between progressbar/song timer sync
+interval = 1
+format-online = <label-song> [<label-time>]
+label-song =%artist% - %title%
+
+label-song-maxlen = 240
+
+label-offline = " "
+; Only applies if <icon-X> is used
+icon-play = ⏯️  
+icon-pause = ⏯️
+icon-stop = ⏹
+icon-prev = ⏮
+icon-next = ⏭
+icon-seekb = ⏪
+icon-seekf = ⏩
+icon-random = 🔀
+icon-repeat = 🔁
+icon-repeatone = 🔂
+icon-single = 🔂
+icon-consume = ✀
+
+; Used to display the state of random/repeat/repeatone/single
+; Only applies if <icon-[random|repeat|repeatone|single]> is used
+toggle-on-foreground = #000000
+toggle-off-foreground = #ffffff
+
+; Only applies if <bar-progress> is used
+bar-progress-width = 20
+bar-progress-indicator = |
+bar-progress-fill = ─
+bar-progress-empty = ─
+
+[module/battery]
+type = internal/battery
+
+format-underline = ${colors.blue}
+
+; This is useful in case the battery never reports 100% charge
+full-at = 99
+
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = AC
+
+poll-interval = 5
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+label-charging ="  %percentage%%"
+label-discharging ="  %percentage%%"
+label-full = 100%% 
+
+; Only applies if <ramp-capacity> is used
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+; Only applies if <bar-capacity> is used
+bar-capacity-width = 10
+
+; Only applies if <animation-charging> is used
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+; Framerate in milliseconds
+animation-charging-framerate = 750
+
+; Only applies if <animation-discharging> is used
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+; Framerate in milliseconds
+animation-discharging-framerate = 500
+
+[module/bspwm]
+type = internal/bspwm
+
+pin-workspaces = true
+
+label-focused =%name%
+label-focused-foreground = ${colors.lightgray}
+label-focused-underline= ${colors.white}
+label-focused-padding = 1
+
+label-occupied = %name%
+label-occupied-foreground = ${colors.lightgray}
+label-occupied-underline = ${colors.blue}
+label-occupied-padding = 1
+
+label-urgent = %name%!
+label-urgent-background = ${colors.red}
+label-urgent-padding = 1
+
+label-empty = %name%
+label-empty-foreground = ${colors.lightgray}
+label-empty-underline= ${colors.black}
+label-empty-padding = 1
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 5
+margin-bottom = 0 

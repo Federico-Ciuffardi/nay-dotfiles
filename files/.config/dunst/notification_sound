@@ -1,0 +1,5 @@
+#! /bin/sh
+# appname summary body icon urgency
+if [ $1 != silent ] ; then
+  paplay /usr/share/sounds/freedesktop/stereo/dialog-information.oga
+fi

@@ -1,0 +1,52 @@
+" theme
+colors base16-grayscale-dark
+
+" Close
+unbind d
+bind q tabclose
+
+" scroll
+set smoothscroll false 
+bind j scrollline 3
+bind k scrollline -3
+
+" editor
+set editorcmd st -c tridactyl_editor -e nvim
+
+" search
+unbind <C-f>
+
+bind / fillcmdline find
+bind n findnext 1
+bind N findnext -1
+bind ;n nohlsearch
+
+" tab nav
+bind J tabnext
+bind K tabprev
+
+" tab nav
+bind t fillcmdline tab
+bind T fillcmdline taball
+
+" open
+bind o fillcmdline open
+bind O fillcmdline tabopen
+
+" home tab
+set newtab about:blank
+
+" gui
+guiset_quiet statuspanel none 
+
+" attach detach
+bind A fillcmdline tabpush
+bind a tabdetach
+bind <C-a> fillcmdline tabgrab
+bind <C-A> fillcmdline winmerge
+
+" no indicator
+set modeindicator false
+
+"
+set storageloc local

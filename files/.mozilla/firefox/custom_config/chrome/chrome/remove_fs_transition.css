@@ -1,0 +1,6 @@
+/* removes transition to full-screen from https://support.mozilla.org/en-US/questions/1251598 */
+
+/* Minimize fullscreen transition time */
+#navigator-toolbox[fullscreenShouldAnimate] {
+  transition: 0ms !important;
+}

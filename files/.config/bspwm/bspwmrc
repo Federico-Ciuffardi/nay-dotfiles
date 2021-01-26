@@ -1,0 +1,101 @@
+#! /bin/sh
+
+# WS to monitor
+monitors=`xrandr --query | grep " connected" | cut -d" " -f1 | tac`
+monitors_nmb=`echo $monitors | wc -w`
+echo $monitors
+echo $monitors_nmb
+ws_per_monitor=$((6 / monitors_nmb - 1))
+starting_ws=0
+extra_ws=1
+
+for m in $monitors ; do
+	if [ $starting_ws -eq 0 ] ; then
+		bspc monitor $m -d `seq -s ' ' $starting_ws $(($starting_ws + $ws_per_monitor))` F$extra_ws F$((extra_ws + 1)) M
+	else
+		bspc monitor $m -d `seq -s ' ' $starting_ws $(($starting_ws + $ws_per_monitor))` F$extra_ws F$((extra_ws + 1))
+	fi
+	extra_ws=$((extra_ws + 2))
+	starting_ws=$((starting_ws + ws_per_monitor +1 ))
+done
+
+#bspc config -m DVI-I-0 initial_polarity first_child
+#bspc config -m HDMI-0 initial_polarity second_child
+#bspc monitor HDMI-0 -d 
+#bspc monitor DVI-I-0 -d F2   
+
+# Gaps and bordsrs
+bspc config border_width        1 
+bspc config window_gap          0 
+#bspc config borderless_monocle  true
+#bspc config gapless_monocle     true
+#bspc config focused_border_color /#D23D3D
+bspc config active_border_color \#2A2A2A
+bspc config normal_border_color \#2A2A2A
+# split ratio
+bspc config split_ratio          0.50
+
+# mouse config
+bspc config pointer_modifier mod1
+bspc config pointer_action3 resize_corner
+bspc config focus_follows_pointer true
+bspc config pointer_follows_focus true
+bspc config pointer_follows_monitor true
+
+# colors
+bspc config presel_feedback_color '#5E5E5E'
+
+# RULES
+# use `xprop | grep WM_CLASS` for getting the class:instance name for the rule
+
+## picture in picture floating
+bspc rule -a firefox:Toolkit state=floating
+bspc rule -a firefox:Toolkit sticky=on
+
+bspc rule -a Nightly:Toolkit state=floating
+bspc rule -a Nightly:Toolkit sticky=on
+
+## zathura
+bspc rule -a Zathura:org.pwmt.zathura state=tiled 
+
+## xcalc
+bspc rule -a SpeedCrunch:speedcrunch state=floating center=true
+bspc rule -a SpeedCrunch:speedcrunch sticky=on
+
+## thunderbird
+bspc rule -a Thunderbird desktop=M
+bspc rule -a Mail desktop=M
+## whatsapp
+bspc rule -a whatsapp-nativefier-d52542 state=floating rectangle=1400x800+230+140
+
+## blender
+bspc rule -a Blender:Blender state=floating hidden=on
+
+## HPC
+bspc rule -a HPC:Practico1 state=floating 
+
+# init 
+
+## polybar
+$AUTOSTART_BIN/start_polybar default &
+
+## sxhkd
+sxhkd &
+
+# mousekeys
+xbindkeys
+
+## cross to default cursor
+xsetroot -cursor_name left_ptr &
+
+## bspwm mode restoration
+$BSPWM_BIN/mode_api restore &
+
+## swallow
+$BSPWM_BIN/swallow.py &
+
+## mail client
+(sleep 30 && thunderbird) &
+
+## whatsapp
+(sleep 30 && whatsapp-nativefier-dark) &

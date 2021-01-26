@@ -1,0 +1,318 @@
+#
+# wm independent hotkeys
+#
+
+# shutdown/logout/restart bspwm
+super + shift + q
+	$DMENU_BIN/dmenu_leave
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# program launcher
+super + r
+	rofi -show drun
+
+# get emoji
+super + shift + e
+	$DMENU_BIN/dmenu_unicode
+
+
+# mount unmount
+super + {_, shift + , shift + ctrl} u 
+	{$DMENU_BIN/dmenumount, lxsudo lxsudo ldm -u $USER ,$DMENU_BIN/dmenuumount }
+	#lxsudo ldm -u $USER
+
+# toggle touchpad
+super+semicolon
+	(synclient | grep "TouchpadOff.*1" && synclient TouchpadOff=0) || synclient TouchpadOff=1
+
+# Print
+Print
+	screengrab
+
+# switch window
+super + Tab
+	$BSPWM_BIN/focus
+
+# polybar toggle
+super + shift + p
+	pkill polybar && bspc config top_padding 0 || $AUTOSTART_BIN/start_polybar 
+
+# conky - system status
+super + shift + c
+	pkill conky || conky
+
+# calc
+XF86Calculator
+	pkill -TERM speedcrunch || speedcrunch
+
+# execute programs 
+## terminal emulator
+super + Return
+	st
+
+super + shift + Return
+	bspc rule -a \* -o state=floating && st
+
+# firefox, fm, code
+super + {w,e,n}
+	{$BROWSER, $TERMINAL -e ranger-standalone, $TERMINAL -e ncmpcpp}
+
+# whatsapp
+super + shift + w
+	whatsapp-nativefier-dark
+
+# func keys
+
+## General
+XF86PowerOff
+	prompt "Shutdown computer?" "sudo -A shutdown -h now"
+
+##Brightness
+XF86MonBrightnessDown
+	light -U 15
+
+XF86MonBrightnessUp
+	light -A 15
+
+## Audiokeys
+XF86AudioMute
+	amixer sset Master toggle; polybar-msg hook volume 1 &>/dev/null
+
+XF86Audio{Raise,Lower}Volume
+	amixer sset Master 5%{+,-}; polybar-msg hook volume 1 &>/dev/null
+
+XF86Audio{Next,Prev}
+	mpc {next,prev}
+
+XF86Audio{Pause,Play,Stop}
+	mpc {pause,toggle,stop}
+
+XF86Audio{Rewind,Forward}
+	mpc seek {-,+}10
+
+XF86AudioRecord
+	dmenurecord
+
+XF86AudioMedia
+	$TERMINAL -e ncmpcpp 
+#
+# bspwm hotkeys
+#
+
+## gaps
+super + {_,shift} + z
+	bspc config window_gap {0,15}
+
+## close and kill
+super + {_, shift + ctrl } + q
+	 { $BSPWM_BIN/tabbed_api close ,bspc node -k}
+
+super + button2
+    $BSPWM_BIN/tabbed_api
+
+## tabbed
+super + t
+	$BSPWM_BIN/tabbed_api toggle $(bspc query -N -n .window.descendant_of)  
+
+super + shift + t
+	$BSPWM_BIN/tabbed_api toggle_all
+
+super + f
+	$BSPWM_BIN/tabbed_api toggle_all
+
+## fullscreeen toggle
+F11
+	bspc node -t fullscreen || bspc node -t tiled
+
+# Mode api
+
+## toggle
+super + shift + Tab
+	$BSPWM_BIN/mode_api toggle
+	#rofi -show window
+
+## balanced
+super + shift + b
+	$BSPWM_BIN/mode_api balanced
+
+## spiral
+super + shift + s
+	$BSPWM_BIN/mode_api spiral
+
+## normal
+super + shift + n
+	$BSPWM_BIN/mode_api normal
+
+## dinamic
+super + shift + d
+	$BSPWM_BIN/mode_api dinamic
+
+
+# Toggle transparency
+super + a
+	pkill picom || rund picom --experimental-backends
+
+# state/flags
+
+## set the window state
+super + s
+	bspc node -g sticky
+
+super + shift + f
+	bspc node -t floating || bspc node -t tiled
+
+## hide window
+super + m
+	bspc node focused -d M -g hidden=on || bspc node focused -g hidden=on
+#  bspc node focused -g hidden=on 
+
+## unhide all windows
+super + shift + m
+	$BSPWM_BIN/unhide
+#   [[ -n "$s" ]] && bspc node "${nodes[$s]}" -n focused -g hidden=off -f
+
+## unhide all windows
+super + ctrl + shift + m
+  bspc node $(bspc query -N -n .hidden.local | tail -n1) -g hidden=off
+
+
+## set the node flags
+super + ctrl + {m,x,s,z}
+	{bspc node -g marked && bspc node newest.marked.local -n newest.!automatic.local, \
+	bspc node -g locked, \
+	bspc node -g sticky, \
+	bspc node -g private}
+
+# focus/swap
+
+## focus the node in the given direction
+super + {h,j,k,l}
+	bspc node -f    {west  || bspc monitor -f west || bspc monitor -f east, \
+					south || bspc node -f next.local, \
+					north || bspc node -f prev.local, \
+					east  || bspc monitor -f east || bspc monitor -f west}
+
+super + shift + {h,j,k,l}
+	bspc node -s   {west.local  --follow  || bspc node -m west --follow || bspc node -m east --follow, \
+					south.local --follow, \
+					north.local --follow, \
+					east.local  --follow  || bspc node -m east --follow || bspc node -m west --follow}
+#	if [ -z "`bspc query -N focused.window.leaf.floating`" ] ; then ;\
+#		bspc node -s   {west.local  --follow  || bspc node -m west --follow || bspc node -m east --follow, \
+#						south.local --follow, \
+#						north.local --follow, \
+#						east.local  --follow  || bspc node -m east --follow || bspc node -m west --follow} ;\
+#	else ;\
+#		bspc node -v {-20 0,0 20,0 -20,20 0} ;\
+#	fi;\
+
+#bspc node -m $d --follow
+# bspc node -m $d --follow,
+# super + {Left,Down,Up,Right}
+#	 bspc node -v {-20 0,0 20,0 -20,20 0}
+
+## focus the next/previous desktop in the current monitor
+alt + {j,k}
+	bspc desktop -f {prev,next}.local
+
+alt + shift + {j,k}
+	bspc node -d {prev,next}.local --follow
+
+alt + {h,l}
+	bspc desktop -f {prev,next}.local
+	#bspc monitor -f {prev,next}
+
+alt + shift + {h,l}
+	bspc node -d {prev,next}.local --follow
+#	bspc node -m {prev,next} --follow
+
+## focus the node for the given path jump
+super + {comma,p}
+	bspc node -f @parent
+
+super + {period}
+	bspc node -f @brother
+
+
+## focus the next/previous node in the current desktop
+super + {_,shift + } c
+	bspc node -f {next,prev}.local
+
+
+## swap the current node and the biggest node
+super + {_,shift +} g
+	bspc node -s {biggest.local, biggest}
+
+super + space
+	bspc node -s biggest.local
+
+## focus or send to the given desktop
+#KP_{End,Down,Next,Left,Begin}
+#	bspc desktop -f '{-5}'
+
+super + {_,shift + }{1-5}
+	bspc {desktop -f,node -d} '{1-5}'
+
+super + {_,shift + } {grave, F1, F2,F3,F4}
+	bspc {desktop -f,node -d} {0, F1, F2,F3,F4}
+
+# Go to mail WS
+XF86Mail 
+	if	[ ! -z `bspc query -M -d M.focused` ] ; then ;\
+		bspc desktop -f last.local;\
+	else ;\
+		bspc desktop -f M ;\
+	fi
+
+super + o
+	if	[ ! -z `bspc query -M -d M.focused` ] ; then ;\
+		bspc desktop -f last;\
+	else ;\
+		bspc desktop -f M ;\
+	fi
+
+
+#
+# preselect
+#
+
+# preselect the direction
+super + ctrl + {h,j,k,l}
+	bspc node -p    {west && bspc node newest.marked.local -n newest.!automatic.local,\
+					south && bspc node newest.marked.local -n newest.!automatic.local,\
+					north && bspc node newest.marked.local -n newest.!automatic.local,\
+					east && bspc node newest.marked.local -n newest.!automatic.local}
+
+# preselect the ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + ctrl + space
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+#
+# move/resize
+#
+
+# expand/contract a window 
+super + control + shift + {h,j,k,l}
+	bspc node -z    {left -20 0 || bspc node -z right -20 0, \
+					bottom 0 20 || bspc node -z top 0 20,\
+					top 0 -20 || bspc node -z bottom 0 -20,\
+					right 20 0 || bspc node -z left 20 0}
+
+# contract a window by moving one of its side inward
+#super + control + shift + {h,j,k,l}
+#	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move a floating window
+super + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}

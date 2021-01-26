@@ -1,0 +1,16 @@
+! clear up
+clear lock
+clear mod1
+clear mod4
+! capslock to super
+keycode 66 = Escape 
+! alt to super
+keycode 64 =  Super_L
+keycode 108 =  Super_L
+! alt to super
+keycode 133 = Alt_L 
+!shift_R to shift_L
+keycode 62 = Shift_L
+
+add Mod1 = Super_L Super_R 
+add Mod4 = Alt_L Alt_R

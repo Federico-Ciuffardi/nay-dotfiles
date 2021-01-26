@@ -1,0 +1,19 @@
+# execs
+alias edit="nvim"
+# git
+alias gcommit="git commit"
+alias gpull="git pull"
+alias gpush="git push"
+alias gadd="git add"
+alias gfetch="git fetch"
+alias gclone="git clone" 
+#nvim
+alias vim="nvim"
+alias vi="nvim"
+alias v="nvim"
+#ranger
+alias r="ranger"
+#xclip
+alias xclip="xclip -selection c"
+# yad
+alias yad="yad --center"

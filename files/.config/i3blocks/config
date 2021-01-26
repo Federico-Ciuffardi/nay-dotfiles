@@ -1,0 +1,86 @@
+command=~/bin/statusbar/$BLOCK_NAME
+separator_block_width=15
+markup=pango
+
+[disc]
+label=💿
+full_text= VLC closed
+interval=once
+signal=2
+
+[music]
+full_text= ⏹️ VLC closed
+interval=once
+signal=1
+
+[coronavirus]
+interval=once
+signal=10
+
+[weather]
+interval=18000
+signal=11
+
+[news]
+interval=3600
+signal=12
+
+[pacpackages]
+label=📦
+interval=3600
+signal=13
+
+[volume]
+interval=once
+
+[clock]
+interval=30
+
+[separator]
+full_text=""
+
+#[mailbox]
+#interval=180
+
+#[iplocate]
+#interval=30
+
+#[clickme]
+#align=center
+#full_text=Click me!=
+#command=echo "Button=$button x=$x y=$y"
+
+#[record]
+#command=cat /tmp/recordingicon
+#interval=once
+#signal=9
+
+#[torrent]
+#interval=20
+#signal=7
+
+#[memory]
+#interval=30
+#label=🧠
+
+#[cpu]
+#interval=15
+#label=💻
+
+#[disk]
+#interval=60
+#command=disk /
+
+#[disk]
+#interval=60
+#command=disk /home 🏠
+
+#[battery]
+#command=battery BAT0
+#interval=5
+
+#[internet]
+#interval=10
+
+#[help]
+#interval=once
