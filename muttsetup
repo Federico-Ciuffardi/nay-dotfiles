@@ -1,6 +1,0 @@
-pass init $1
-gpg --list-secret-keys --keyid-format LONG | grep federico.ciuffardi@outlook.com || gpg --full-gen-key
-mw -D $1 
-mw -a $1
-mw -y $1
-mw -T
