@@ -11,7 +11,6 @@
 .config/picom
 .config/polybar
 .config/qutebrowser
-.config/ranger
 .config/rofi
 .config/screengrab
 .config/sxhkd
