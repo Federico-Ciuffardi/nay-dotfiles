@@ -12,7 +12,6 @@
 .config/polybar
 .config/qutebrowser
 .config/rofi
-.config/screengrab
 .config/sxhkd
 .config/sxiv
 .config/termite
