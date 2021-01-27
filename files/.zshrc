@@ -253,7 +253,7 @@ print -Pn "\e]0;`pwd`\a"
 echo  -ne "\033k`pwd`\033\\"
 
 # modify fpath
-fpath=(~/git/nay/completion $fpath)
+fpath=($HOME/git/nay/completion $fpath)
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
