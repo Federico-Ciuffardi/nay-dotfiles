@@ -3,7 +3,7 @@
 source /usr/lib/naylib
 
 # sync firefox profiles
-draw_heading 3 "Sync firefox profiles"
+draw_heading "Sync firefox profiles"
 cd $HOME/.mozilla/firefox/ 
 for profile in `grep path -i profiles.ini | sed 's/Path=//g'` ; do
   echo "  $profile"

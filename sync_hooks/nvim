@@ -3,5 +3,5 @@
 source /usr/lib/naylib
 
 # install vim plug pluggins
-draw_heading 3 "Sync vim pluggins"
+draw_heading "Sync vim pluggins"
 nvim <(figlet Syncing Pluggins...) -c " PlugUpgrade | PlugClean | PlugUpdate | PlugInstall | qa"

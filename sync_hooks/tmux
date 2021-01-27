@@ -3,7 +3,7 @@
 source /usr/lib/naylib
 
 # install tmux tpm pluggins
-draw_heading 3 "Sync tmux pluggins"
+draw_heading "Sync tmux pluggins"
 $HOME/.tmux/plugins/tpm/bin/clean_plugins
 $HOME/.tmux/plugins/tpm/bin/update_plugins all
 $HOME/.tmux/plugins/tpm/bin/install_plugins
