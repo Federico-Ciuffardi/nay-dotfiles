@@ -1,9 +1,7 @@
 # sync firefox profiles
-echo
 echo ":: Sync firefox profiles"
 cd $HOME/.mozilla/firefox/ 
 for profile in `grep path -i profiles.ini | sed 's/Path=//g'` ; do
   echo "  $profile"
   cp -r custom_config/*  $profile
 done
-printf "\n"
