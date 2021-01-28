@@ -133,6 +133,9 @@ autocmd BufNewFile,BufRead *.vim setlocal foldmethod=marker
 " no nested folds
 set foldlevel=1
 
+" unfold on jump
+set foldopen+=jump
+
 " FastFold base config
 let g:fastfold_savehook = 1
 let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
