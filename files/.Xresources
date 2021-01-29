@@ -34,6 +34,16 @@
 *color15: #FFFFFF
 
 ! ******************
+! sxiv config
+! ******************
+
+Sxiv.background: #222222
+Sxiv.foreground: #BBBBBB
+
+Sxiv.bbackground: #1D2021
+Sxiv.bforeground: #FFFFFF 
+
+! ******************
 ! urxvt config
 ! ******************
 
