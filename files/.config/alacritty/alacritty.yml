@@ -10,7 +10,6 @@ env:
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  TERM: xterm-256color
   WINIT_X11_SCALE_FACTOR: "1.0"
 
 window:
@@ -647,11 +646,11 @@ key_bindings:
   - { key: N,                           mode: Vi, action: SearchNext              }
   - { key: N,      mods: Shift,         mode: Vi, action: SearchPrevious          }
 
-    # fix keys
-  - { key: H, mods: Control, chars: "\x1b[104;5u" }
-  - { key: I, mods: Control, chars: "\x1b[105;5u" }
-  - { key: J, mods: Control, chars: "\x1b[106;5u" }
-  - { key: M, mods: Control, chars: "\x1b[109;5u" }
+    # # fix keys
+  # - { key: H, mods: Control, chars: "\x1b[104;5u" }
+  # - { key: I, mods: Control, chars: "\x1b[105;5u" }
+  # - { key: J, mods: Control, chars: "\x1b[106;5u" }
+  # - { key: M, mods: Control, chars: "\x1b[109;5u" }
 
   - { key: Tab,    mods: Control, chars: "\x1b[9;5u" }
   - { key: Return, mods: Control, chars: "\x1b[13;5u" }
