@@ -1,7 +1,7 @@
 # Enviromental variables
 ## Defaults Programs
 
-export TERMINAL="st"
+export TERMINAL="alacritty"
 export TERM="st-256color"
 
 export EDITOR="nvim"
