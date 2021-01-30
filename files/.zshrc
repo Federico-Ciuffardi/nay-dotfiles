@@ -220,10 +220,10 @@ function preexec(){
   vi_preexec
 
 	# title change
-	print -Pn "\e]0;$1\a" 
+	print -Pn "\e]0;"$1"\a" 
 
   # title change for tmux
-	echo -ne "\033k$1\033\\"
+  [ -z $TMUX ] || echo -ne "\033k"$1"\033\\"
 }
 
 ##############
@@ -249,8 +249,8 @@ function preexec(){
 [ -z $TMUX ] || tmuxkd 5
 
 # starting window title
-print -Pn "\e]0;`pwd`\a" 
-echo  -ne "\033k`pwd`\033\\"
+# print -Pn "\e]0;`pwd`\a" 
+# echo  -ne "\033k`pwd`\033\\"
 
 # modify fpath
 fpath=($HOME/git/nay/completion $fpath)
