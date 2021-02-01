@@ -21,3 +21,4 @@
 .config/conky
 .config/kitty
 .mozilla/firefox/custom_config
+.config/sxiv/exec
