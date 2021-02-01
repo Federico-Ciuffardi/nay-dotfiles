@@ -26,3 +26,5 @@
 .config/qutebrowser/bookmarks
 .config/tridactyl/themes
 .mozilla/firefox/custom_config/chrome
+.mozilla/firefox/custom_config/chrome/chrome
+.mozilla/firefox/custom_config/chrome/content
