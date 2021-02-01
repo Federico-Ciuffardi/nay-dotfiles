@@ -22,3 +22,7 @@
 .config/kitty
 .mozilla/firefox/custom_config
 .config/sxiv/exec
+.config/mutt/accounts
+.config/qutebrowser/bookmarks
+.config/tridactyl/themes
+.mozilla/firefox/custom_config/chrome
