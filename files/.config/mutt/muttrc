@@ -14,6 +14,9 @@ set date_format = "%d/%m/%y %H:%M"
 bind index,pager b sidebar-toggle-visible
 
 macro pager u <pipe-entry>'urlscan'<enter> 'Follow links with urlview'
+
+set abort_key = "<Esc>"  
+
 ##########
 # Colors #
 ##########

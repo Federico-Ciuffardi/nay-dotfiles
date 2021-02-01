@@ -38,6 +38,7 @@ PS1="%B%{$fg[green]%}[ %{$fg[white]%}%~ %{$fg[green]%}]$%b "
 
 # less delay on escape
 KEYTIMEOUT=1
+export ESCDELAY=1
 
 # History search
 HISTFILE=~/.histfile
