@@ -20,3 +20,7 @@
 .config/zathura
 .config/conky
 .config/kitty
+.config/mutt/accounts
+.config/qutebrowser/bookmarks
+.config/sxiv/exec
+.config/tridactyl/themes

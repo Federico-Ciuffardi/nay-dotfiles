@@ -9,6 +9,9 @@ set header_cache = /home/fede/.cache/mutt-wizard/federico.ciuffardi@outlook.com/
 set message_cachedir = /home/fede/.cache/mutt-wizard/federico.ciuffardi@outlook.com/bodies
 set mbox_type = Maildir
 
+
+set query_command = "mail-query '%s' /home/fede/.local/share/mail/federico.ciuffardi@outlook.com"
+
 bind index,pager gg noop
 bind index,pager g noop
 bind index,pager M noop

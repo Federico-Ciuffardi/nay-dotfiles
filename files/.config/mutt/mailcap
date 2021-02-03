@@ -1,11 +1,11 @@
 audio/*; /usr/bin/xdg-open %s
 
-image/*; /usr/bin/xdg-open %s
+image/*; sxiv %s &
 
 application/msword; /usr/bin/xdg-open %s
-application/pdf; /usr/bin/xdg-open %s &;
+application/pdf; /usr/bin/xdg-open %s &
 application/postscript ; /usr/bin/xdg-open %s
 
-text/html; firefox --new-window %s;
+text/html; firefox --new-window %s
 # text/html; firefox --new-window %s & sleep 1; test=test -n "$DISPLAY"; nametemplate=%s.html; copiousoutput
 # text/html; w3m -I %{charset} -T text/html; copiousoutput;

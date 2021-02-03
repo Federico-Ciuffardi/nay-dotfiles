@@ -3,6 +3,9 @@
 """"""""
 "{{{{{{
 
+" limit the width of text to 72 characters when editing a mail on neomutt
+au BufRead /tmp/mutt-* set tw=72
+
 " horizontal line
 set colorcolumn=90
 
