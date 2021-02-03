@@ -27,11 +27,21 @@ macro compose A "<shell-escape>bash $HOME/.config/mutt/filepicker<enter><enter-c
 # Key bindings #
 ################
 
-bind index,pager b sidebar-toggle-visible
+bind index,pager b       sidebar-toggle-visible
 
-macro pager u <pipe-entry>'urlscan'<enter> 'Follow links with urlview'
+bind index,pager J       next-new
+bind index,pager K       previous-new 
 
-set abort_key = "<Esc>"  
+bind index,pager N       search-opposite
+bind index,pager N       search-opposite
+
+bind index,pager \Cl     sidebar-open
+
+bind index       <Space> toggle-new 
+
+macro pager      u       <pipe-entry>'urlscan'<enter> 'Follow links with urlview'
+
+set abort_key =  "<Esc>"  
 
 ##########
 # Colors #
