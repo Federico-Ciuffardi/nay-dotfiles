@@ -1,4 +1,3 @@
-
 ###########
 # Plugins #
 ###########
@@ -21,7 +20,6 @@ antigen apply
 ###########
 # General #
 ###########
-
 # GPG Agent
 GPG_TTY=`tty`
 export GPG_TTY
@@ -72,7 +70,7 @@ zle -N down-line-or-beginning-search
 ####################
 # Custom functions #
 ####################
-## ranger changing directory
+# ranger changing directory
 ranger_cd() {
   ranger --choosedir=$last_wd_file
   [ -z $last_wd_file ] || cd "`cat $last_wd_file`"
@@ -80,6 +78,7 @@ ranger_cd() {
 
 alias ranger=ranger_cd
 
+# Colored man
 function man() {
 	env \
 		LESS_TERMCAP_md=$(tput bold; tput setaf 4) \
@@ -93,11 +92,14 @@ function man() {
 		man "$@"
 }
 
+# sync wd
+function swd() {
+  cd "$(cat "${HOME}/.local/share/last_wd")"
+}
 
 #######
 # fzf #
 #######
-
 # enable fzf completion with **
 source /usr/share/fzf/completion.zsh
 
@@ -233,7 +235,7 @@ function preexec(){
 ##############
 # enviroment #
 ##############
-## ROS
+# ROS
 [ -f "$HOME/catkin_ws/devel/setup.zsh" ] && source "$HOME/catkin_ws/devel/setup.zsh"
 
 # GHCUP
@@ -245,7 +247,6 @@ function preexec(){
 ###########
 # execute #
 ###########
-
 # cd to last working directoy
 [ ! -z $last_wd_file ] && cd "`cat $last_wd_file`"
 
