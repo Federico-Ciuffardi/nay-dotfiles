@@ -19,6 +19,7 @@ bind index,pager C noop
 bind index gg first-entry
 
 macro index S "<shell-escape>mw -y federico.ciuffardi@outlook.com<enter>" "run mbsync to sync federico.ciuffardi@outlook.com"
+macro index \Cr "<shell-escape>mw -y federico.ciuffardi@outlook.com<enter>" "run mbsync to sync federico.ciuffardi@outlook.com"
 macro index <F5> "<shell-escape>mw -y federico.ciuffardi@outlook.com<enter>" "run mbsync to sync federico.ciuffardi@outlook.com"
 
 unmailboxes *
