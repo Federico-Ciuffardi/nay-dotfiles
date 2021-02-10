@@ -6,6 +6,7 @@ export TERM="st-256color"
 
 export EDITOR="nvim"
 export VISUAL="nvim"
+export DIFFPROG="nvim -d"
 
 export BROWSER="firefox"
 #export WM="xmonad"

@@ -83,6 +83,11 @@ noremap <S-Q> q
 noremap <Space> <Nop>
 let mapleader = "\<Space>"
 
+" enhanced diff
+if has("patch-8.1.0360")
+    set diffopt+=internal,algorithm:patience
+endif
+
 "}}}}}}
 
 """""""""""""""""""""
@@ -105,6 +110,7 @@ Plug 'bling/vim-airline'
 Plug 'brooth/far.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'stsewd/fzf-checkout.vim'
 
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -218,6 +224,39 @@ nnoremap <leader>m  :Maps<cr>
 nnoremap <leader>?  :Helptags<cr>
 
 "}}}
+
+""""""""""""""""
+" fzf-checkout "
+""""""""""""""""
+let $FZF_DEFAULT_OPTS='--reverse'
+let g:fzf_branch_actions = {
+      \ 'rebase': {
+      \   'prompt': 'Rebase> ',
+      \   'execute': 'echo system("{git} rebase {branch}")',
+      \   'multiple': v:false,
+      \   'keymap': 'ctrl-r',
+      \   'required': ['branch'],
+      \   'confirm': v:false,
+      \ },
+      \ 'track': {
+      \   'prompt': 'Track> ',
+      \   'execute': 'echo system("{git} checkout --track {branch}")',
+      \   'multiple': v:false,
+      \   'keymap': 'ctrl-t',
+      \   'required': ['branch'],
+      \   'confirm': v:false,
+      \ },
+      \ 'diff': {
+      \   'prompt': 'Diff> ',
+      \   'execute': 'Git diff {branch}',
+      \   'multiple': v:false,
+      \   'keymap': 'ctrl-f',
+      \   'required': ['branch'],
+      \   'confirm': v:false,
+      \ },
+      \}
+nnoremap <leader>gb :GBranche<cr>
+
 
 """""""""""
 " vimwiki "
@@ -425,7 +464,7 @@ nnoremap <C-t> :call Toggle_transparent_background()<CR>
 "}}}
 
 """""""""
-" Mapps "
+" Maps "
 """""""""
 "{{{
 
