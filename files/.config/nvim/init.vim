@@ -1,7 +1,12 @@
 """"""""
 " Base "
 """"""""
-"{{{{{{
+"{{{
+
+"spellcheck
+set spelllang=en,es
+autocmd BufNewFile,BufRead /tmp/mutt-* set spell!
+autocmd BufNewFile,BufRead *.md set spell!
 
 " limit the width of text to 72 characters when editing a mail on neomutt
 au BufRead /tmp/mutt-* set tw=72
@@ -10,6 +15,8 @@ au BufRead /tmp/mutt-* set tw=72
 set colorcolumn=90
 
 " misc 
+set autoindent
+set smarttab
 set incsearch
 set scrolloff=8
 
@@ -52,6 +59,21 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set splitbelow
 set splitright
 
+set equalalways
+
+" function! s:SetWindowsToEqualWidths()
+"   let restoreCommands = split(winrestcmd(), '|')
+"   let heightCommands = filter(restoreCommands, { idx, cmd -> cmd =~# '^\d\+resize' })
+"   wincmd =
+"   execute join(heightCommands, '|')
+" endfunction
+
+augroup AutomaticWindowSizing
+  autocmd!
+  autocmd VimResized * wincmd =
+  " autocmd VimResized * call <SID>SetWindowsToEqualWidths()
+augroup END
+
 " buffers
 set hidden
 
@@ -69,7 +91,11 @@ function! CondQuit()
   if len(getbufinfo({'buflisted':1})) == 1
     silent! execute "q"
   else
-    silent! execute "bd"
+    if len(tabpagebuflist()) > 1
+      silent! execute "q"
+    else
+      silent! execute "bd"
+    endif
   endif
 endfunction
 
@@ -84,11 +110,11 @@ noremap <Space> <Nop>
 let mapleader = "\<Space>"
 
 " enhanced diff
-if has("patch-8.1.0360")
-    set diffopt+=internal,algorithm:patience
-endif
+" if has("patch-8.1.0360")
+"     set diffopt+=internal,algorithm:patience
+" endif
 
-"}}}}}}
+"}}}
 
 """""""""""""""""""""
 " Installed plugins "
@@ -127,7 +153,36 @@ Plug 'chrisbra/recover.vim'
 Plug 'zhimsel/vim-stay'
 Plug 'Konfekt/FastFold'
 
+Plug 'easymotion/vim-easymotion'
+
+Plug 'mhinz/vim-startify'
+
+Plug 'jiangmiao/auto-pairs'
+
+Plug 'yuttie/comfortable-motion.vim'
+
+Plug 'tpope/vim-abolish'
+
+Plug 'tpope/vim-unimpaired'
+
 call plug#end()
+"}}}
+
+""""""""""""""
+" Auto pairs "
+""""""""""""""
+"{{{
+
+autocmd BufNewFile,BufRead *.vim let g:AutoPairs = {'(':')', '[':']', "'":"'", "`":"`"}
+
+"}}}
+
+""""""""""""""""""""""
+" Confortable motion "
+""""""""""""""""""""""
+"{{{
+let g:comfortable_motion_friction = 165.0
+let g:comfortable_motion_air_drag = 1.0
 "}}}
 
 """""""""""""""""""""
@@ -143,7 +198,7 @@ autocmd BufNewFile,BufRead *.vim setlocal foldmethod=marker
 set foldlevel=1
 
 " unfold on jump
-set foldopen+=jump
+set foldopen+=jump,search
 
 " FastFold base config
 let g:fastfold_savehook = 1
@@ -222,12 +277,14 @@ nnoremap <leader>gc :BCommits<cr>
 nnoremap <leader>gC :Commits<cr>
 nnoremap <leader>m  :Maps<cr>
 nnoremap <leader>?  :Helptags<cr>
+nnoremap <leader>b  :Buffers<cr>
 
 "}}}
 
 """"""""""""""""
 " fzf-checkout "
 """"""""""""""""
+"{{{
 let $FZF_DEFAULT_OPTS='--reverse'
 let g:fzf_branch_actions = {
       \ 'rebase': {
@@ -255,8 +312,9 @@ let g:fzf_branch_actions = {
       \   'confirm': v:false,
       \ },
       \}
-nnoremap <leader>gb :GBranche<cr>
+nnoremap <leader>gb :GBranch<cr>
 
+"}}}
 
 """""""""""
 " vimwiki "
@@ -467,6 +525,7 @@ nnoremap <C-t> :call Toggle_transparent_background()<CR>
 " Maps "
 """""""""
 "{{{
+command! -nargs=1 -complete=file Diff :vertical diffsplit <args>
 
 " " Undo
 " nnoremap <C-Z> u
