@@ -192,7 +192,7 @@ function vi_preexec() {
 	# ^X to ^C
 	stty intr '^C' 
 	# re set beam
-	echo -ne '\e[5 q' ;
+	echo -ne '\e[5 q'
 }
 
 ## exec on precmd hook
@@ -226,7 +226,7 @@ function preexec(){
   vi_preexec
 
 	# title change
-	print -Pn "\e]0;"$1"\a" 
+	echo -ne "\e]0;"$1"\a" 
 
   # title change for tmux
   [ -z $TMUX ] || echo -ne "\033k"$1"\033\\"
