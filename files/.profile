@@ -12,9 +12,7 @@ export BROWSER="firefox"
 #export WM="xmonad"
 #export WM="bspwm"
 export WM="dwm"
-
-
-export STATUSBAR="polybar"
+# export STATUSBAR="polybar"
 
 ## Path
 export MY_BIN=$HOME/bin
@@ -38,7 +36,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 ## Misc Configrations
 export last_wd_file="$HOME/.local/share/last_wd"
 export QT_QPA_PLATFORMTHEME="qt5ct" # qt theming with qt5ct
-#export MORSE_BLENDER="/bin/blender-2.7"
+export LESS="-RF"
 
 # startx on login
 if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
