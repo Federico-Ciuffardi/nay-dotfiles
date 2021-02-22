@@ -79,18 +79,20 @@ ranger_cd() {
 alias ranger=ranger_cd
 
 # Colored man
-function man() {
-	env \
-		LESS_TERMCAP_md=$(tput bold; tput setaf 4) \
-		LESS_TERMCAP_me=$(tput sgr0) \
-		LESS_TERMCAP_mb=$(tput blink) \
-		LESS_TERMCAP_us=$(tput setaf 2) \
-		LESS_TERMCAP_ue=$(tput sgr0) \
-		LESS_TERMCAP_so=$(tput smso) \
-		LESS_TERMCAP_se=$(tput rmso) \
-		PAGER="${commands[less]:-$PAGER}" \
-		man "$@"
-}
+# function man() {
+# 	env \
+# 		LESS_TERMCAP_md=$(tput bold; tput setaf 4) \
+# 		LESS_TERMCAP_me=$(tput sgr0) \
+# 		LESS_TERMCAP_mb=$(tput blink) \
+# 		LESS_TERMCAP_us=$(tput setaf 2) \
+# 		LESS_TERMCAP_ue=$(tput sgr0) \
+# 		LESS_TERMCAP_so=$(tput smso) \
+# 		LESS_TERMCAP_se=$(tput rmso) \
+# 		PAGER="${commands[less]:-$PAGER}" \
+# 		man "$@"
+# }
+
+export MANPAGER="nvim +'nnoremap <leader>f :Lines<cr>' +'set laststatus=0' +'set ft=man' -"
 
 # sync wd
 function swd() {

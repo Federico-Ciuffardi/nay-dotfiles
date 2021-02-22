@@ -1,6 +1,32 @@
 " theme
 colors base16-grayscale-dark
 
+" bookmarks
+bind b bmark
+bind B fillcmdline bmarks
+
+
+" move on completion
+bind --mode=ex <C-j> ex.next_completion
+bind --mode=ex <C-k> ex.prev_completion
+
+" Only hint search results on Google and DDG
+bindurl www.google.com f hint -Jc #search div:not(.action-menu) > a
+bindurl www.google.com F hint -Jbc #search div:not(.action-menu) > a
+
+bindurl ^https://duckduckgo.com f hint -Jc [class=result__a]
+bindurl ^https://duckduckgo.com F hint -Jbc [class=result__a]
+
+" Sane hinting mode
+set hintfiltermode vimperator-reflow
+set hintnames uniform
+
+" Allow Ctrl-a to select all in the commandline
+unbind --mode=ex <C-a>
+
+" Allow Ctrl-c to copy in the commandline
+unbind --mode=ex <C-c>
+
 " Close
 unbind d
 bind q tabclose
@@ -42,7 +68,6 @@ guiset_quiet statuspanel none
 " attach detach
 bind A fillcmdline tabpush
 bind a tabdetach
-bind <C-a> fillcmdline tabgrab
 bind <C-A> fillcmdline winmerge
 
 " no indicator
