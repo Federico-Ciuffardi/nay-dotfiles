@@ -72,8 +72,12 @@ zle -N down-line-or-beginning-search
 ####################
 # ranger changing directory
 ranger_cd() {
-  ranger --choosedir=$last_wd_file
-  [ -z $last_wd_file ] || cd "`cat $last_wd_file`"
+  ranger --choosedir="$ranger_choosedir_file"
+  lwd save "$(cat "$ranger_choosedir_file")"
+  . lwd load
+  # ranger --choosedir="$last_wd_file"
+  # last_working_dir="$(lwd load)"
+  # [ -z "$last_working_dir" ] || cd "$last_working_dir"
 }
 
 alias ranger=ranger_cd
@@ -216,7 +220,8 @@ bindkey -M vicmd "j" down-line-or-beginning-search
 #########
 # cd hook
 function chpwd() {
-    pwd > "$last_wd_file"
+    # pwd > "$last_wd_file"
+    lwd save
 }
 # precm and preexec hooks
 function precmd(){ 
@@ -250,7 +255,8 @@ function preexec(){
 # execute #
 ###########
 # cd to last working directoy
-[ ! -z $last_wd_file ] && cd "`cat $last_wd_file`"
+. lwd load
+# [ ! -z $last_wd_file ] && cd "`cat $last_wd_file`"
 
 # execute tmuxkd to kill detached sessions so there ar only 5 of them
 [ -z $TMUX ] || tmuxkd 5
