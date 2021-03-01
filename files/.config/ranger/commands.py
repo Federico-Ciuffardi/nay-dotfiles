@@ -17,16 +17,20 @@ import subprocess
 from ranger.api.commands import Command
 from ranger.core.loader import CommandLoader
 
+class lwd_fzf(Command):
+    def execute(self):
+        import subprocess
+        import os.path
+        # match only directories
+        command="lwd history"
+        fzf = self.fm.execute_command(command, universal_newlines=True, stdout=subprocess.PIPE)
+        stdout, stderr = fzf.communicate()
+        if fzf.returncode == 0:
+            fzf_file = os.path.abspath(stdout.rstrip('\n'))
+            self.fm.cd(fzf_file)
+
+
 class fzf_select(Command):
-    """
-    :fzf_select
-
-    Find a file using fzf.
-
-    With a prefix argument select only directories.
-
-    See: https://github.com/junegunn/fzf
-    """
     def execute(self):
         import subprocess
         import os.path

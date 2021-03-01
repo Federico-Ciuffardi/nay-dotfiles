@@ -99,8 +99,8 @@ alias ranger=ranger_cd
 export MANPAGER="nvim +'nnoremap <leader>f :Lines<cr>' +'set laststatus=0' +'set ft=man' -"
 
 # sync wd
-function swd() {
-  cd "$(cat "${HOME}/.local/share/last_wd")"
+function cwd() {
+  . lwd fzf
 }
 
 #######
@@ -143,7 +143,7 @@ fzf-file-widget() {
   return $ret
 }
 zle     -N   fzf-file-widget
-bindkey '^P' fzf-file-widget
+bindkey '^@' fzf-file-widget
 
 ################
 # Key bindings #
@@ -160,6 +160,18 @@ bindkey -M menuselect 'h' vi-backward-char
 bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
+
+
+fzf-lwd-widget() {
+  # LBUFFER="${LBUFFER} $(__fsel)"
+  . lwd history_cd
+  local ret=$?
+  zle reset-prompt
+  echo -ne '\e[5 q'
+  return $ret
+}
+zle     -N   fzf-lwd-widget
+bindkey '^P' fzf-lwd-widget
 
 ###########
 # vi mode #
