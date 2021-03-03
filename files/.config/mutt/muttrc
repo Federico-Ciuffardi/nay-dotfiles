@@ -43,6 +43,9 @@ macro pager      u       <pipe-entry>'urlscan'<enter> 'Follow links with urlview
 
 set abort_key =  "<Esc>"  
 
+bind pager <up> previous-line
+bind pager <down> next-line
+
 ##########
 # Colors #
 ##########
