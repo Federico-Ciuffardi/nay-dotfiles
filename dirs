@@ -25,3 +25,4 @@
 .config/sxiv/exec
 .config/tridactyl/themes
 .config/mpv
+.local/share/nvim/site
