@@ -5,8 +5,8 @@
 
 "spellcheck
 set spelllang=en,es
-autocmd BufNewFile,BufRead /tmp/mutt-* set spell!
-autocmd BufNewFile,BufRead *.md set spell!
+autocmd BufNew,BufRead /tmp/mutt-* set spell!
+autocmd BufNew,BufRead *.md set spell!
 
 " limit the width of text to 72 characters when editing a mail on neomutt
 au BufRead /tmp/mutt-* set tw=72
@@ -53,7 +53,10 @@ set startofline
 set wildmode=longest,list,full
 
 " Disables automatic commenting on newline:
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+augroup NoCommentOnNewLine 
+  autocmd!
+  autocmd BufEnter * set formatoptions-=c formatoptions-=r formatoptions-=o
+augroup END
 
 " splits
 set splitbelow
@@ -173,7 +176,7 @@ call plug#end()
 """"""""""""""
 "{{{
 
-autocmd BufNewFile,BufRead *.vim let g:AutoPairs = {'(':')', '[':']', "'":"'", "`":"`"}
+autocmd BufNew,BufRead *.vim let g:AutoPairs = {'(':')', '[':']', "'":"'", "`":"`"}
 
 "}}}
 
@@ -191,8 +194,8 @@ let g:comfortable_motion_air_drag = 1.0
 "{{{
 
 " set the fold method by filename
-autocmd BufNewFile,BufRead *.c,*.cpp setlocal foldmethod=indent
-autocmd BufNewFile,BufRead *.vim setlocal foldmethod=marker
+autocmd BufNew,BufRead *.c,*.cpp setlocal foldmethod=indent
+autocmd BufNew,BufRead *.vim setlocal foldmethod=marker
 
 " no nested folds
 set foldlevel=1
@@ -223,7 +226,7 @@ nnoremap zF zM
 """"""""
 "{{{
 
-set viewoptions=cursor,folds,slash,unix
+set viewoptions=cursor
 
 "}}}
 
@@ -236,7 +239,7 @@ if has("persistent_undo")
     set undodir=$HOME/.local/share/nvim/undo"
     set undofile
 endif
-nnoremap <C-z> :UndotreeToggle<CR>
+nnoremap <C-Z> :UndotreeToggle<CR>
 let g:undotree_WindowLayout = 1
 let g:undotree_ShortIndicators = 0
 let g:undotree_SetFocusWhenToggle = 1
@@ -527,23 +530,31 @@ nnoremap <C-t> :call Toggle_transparent_background()<CR>
 "{{{
 command! -nargs=1 -complete=file Diff :vertical diffsplit <args>
 
-" " Undo
-" nnoremap <C-Z> u
-" inoremap <C-Z> <ESC>ua
-
 " Copy Cut Paste
 vnoremap <C-C> "+y
 vnoremap <C-X> "+x
 noremap  <C-V> "+P
-inoremap <C-V> <ESC>"+pa
+inoremap <C-V> <C-O>"+P
+"" preserve clipboard on pasting
+vnoremap p     pgvy
+vnoremap P     Pgvy
+vnoremap <C-V> Pgvy
 
 " Save
-noremap  <C-S> :w<CR>
-inoremap <C-S> <ESC>:w<CR>a
+function! Save()
+  if &readonly
+    silent! execute "SudaWrite"
+  else
+    silent! execute "w"
+  end
+endfunction
+
+noremap <silent> <C-S> :call Save()<CR>
+inoremap <silent> <C-S> <C-O>:call Save()<CR>
 
 " Console like bindings
-inoremap <C-A> <ESC>^i
-inoremap <C-E> <ESC>$a
+inoremap <C-A> <C-O>^i
+inoremap <C-E> <C-O>$a
 inoremap <C-C> <ESC>
 
 " 
@@ -558,10 +569,6 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-"" preserve clipboard on pasting
-vnoremap p    pgvy
-vnoremap P    Pgvy
-noremap  <C-V> P
 
 "}}}
 
