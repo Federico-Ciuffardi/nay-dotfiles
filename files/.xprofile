@@ -50,3 +50,6 @@ unclutter &
 
 # kdeconnect
 kdeconnect-indicator &
+
+# calcurse notifications
+calcurse-notify &

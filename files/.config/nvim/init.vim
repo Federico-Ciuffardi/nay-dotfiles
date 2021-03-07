@@ -347,11 +347,12 @@ vnoremap <silent> <leader>r :Farr<cr>
 "{{{
 
 " Config
-" let g:coc_global_extensions = [
-"       \ 'coc-highlight',
-"       \ 'coc-sh',
-"       \ 'coc-clangd',
-"       \ ]
+let g:coc_global_extensions = [
+      \ 'coc-highlight',
+      \ 'coc-sh',
+      \ 'coc-clangd',
+      \ 'coc-python',
+      \ ]
 
 "" don't give |ins-completion-menu| messages.
 set shortmess+=c
@@ -534,7 +535,7 @@ command! -nargs=1 -complete=file Diff :vertical diffsplit <args>
 vnoremap <C-C> "+y
 vnoremap <C-X> "+x
 noremap  <C-V> "+P
-inoremap <C-V> <C-O>"+P
+inoremap <C-V> <C-O>"+p
 "" preserve clipboard on pasting
 vnoremap p     pgvy
 vnoremap P     Pgvy
