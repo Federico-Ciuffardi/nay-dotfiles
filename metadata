@@ -88,3 +88,5 @@
 .config/calcurse/caldav/oauth2_cred 600 fede fede
 .config/calcurse/conf 644 fede fede
 .config/calcurse/keys 644 fede fede
+.config/calcurse/hooks/post-save 755 fede fede
+.config/calcurse/hooks/pre-load 755 fede fede
