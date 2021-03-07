@@ -17,7 +17,7 @@ if [ -d "$data_dir/caldav" ] && command -v calcurse-caldav >/dev/null; then
 		echo "$date Running calcurse-caldav from the post-save hook..."
 		calcurse-caldav
 		echo
-	) >>$logfile 2>&1 &
+	) >>$logfile 2>&1
 fi
 
 tmp="$(mktemp)"
