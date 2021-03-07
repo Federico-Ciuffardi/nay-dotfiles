@@ -84,3 +84,7 @@
 .config/mpv/mpv.conf 644 fede fede
 .local/share/nvim/site/spell/es.utf-8.spl 644 fede fede
 .local/share/nvim/site/spell/es.utf-8.sug 644 fede fede
+.config/calcurse/caldav/config 644 fede fede
+.config/calcurse/caldav/oauth2_cred 600 fede fede
+.config/calcurse/conf 644 fede fede
+.config/calcurse/keys 644 fede fede
