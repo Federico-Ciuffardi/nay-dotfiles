@@ -135,6 +135,7 @@
         "R": "reverse",
         "S": "all_shorten",
         "s": "shorten",
-        "u": "all_escape"
+        "u": "all_escape",
+        "esc": "quit"
     }
 }
