@@ -1,5 +1,17 @@
 #! /bin/sh
 # appname summary body icon urgency
-if [ $1 != silent ] ; then
-  paplay /usr/share/sounds/freedesktop/stereo/dialog-information.oga
+
+if [ "$1" = "silent" ] || [ "$1" = "whatsapp-nativefier-d40211" ] ; then
+  exit 0
 fi
+
+# echo "$@" > $HOME/notificacion
+
+case $5 in
+  NORMAL)
+    paplay /usr/share/sounds/freedesktop/stereo/dialog-information.oga
+    ;;
+  CRITICAL)
+    paplay /usr/share/sounds/freedesktop/stereo/message-new-instant.oga
+    ;;
+esac

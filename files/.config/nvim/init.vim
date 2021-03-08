@@ -9,7 +9,7 @@ autocmd BufNew,BufRead,BufNewFile /tmp/neomutt-* setlocal spell
 autocmd BufNew,BufRead,BufNewFile *.md set spell
 
 " limit the width of text to 72 characters when editing a mail on neomutt
-autocmd BufNew,BufRead,BufNewFile /tmp/mutt-* set tw=72
+autocmd BufNew,BufRead,BufNewFile /tmp/neomutt-* set tw=72
 
 " horizontal line
 set colorcolumn=90
@@ -535,7 +535,7 @@ command! -nargs=1 -complete=file Diff :vertical diffsplit <args>
 vnoremap <C-C> "+y
 vnoremap <C-X> "+x
 noremap  <C-V> "+P
-inoremap <C-V> <C-O>"+p
+inoremap <C-V> <C-O>"+P
 "" preserve clipboard on pasting
 vnoremap p     pgvy
 vnoremap P     Pgvy
