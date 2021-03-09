@@ -224,7 +224,6 @@ function vi_precmd() {
 
 # keybindings
 bindkey -M viins '^C' vi-cmd-mode
-bindkey '\e' undo
 
 bindkey "^[[A"   up-line-or-beginning-search
 bindkey "^[[B"  down-line-or-beginning-search

@@ -30,7 +30,6 @@ nm-applet &
 start-pulseaudio-x11 &
 
 # Disk Automount
-devmon &
 udiskie --tray &
 
 # Screensaver
