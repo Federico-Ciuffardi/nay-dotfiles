@@ -27,6 +27,6 @@ general.firstdayofweek=monday
 general.multipledays=yes
 general.periodicsave=5
 general.systemevents=yes
-notification.command= 
+notification.command=notify-send "Check Calcurse"
 notification.notifyall=all
 notification.warning=0
