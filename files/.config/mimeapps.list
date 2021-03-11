@@ -24,6 +24,7 @@ inode/directory=ranger.desktop
 x-scheme-handler/mailto=userapp-Thunderbird-ZG9TK0.desktop
 message/rfc822=userapp-Thunderbird-ZG9TK0.desktop
 image/jpeg=sxiv.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-FV7TZ0.desktop
 
 [Added Associations]
 application/x-shellscript=notepadqq.desktop;code-oss.desktop;
@@ -50,3 +51,4 @@ x-scheme-handler/mailto=userapp-Thunderbird-ZG9TK0.desktop;
 message/rfc822=userapp-Thunderbird-ZG9TK0.desktop;
 image/png=sxiv.desktop;
 application/atom+xml=firefox.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-FV7TZ0.desktop;
