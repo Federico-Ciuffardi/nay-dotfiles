@@ -1,26 +1,3 @@
 #!/bin/sh
 
-# Synchronize with a CalDAV server if calcurse-caldav is configured.
-
-histsize=1000
-data_dir="${XDG_DATA_HOME:-$HOME/.local/share}/calcurse"
-config_dir="${XDG_CONFIG_HOME:-$HOME/.config}/calcurse"
-logfile="$data_dir/caldav/log"
-
-# Do not do anything when synchronizing with a CalDAV server.
-[ -f "$data_dir/caldav/lock" ] && exit
-
-# Optionally run the CalDAV synchronization script in the background.
-if [ -d "$data_dir/caldav" ] && command -v calcurse-caldav >/dev/null; then
-	(
-		date="$(date +'%b %d %H:%M:%S')"
-		echo "$date Running calcurse-caldav from the post-save hook..."
-		calcurse-caldav
-		echo
-	) >>$logfile 2>&1
-fi
-
-tmp="$(mktemp)"
-tail -$histsize "$logfile" > "$tmp"
-cp "$tmp" "$logfile"
-rm "$tmp"
+calcurse-caldav-sync

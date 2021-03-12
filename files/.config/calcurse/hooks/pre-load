@@ -1,27 +1,3 @@
 #!/bin/sh
-#
-# Synchronizes calcurse with a CalDAV server before
-# loading the data files.
 
-histsize=1000
-[ -d "$HOME/.calcurse" ] && data_dir="$HOME/.calcurse" || data_dir="${XDG_DATA_HOME:-$HOME/.local/share}/calcurse"
-logfile="$data_dir/caldav/log"
-
-# Do not do anything when synchronizing with a CalDAV server.
-[ -f "$data_dir/caldav/lock" ] && exit
-
-# Run the CalDAV synchronization script in the background.
-if [ -d "$data_dir/caldav" ] && command -v calcurse-caldav >/dev/null; then
-	(
-		date="$(date +'%b %d %H:%M:%S')"
-		echo "$date Running calcurse-caldav from the pre-load hook..."
-		calcurse-caldav
-		echo
-	) >>$logfile 2>&1
-fi
-
-# keep the logfile short
-tmp="$(mktemp)"
-tail -$histsize "$logfile" > "$tmp"
-cp "$tmp" "$logfile"
-rm "$tmp"
+calcurse-caldav-sync
