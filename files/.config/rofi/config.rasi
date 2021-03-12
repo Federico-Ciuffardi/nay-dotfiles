@@ -20,7 +20,7 @@ configuration {
 	kb-remove-char-back: "BackSpace,Shift+BackSpace,Control+h";
 	kb-remove-to-eol: "";
 	kb-remove-to-sol: "Control+u";
-	kb-accept-entry: "Control+m,Return,KP_Enter";
+	kb-accept-entry: "Control+m,Return,KP_Enter,Control+space";
 	kb-accept-custom: "Control+Return";
 	kb-accept-alt: "Shift+Return";
 	kb-delete-entry: "Shift+Delete";
@@ -35,7 +35,7 @@ configuration {
 	kb-page-next: "Page_Down";
 	kb-row-first: "Home,KP_Home";
 	kb-row-last: "End,KP_End";
-	kb-row-select: "Control+space";
+	kb-row-select: "Control+KP_Enter";
 	kb-screenshot: "Alt+S";
 	kb-ellipsize: "Alt+period";
 	kb-toggle-case-sensitivity: "grave,dead_grave";
