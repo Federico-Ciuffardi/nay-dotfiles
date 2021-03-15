@@ -91,4 +91,3 @@
 .config/calcurse/hooks/pre-load 755 fede fede
 .gnupg/dirmngr.conf 644 fede fede
 .gnupg/gpg-agent.conf 644 fede fede
-.config/mpv/mpv.conf.bkp 644 fede fede
