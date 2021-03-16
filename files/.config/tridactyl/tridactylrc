@@ -5,17 +5,9 @@ colors base16-grayscale-dark
 bind b bmark
 bind B fillcmdline bmarks
 
-
 " move on completion
 bind --mode=ex <C-j> ex.next_completion
 bind --mode=ex <C-k> ex.prev_completion
-
-" Only hint search results on Google and DDG
-bindurl www.google.com f hint  
-bindurl www.google.com F hint 
-
-bindurl ^https://duckduckgo.com f hint
-bindurl ^https://duckduckgo.com F hint
 
 " Sane hinting mode
 set hintfiltermode vimperator-reflow
