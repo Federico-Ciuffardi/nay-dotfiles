@@ -34,7 +34,11 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 autoload -U colors && colors
 
 # PS
-PS1="%B%{$fg[green]%}[ %{$fg[white]%}%~ %{$fg[green]%}]$%b "
+if [ "$(cat /etc/hostname)" = "server" ] ; then
+  PS1="%B%{$fg[red]%}[ %{$fg[white]%}%~ %{$fg[red]%}]$%b "
+else
+  PS1="%B%{$fg[green]%}[ %{$fg[white]%}%~ %{$fg[green]%}]$%b "
+fi
 
 
 # less delay on escape
