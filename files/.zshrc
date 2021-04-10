@@ -261,6 +261,7 @@ function preexec(){
 # enviroment #
 ##############
 # ROS
+[ -f "/opt/ros/noetic/setup.zsh" ] && source "/opt/ros/noetic/setup.zsh"
 [ -f "$HOME/catkin_ws/devel/setup.zsh" ] && source "$HOME/catkin_ws/devel/setup.zsh"
 
 # GHCUP
