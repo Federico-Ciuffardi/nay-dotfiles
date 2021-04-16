@@ -3,6 +3,9 @@
 """"""""
 "{{{
 
+" Compile .tex
+autocmd BufEnter *.tex VimtexCompile
+
 "spellcheck
 set spelllang=en,es
 autocmd BufNew,BufRead,BufNewFile /tmp/neomutt-* setlocal spell
@@ -130,6 +133,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
 Plug 'clangd/coc-clangd', {'do': 'yarn install --frozen-lockfile'}
+
+Plug 'lervag/vimtex'
 
 " Plug 'puremourning/vimspector'
 
@@ -454,6 +459,7 @@ let g:coc_global_extensions = [
       \ 'coc-sh',
       \ 'coc-clangd',
       \ 'coc-python',
+      \ 'coc-vimtex',
       \ ]
 
 "" don't give |ins-completion-menu| messages.
