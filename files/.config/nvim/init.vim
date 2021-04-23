@@ -128,10 +128,13 @@ let mapleader = "\<Space>"
 "{{{
 
 call plug#begin('~/.config/nvim/plugged')
+
+Plug 'honza/vim-snippets'
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
+" Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
 Plug 'clangd/coc-clangd', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'lervag/vimtex'
@@ -454,12 +457,13 @@ vnoremap <silent> <leader>r :Farr<cr>
 "{{{
 
 " Config
+    " \ 'coc-highlight',
+    " \ 'coc-sh',
+    " \ 'coc-clangd',
 let g:coc_global_extensions = [
-      \ 'coc-highlight',
-      \ 'coc-sh',
-      \ 'coc-clangd',
       \ 'coc-python',
       \ 'coc-vimtex',
+      \ 'coc-snippets',
       \ ]
 
 "" don't give |ins-completion-menu| messages.
@@ -469,7 +473,7 @@ set shortmess+=c
 set signcolumn=yes
 
 "" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 " Update signature help on jump placeholder.
 autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 
@@ -678,6 +682,8 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+" correct next
+nmap zz ]sz=
 
 "}}}
 
