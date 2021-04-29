@@ -7,15 +7,13 @@ antigen bundle "unixorn/autoupdate-antigen.zshplugin"
 
 antigen bundle "MichaelAquilina/zsh-you-should-use"
 
-# antigen bundle "kutsan/zsh-system-clipboard"
-antigen bundle "Federico-Ciuffardi/zsh-system-clipboard"
+antigen bundle "kutsan/zsh-system-clipboard"
+# antigen bundle "Federico-Ciuffardi/zsh-system-clipboard"
 
 antigen bundle "zsh-users/zsh-completions"
 antigen bundle "zsh-users/zsh-autosuggestions"
 
 antigen apply
-
-# source "/home/fede/git/zsh-system-clipboard/zsh-system-clipboard.zsh"
 
 ###########
 # General #

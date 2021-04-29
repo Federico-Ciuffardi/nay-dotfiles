@@ -1,0 +1,17 @@
+#! /bin/bash
+
+function sync(){
+  git-http2ssh
+  git pull
+}
+
+source /usr/lib/naylib
+
+# install zsh plug pluggins
+draw_heading "Sync zsh pluggins"
+cd "$HOME/.antigen/bundles"
+for plugin in */* ; do
+  cd "$plugin" 
+  draw_spinner "$plugin" "sync"
+  cd "../.."
+done
