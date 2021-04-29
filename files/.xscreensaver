@@ -1,8 +1,8 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-settings 6.00 for fede on Tue Apr 27 16:26:08 2021.
+# Written by xscreensaver-settings 6.00 for fede on Thu Apr 29 13:25:48 2021.
 # https://www.jwz.org/xscreensaver/
 
-timeout:	1:00:00
+timeout:	0:30:00
 cycle:		0:05:00
 lock:		False
 lockTimeout:	0:00:00
@@ -139,7 +139,7 @@ programs:								      \
 -				wander -root				    \n\
 -				webcollage -root			    \n\
 -				xflame -root				    \n\
-				xmatrix -root				    \n\
+-				xmatrix -root				    \n\
   GL: 				gflux -root				    \n\
 -				nerverot -root				    \n\
 -				xrayswarm -root				    \n\
@@ -194,7 +194,7 @@ programs:								      \
 				  -linger 10 -mode page			    \n\
 - GL: 				gleidescope -root			    \n\
 - GL: 				glknots -root				    \n\
-  GL: 				glmatrix -root -density 69 -speed 3.4168    \n\
+- GL: 				glmatrix -root -density 69 -speed 3.4168    \n\
 - GL: 				glslideshow -root			    \n\
 - GL: 				hypertorus -root			    \n\
 - GL: 				jigglypuff -root			    \n\
@@ -290,7 +290,7 @@ programs:								      \
   GL: 				peepers -root				    \n\
 - GL: 				razzledazzle -root			    \n\
 				vfeedback -root -tv-color 281		    \n\
-  GL: 				deepstars -root -smear 5		    \n\
+- GL: 				deepstars -root -smear 0.1		    \n\
 - GL: 				gravitywell -root			    \n\
 -				scooter -root -cycles 443 -count 31 -size     \
 				  134					    \n\
