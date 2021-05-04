@@ -10,7 +10,7 @@ numlockx &
 
 # Disables Energy Star features (No screen blank)
 xset -dpms
-# xset s off 
+xset s off
 
 # Speed xrate up
 xset r rate 300 50 
