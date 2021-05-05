@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-settings 6.00 for fede on Thu Apr 29 13:25:48 2021.
+# Written by xscreensaver-settings 6.00 for fede on Tue May  4 23:37:32 2021.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:30:00
@@ -30,7 +30,7 @@ chooseRandomImages: False
 imageDirectory:	/home/fede/pictures
 
 mode:		random
-selected:	-1
+selected:	139
 
 textMode:	program
 textLiteral:	XScreenSaver
@@ -69,7 +69,7 @@ programs:								      \
 -				goop -root				    \n\
 -				grav -root				    \n\
 -				ifs -root				    \n\
-  GL: 				jigsaw -root				    \n\
+- GL: 				jigsaw -root				    \n\
 -				julia -root				    \n\
 -				kaleidescope -root			    \n\
 - GL: 				moebius -root				    \n\
@@ -106,7 +106,7 @@ programs:								      \
 -				crystal -root				    \n\
 -				cynosure -root				    \n\
 -				discrete -root -ncolors 203		    \n\
-				distort -root				    \n\
+-				distort -root				    \n\
 -				epicycle -root				    \n\
 -				flow -root				    \n\
 - GL: 				glplanet -root				    \n\
@@ -298,7 +298,7 @@ programs:								      \
 - GL: 				gibson -root				    \n\
 - GL: 				beats -root				    \n\
 - GL: 				covid19 -root				    \n\
-  GL: 				headroom -root -delay 16794 -speed 4.7099   \n\
+  GL: 				headroom -root -delay 16794 -speed 5.4656   \n\
 - GL: 				sphereeversion -root			    \n\
 
 
