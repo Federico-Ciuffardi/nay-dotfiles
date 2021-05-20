@@ -92,3 +92,4 @@
 .gnupg/dirmngr.conf 644 fede fede
 .gnupg/gpg-agent.conf 644 fede fede
 .config/flameshot/flameshot.ini 644 fede fede
+.config/mpv/input.conf 644 fede fede
