@@ -22,6 +22,7 @@ set autoindent
 set smarttab
 set incsearch
 set scrolloff=8
+set smartcase
 
 " refresh on file changes
 "" Triger `autoread` when files changes on disk
@@ -115,6 +116,19 @@ noremap <S-Q> q
 noremap <Space> <Nop>
 let mapleader = "\<Space>"
 
+" swap g<command> and <command> 
+nnoremap j gj
+nnoremap k gk
+nnoremap $ g$
+nnoremap 0 g0
+nnoremap ^ g^
+
+nnoremap gj j
+nnoremap gk k
+nnoremap g$ $
+nnoremap g0 0
+nnoremap g^ ^
+
 " enhanced diff
 " if has("patch-8.1.0360")
 "     set diffopt+=internal,algorithm:patience
@@ -168,7 +182,7 @@ Plug 'easymotion/vim-easymotion'
 
 Plug 'mhinz/vim-startify'
 
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 
 Plug 'yuttie/comfortable-motion.vim'
 
@@ -286,7 +300,7 @@ let g:mkdp_filetypes = ['markdown']
 """"""""""""""
 "{{{
 
-autocmd BufNew,BufRead *.vim let g:AutoPairs = {'(':')', '[':']', "'":"'", "`":"`"}
+" autocmd BufNew,BufRead *.vim let g:AutoPairs = {'(':')', '[':']', "'":"'", "`":"`"}
 
 "}}}
 
@@ -674,8 +688,8 @@ inoremap <C-C> <ESC>
 nnoremap M J
 
 " splits
-nmap <silent> <C--> :sp<CR>
-nmap <silent> <C-\> :vsp<CR>
+nmap <silent> <C-w>- :sp<CR>
+nmap <silent> <C-w>\ :vsp<CR>
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -684,6 +698,14 @@ nnoremap <C-H> <C-W><C-H>
 
 " correct next
 nmap zz ]sz=
+
+"disable not used bindings on netrw
+augroup FiletypeSpecificMappings
+    autocmd FileType netrw unmap <buffer> qL
+    autocmd FileType netrw unmap <buffer> qF
+    autocmd FileType netrw unmap <buffer> qf
+    autocmd FileType netrw unmap <buffer> qb
+augroup END
 
 "}}}
 
