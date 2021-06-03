@@ -3,6 +3,12 @@
 """"""""
 "{{{
 
+
+" neovide
+let g:neovide_cursor_antialiasing=v:true
+let g:neovide_refresh_rate=60
+let g:neovide_transparency=0.94
+
 " Compile .tex
 autocmd BufEnter *.tex VimtexCompile
 
@@ -629,6 +635,7 @@ nmap <leader>gp <Plug>(GitGutterPreviewHunk)
 " theming "
 """""""""""
 "{{{
+"
 
 set t_Co=256
 set t_ut=
@@ -649,6 +656,9 @@ function! Toggle_transparent_background()
 endfunction
 nnoremap <C-t> :call Toggle_transparent_background()<CR>
 
+" neovide bg
+hi Normal guibg=#1E1E1E
+highlight Folded gui=bold guibg=#1E1E1E guifg=#5E5E5E
 "}}}
 
 """""""""
@@ -709,3 +719,20 @@ augroup END
 
 "}}}
 
+" GUI font
+set guifont=Source\ Code\ Pro:h16
+nnoremap <C-+> :silent! let &guifont = substitute(
+ \ &guifont,
+ \ ':h\zs\d\+',
+ \ '\=eval(submatch(0)+1)',
+ \ '')<CR>
+nnoremap <C-_> :silent! let &guifont = substitute(
+ \ &guifont,
+ \ ':h\zs\d\+',
+ \ '\=eval(submatch(0)-1)',
+ \ '')<CR>
+nnoremap <C-)> :silent! let &guifont = substitute(
+ \ &guifont,
+ \ ':h\zs\d\+',
+ \ '\=eval(16)',
+ \ '')<CR>
