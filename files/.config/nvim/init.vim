@@ -28,7 +28,7 @@ set autoindent
 set smarttab
 set incsearch
 set scrolloff=8
-set smartcase
+set ignorecase 
 
 " refresh on file changes
 "" Triger `autoread` when files changes on disk
@@ -129,11 +129,23 @@ nnoremap $ g$
 nnoremap 0 g0
 nnoremap ^ g^
 
+vnoremap j gj
+vnoremap k gk
+vnoremap $ g$
+vnoremap 0 g0
+vnoremap ^ g^
+
 nnoremap gj j
 nnoremap gk k
 nnoremap g$ $
 nnoremap g0 0
 nnoremap g^ ^
+
+vnoremap gj j
+vnoremap gk k
+vnoremap g$ $
+vnoremap g0 0
+vnoremap g^ ^
 
 " enhanced diff
 " if has("patch-8.1.0360")

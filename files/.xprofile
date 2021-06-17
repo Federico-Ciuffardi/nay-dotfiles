@@ -31,7 +31,8 @@ picom --experimental-backends &
 nm-applet &
 
 # Audio
-start-pulseaudio-x11 &
+pipewire-pulse &
+# start-pulseaudio-x11 &
 
 # Disk Automount
 udiskie --tray &
