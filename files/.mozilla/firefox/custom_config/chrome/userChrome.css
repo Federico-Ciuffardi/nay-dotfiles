@@ -83,6 +83,7 @@
  */
 
 /* set default height */
+
 :root {
   --hidetabs-tab-min-height: 33px;
 }
@@ -96,16 +97,19 @@
 }
 
 /* Set --tab-min-height to 0px so tab bar can disappear */
+
 #tabbrowser-tabs {
   --tab-min-height: 0px;
 }
 
 /* Restore minimum height when more than one tab */
+
 #tabbrowser-tabs tab {
   --tab-min-height: var(--hidetabs-tab-min-height);
 }
 
 /* Collapse tab bar when there is only one tab (tab is both first & last) */
+
 #tabbrowser-tabs tab[first-visible-tab="true"][last-visible-tab="true"] {
   visibility: collapse;
 }
@@ -209,9 +213,10 @@
  */
 
 :root:not([customizing])[chromehidden=""][sizemode="normal"] #nav-bar,
+:root:not([customizing])[chromehidden=""][sizemode="fullscreen"] #nav-bar,
 :root:not([customizing])[chromehidden=""][sizemode="maximized"] #nav-bar {
   position: relative;
-  margin-bottom: var(--nav-bar-margin);
+  margin-bottom: calc(var(--nav-bar-margin) + 3px);
   transform: rotateX(90deg);
   transform-origin: top;
   transition: transform var(--navbar-transition-duration) linear var(--navbar-transition-delay) !important;
@@ -219,8 +224,10 @@
 }
 
 :root:not([customizing])[sizemode="normal"] #navigator-toolbox:hover #nav-bar,
+:root:not([customizing])[sizemode="fullscreen"] #navigator-toolbox:hover #nav-bar,
 :root:not([customizing])[sizemode="maximized"] #navigator-toolbox:hover #nav-bar,
 :root:not([customizing])[sizemode="normal"] #navigator-toolbox:focus-within #nav-bar,
+:root:not([customizing])[sizemode="fullscreen"] #navigator-toolbox:focus-within #nav-bar,
 :root:not([customizing])[sizemode="maximized"] #navigator-toolbox:focus-within #nav-bar {
   transform: rotateX(0deg);
   transition-delay: 0s!important;
