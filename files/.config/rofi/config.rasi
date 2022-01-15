@@ -3,15 +3,14 @@
 configuration {
   /* location: 2; */
   modi: "window,drun";
-  fixed-num-lines: true;
+  fixed-num-lines: false;
   display-window: "缾";
   display-run: "";
   display-drun: "";
   display-emoji: "";
-  
   show-icons: true;
   icon-theme: "Papirus";
-  font: "Source Code Pro Medium 14";
+  font: "Source Code Pro Nerd Font Medium 14";
   
   kb-primary-paste: "Control+V,Shift+Insert";
   kb-secondary-paste: "Control+v,Insert";
