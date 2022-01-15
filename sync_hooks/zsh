@@ -3,8 +3,8 @@
 source /usr/lib/naylib
 
 # install zsh plug pluggins
-if [ -d ~/.zinit ] && [ "${SHELL##*/}" = "zsh" ] ; then
-  draw_heading "Sync zsh pluggins"
-  zsh -c "source .zshrc ; zinit self-update ; zinit update"
-fi
+# if [ -d ~/.zinit ] && [ "${SHELL##*/}" = "zsh" ] ; then
+draw_heading "Sync zsh pluggins"
+zsh -c "source .zshrc ; zinit self-update ; zinit update"
+# fi
 
