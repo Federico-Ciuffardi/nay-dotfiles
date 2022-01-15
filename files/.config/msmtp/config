@@ -1,0 +1,22 @@
+account federico.ciuffardi@outlook.com
+host smtp-mail.outlook.com
+port 587
+from federico.ciuffardi@outlook.com
+user federico.ciuffardi@outlook.com
+passwordeval "pass federico.ciuffardi@outlook.com"
+auth on
+tls on
+tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+logfile /home/fede/.config/msmtp/msmtp.log
+
+account fciuffardi@fing.edu.uy
+host smtp.fing.edu.uy
+port 25
+from fciuffardi@fing.edu.uy
+user fciuffardi@fing.edu.uy
+passwordeval "pass fciuffardi@fing.edu.uy"
+auth on
+tls on
+tls_starttls on
+tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+logfile /home/fede/.config/msmtp/msmtp.log

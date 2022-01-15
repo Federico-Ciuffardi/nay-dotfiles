@@ -34,11 +34,18 @@ class fzf_select(Command):
     def execute(self):
         import subprocess
         import os.path
+
+        args = self.line.split()
+        if len(args) > 1:
+            depth = args[1]
+        else:
+            depth = "5"
+
         # match only directories
-        command="find -L . -maxdepth 5 \\( -path '*/' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) -prune \
+        command="find -L . -maxdepth "+depth+" \\( -path '*/' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) -prune \
                  -o -type f -print \
                  -o -type d -print \
-                 -o -type l -print 2> /dev/null | cut -b3- | fzf +m --height=100%"
+                 -o -type l -print 2> /dev/null | cut -b3- | tail -n +2 | fzf +m --height=100%"
         fzf = self.fm.execute_command(command, universal_newlines=True, stdout=subprocess.PIPE)
         stdout, stderr = fzf.communicate()
         if fzf.returncode == 0:

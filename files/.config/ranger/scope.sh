@@ -139,6 +139,9 @@ handle_image() {
         #           && exit 6 || exit 1;;
 
         ## Image
+        image/gif)
+          ### the default method does not work 
+          ;;
         image/*)
             local orientation
             orientation="$( identify -format '%[EXIF:Orientation]\n' -- "${FILE_PATH}" )"

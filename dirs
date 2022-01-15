@@ -26,3 +26,4 @@
 .config/tridactyl/themes
 .config/mpv
 .local/share/nvim/site
+.config/ncmpcpp

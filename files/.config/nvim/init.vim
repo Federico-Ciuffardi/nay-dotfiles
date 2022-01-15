@@ -3,32 +3,28 @@
 """"""""
 "{{{
 
-
-" neovide
-let g:neovide_cursor_antialiasing=v:true
-let g:neovide_refresh_rate=60
-let g:neovide_transparency=0.94
-
-" Compile .tex
-autocmd BufEnter *.tex VimtexCompile
-
-"spellcheck
-set spelllang=en,es
-autocmd BufNew,BufRead,BufNewFile /tmp/neomutt-* setlocal spell
-autocmd BufNew,BufRead,BufNewFile *.md set spell
-
-" limit the width of text to 72 characters when editing a mail on neomutt
-autocmd BufNew,BufRead,BufNewFile /tmp/neomutt-* set tw=72
-
-" horizontal line
-set colorcolumn=90
-
 " misc 
 set autoindent
 set smarttab
 set incsearch
 set scrolloff=8
 set ignorecase 
+set noswapfile
+
+"spellcheck
+set spelllang=en,es
+autocmd BufNew,BufRead,BufNewFile /tmp/neomutt-* setlocal spell
+autocmd BufNew,BufRead,BufNewFile *.tex set spell
+
+" Compile .tex
+autocmd BufEnter *.tex VimtexCompile
+let g:vimtex_view_general_viewer = 'okular'
+
+" limit the width of text to 72 characters when editing a mail on neomutt
+autocmd BufNew,BufRead,BufNewFile /tmp/neomutt-* set tw=72
+
+" vertical line mark
+set colorcolumn=90
 
 " refresh on file changes
 "" Triger `autoread` when files changes on disk
@@ -37,10 +33,10 @@ autocmd WinEnter,FocusGained,BufEnter,CursorHold,CursorHoldI *
 
 "" Notification after file change
 autocmd FileChangedShellPost *
-        \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+        \  echo "File updated." | echohl None
 
-" tab char
 set tabstop=2
+" tab char
 set shiftwidth=2
 set expandtab
 
@@ -60,7 +56,9 @@ set clipboard=unnamedplus
 set startofline
 
 " Enable autocompletion:
-set wildmode=longest,list,full
+set wildoptions+=pum
+set wildmode=longest:full,full
+" set wildmode=longest,list,full
 
 " Disables automatic commenting on newline:
 augroup NoCommentOnNewLine 
@@ -73,13 +71,6 @@ set splitbelow
 set splitright
 
 set equalalways
-
-" function! s:SetWindowsToEqualWidths()
-"   let restoreCommands = split(winrestcmd(), '|')
-"   let heightCommands = filter(restoreCommands, { idx, cmd -> cmd =~# '^\d\+resize' })
-"   wincmd =
-"   execute join(heightCommands, '|')
-" endfunction
 
 augroup AutomaticWindowSizing
   autocmd!
@@ -100,12 +91,13 @@ nmap J :bnext<cr>
 autocmd BufEnter * if (winnr("$") == 0) | q | endif
 
 "" quit closes buffer
+set confirm
 function! CondQuit()
   if len(getbufinfo({'buflisted':1})) == 1
-    silent! execute "q"
+    execute "q"
   else
     if len(tabpagebuflist()) > 1
-      silent! execute "q"
+      execute "q"
     else
       silent! execute "bd"
     endif
@@ -147,11 +139,48 @@ vnoremap g$ $
 vnoremap g0 0
 vnoremap g^ ^
 
-" enhanced diff
-" if has("patch-8.1.0360")
-"     set diffopt+=internal,algorithm:patience
-" endif
+" Better Y
+nnoremap Y y$
 
+" Keep n N centered
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+function! CenterSearch()
+  let cmdtype = getcmdtype()
+  if cmdtype == '/' || cmdtype == '?'
+    return "\<enter>zzzv"
+  endif
+  return "\<enter>"
+endfunction
+
+cnoremap <silent> <expr> <enter> CenterSearch()
+
+" Undo break points
+inoremap , ,<C-g>u
+inoremap . .<C-g>u
+inoremap [ [<C-g>u
+inoremap ! !<C-g>u
+inoremap ? ?<C-g>u
+inoremap <Space> <Space><C-g>u
+
+" Moving text
+vnoremap<silent> <C-K> :m '<-2<CR>gv=gv
+vnoremap<silent> <C-J> :m '>+1<CR>gv=gv
+" inoremap<silent> <C-K> <esc>:m .-2<CR>==i
+" inoremap<silent> <C-J> <esc>:m .+1<CR>==i
+" nnoremap<silent> <C-K> :m .-2<CR>==
+" nnoremap<silent> <C-J> :m .+1<CR>==
+
+" Word replace
+nnoremap cn *``cgn
+nnoremap cN *``cgN
+
+" W
+set breakindent
+set breakindentopt=shift:2
+" set showbreak=\\\\\
+" set showbreak=↳
 "}}}
 
 """""""""""""""""""""
@@ -159,15 +188,22 @@ vnoremap g^ ^
 """""""""""""""""""""
 "{{{
 
+" auto install plug
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin('~/.config/nvim/plugged')
+
+Plug 'chrisbra/Colorizer'
 
 Plug 'honza/vim-snippets'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
-" Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
-Plug 'clangd/coc-clangd', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'lervag/vimtex'
 
@@ -200,9 +236,7 @@ Plug 'easymotion/vim-easymotion'
 
 Plug 'mhinz/vim-startify'
 
-" Plug 'jiangmiao/auto-pairs'
-
-Plug 'yuttie/comfortable-motion.vim'
+Plug 'Federico-Ciuffardi/comfortable-motion.vim'
 
 Plug 'tpope/vim-abolish'
 
@@ -211,6 +245,20 @@ Plug 'tpope/vim-unimpaired'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 call plug#end()
+"}}}
+
+""""""""""""
+" Startify "
+""""""""""""
+"{{{
+
+let g:startify_lists = [
+      \ { 'type': 'dir',       'header': [ '   ' .getcwd(),'' ,'   Recent Files '] },
+      \ { 'type': 'sessions',  'header': ['   Sessions']       },
+      \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+      \ { 'type': 'commands',  'header': ['   Commands']       },
+      \ ]
+
 "}}}
 
 """"""""""""""""""""
@@ -313,17 +361,17 @@ let g:mkdp_filetypes = ['markdown']
 
 "}}}
 
-""""""""""""""
-" Auto pairs "
-""""""""""""""
+""""""""""""""""
+" vim-surround "
+""""""""""""""""
 "{{{
 
-" autocmd BufNew,BufRead *.vim let g:AutoPairs = {'(':')', '[':']', "'":"'", "`":"`"}
+vmap ' S
 
 "}}}
 
 """"""""""""""""""""""
-" Confortable motion "
+" comfortable motion "
 """"""""""""""""""""""
 "{{{
 let g:comfortable_motion_friction = 165.0
@@ -335,15 +383,21 @@ let g:comfortable_motion_air_drag = 1.0
 """""""""""""""""""""
 "{{{
 
-" set the fold method by filename
-autocmd BufNew,BufRead *.c,*.cpp setlocal foldmethod=indent
-autocmd BufNew,BufRead *.vim setlocal foldmethod=marker
-
 " no nested folds
-set foldlevel=1
+set foldnestmax=1
+
+" default to marks
+set foldmethod=marker
 
 " unfold on jump
-set foldopen+=jump,search
+set foldopen+=block,hor,insert,jump,mark,search,tag,undo
+
+" set the fold method by filename
+autocmd BufNew,BufRead *.c,*.cpp setlocal foldmethod=indent
+autocmd BufNew,BufRead *.py setlocal foldmethod=indent
+autocmd BufNew,BufRead *.pas setlocal foldmethod=marker
+autocmd BufNew,BufRead *.vim setlocal foldmethod=marker
+autocmd BufEnter * silent! normal zO
 
 " FastFold base config
 let g:fastfold_savehook = 1
@@ -351,15 +405,16 @@ let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
 let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 
 " Bindings
-"" update
-nmap zuz <Plug>(FastFoldUpdate)
-nnoremap L zO
-nnoremap H zC
-nnoremap <leader><leader> zA
+"" toggle fold with L or H
+nnoremap L zA
+nnoremap H zA
+"" close fold with H and open with L
+" nnoremap L zO
+" nnoremap H zC
+
+"" fold all with zF and unfold all with zF
 nnoremap zU zR
 nnoremap zF zM
- " zM - fold all 
-" zR - unfold all 
 
 "}}}
 
@@ -394,9 +449,9 @@ let g:undotree_SetFocusWhenToggle = 1
 "{{{
 
 " Config
-" Open on almost full screen
-"let g:fzf_layout = { 'tmux': '-d100%' }
+"" Open on almost full screen
 let g:fzf_layout = { 'window': { 'width': 1, 'height': 1 } }
+let g:fzf_buffers_jump = 1
 
 "" BLines with preview
 command! -bang -nargs=* BLines
@@ -404,10 +459,11 @@ command! -bang -nargs=* BLines
     \   'rg --with-filename --column --line-number --no-heading --smart-case . '.fnameescape(expand('%:p')), 1,
     \   fzf#vim#with_preview({'options': '--keep-right --delimiter : --nth 4.. --preview "bat -p --color always {}"'}, 'right:60%' ))
 
-" Bindings
+"" Bindings
 let g:fzf_action = {
   \ 'ctrl-h': 'split',
-  \ 'ctrl-v': 'vsplit' }
+  \ 'ctrl-v': 'vsplit', 
+  \ 'ctrl-l': 'e'}
 
 let $FZF_DEFAULT_OPTS='--bind=ctrl-d:preview-down,ctrl-u:preview-up'
 
@@ -466,7 +522,7 @@ nnoremap <leader>gb :GBranch<cr>
 """""""""""
 "{{{
 
-let g:vimwiki_list = [{'path': '~/.local/share/vimwiki'}]
+let g:vimwiki_list = [{'path': '~/.local/share/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
 command TODO :F TODO ~/.local/share/vimwiki/* <cr>
 
 "}}}
@@ -480,6 +536,9 @@ command TODO :F TODO ~/.local/share/vimwiki/* <cr>
 " shortcut for far.vim replace
 nnoremap <silent> <leader>r :Farr<cr>
 vnoremap <silent> <leader>r :Farr<cr>
+
+" nnoremap <silent> <C-S-F> :Farf<cr>
+" vnoremap <silent> <C-S-F> :Farf<cr>
 
 "}}}
 
@@ -500,7 +559,6 @@ let g:coc_global_extensions = [
 
 "" don't give |ins-completion-menu| messages.
 set shortmess+=c
-
 " always show signcolumns
 set signcolumn=yes
 
@@ -549,8 +607,8 @@ inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 "" use `lp` and `ln` for navigate diagnostics
-nmap <silent> <leader>[d <plug>(coc-diagnostic-prev)
-nmap <silent> <leader>]d <plug>(coc-diagnostic-next)
+nmap <silent> <leader>[d <plug>(coc-diagnostic-prev)h
+nmap <silent> <leader>]d <plug>(coc-diagnostic-next)h
 
 "" remap keys for gotos
 nmap <silent> gd <plug>(coc-definition)
@@ -570,7 +628,7 @@ vnoremap <silent><nowait><expr> <C-u> coc#float#has_scroll() ? coc#float#scroll(
 
 "" Mappings for CoCList
 """ Show all diagnostics.
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent><nowait> <space>e  :<C-u>CocList diagnostics<cr>
 """ Manage extensions.
 nnoremap <silent><nowait> <space>ce  :<C-u>CocList extensions<cr>
 """ Show commands.
@@ -585,6 +643,11 @@ nnoremap <silent><nowait> <space>cj  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>ck  :<C-u>CocPrev<CR>
 """ Resume latest coc list.
 nnoremap <silent><nowait> <space>cr  :<C-u>CocListResume<CR>
+
+"" move to
+nmap <silent> [e <Plug>(coc-diagnostic-prev)
+nmap <silent> ]e <Plug>(coc-diagnostic-next)
+nmap <silent> ge <Plug>(coc-diagnostic-next)
 
 "" use <leader>d for show documentation in preview window
 nnoremap <silent> <leader>d :call <sid>show_documentation()<cr>
@@ -682,7 +745,7 @@ command! -nargs=1 -complete=file Diff :vertical diffsplit <args>
 " Copy Cut Paste
 vnoremap <C-C> "+y
 vnoremap <C-X> "+x
-noremap  <C-V> "+P
+nnoremap <C-V> "+gP
 inoremap <C-V> <C-O>"+P
 "" preserve clipboard on pasting
 vnoremap p     pgvy
@@ -713,10 +776,10 @@ nnoremap M J
 nmap <silent> <C-w>- :sp<CR>
 nmap <silent> <C-w>\ :vsp<CR>
 
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" nnoremap <C-J> <C-W><C-J>
+" nnoremap <C-K> <C-W><C-K>
+" nnoremap <C-L> <C-W><C-L>
+" nnoremap <C-H> <C-W><C-H>
 
 " correct next
 nmap zz ]sz=
@@ -731,7 +794,14 @@ augroup END
 
 "}}}
 
-" GUI font
+"""""""
+" GUI "
+"""""""
+"{{{
+let g:neovide_cursor_antialiasing=v:true
+let g:neovide_refresh_rate=60
+let g:neovide_transparency=0.94
+
 set guifont=Source\ Code\ Pro:h16
 nnoremap <C-+> :silent! let &guifont = substitute(
  \ &guifont,
@@ -748,3 +818,4 @@ nnoremap <C-)> :silent! let &guifont = substitute(
  \ ':h\zs\d\+',
  \ '\=eval(16)',
  \ '')<CR>
+"}}}

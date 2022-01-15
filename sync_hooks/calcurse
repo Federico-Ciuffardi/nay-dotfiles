@@ -1,0 +1,7 @@
+#! /bin/bash
+
+source /usr/lib/naylib
+
+# install vim plug pluggins
+draw_heading "Sync calcurse caldav"
+calcurse-caldav-sync

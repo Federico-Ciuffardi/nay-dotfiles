@@ -1,5 +1,5 @@
 " theme
-colors base16-grayscale-dark
+colors midnight
 
 " bookmarks
 bind b bmark

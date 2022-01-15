@@ -20,7 +20,7 @@
 		"<C-p>": "normal:k",
 		"<C-t>": "action:tabe"
 	},
-
+  "coc.preferences.semanticTokensHighlights": false, 
   "explorer.icon.enableNerdfont": true,
   "explorer.quitOnOpen": false,
   "explorer.position": "left",
@@ -83,5 +83,6 @@
     "]c": "gitNext",
     "<<": "gitStage",
     ">>": "gitUnstage"
-  }
+  },
+  "clangd.path": "/home/fede/.config/coc/extensions/coc-clangd-data/install/12.0.0/clangd_12.0.0/bin/clangd"
 }

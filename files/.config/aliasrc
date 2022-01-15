@@ -17,3 +17,12 @@ alias r="ranger"
 alias xclip="xclip -selection c"
 # yad
 alias yad="yad --center"
+# enable switch dir
+alias p=". p"
+# diff 
+alias diff="git diff --no-index"
+# catkin_make
+alias catkin_make="catkin_make --directory "$HOME/catkin_ws" -DCMAKE_EXPORT_COMPILE_COMMANDS=1"
+
+alias gdiff="git diff --color-words=."
+
