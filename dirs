@@ -27,3 +27,4 @@
 .config/mpv
 .local/share/nvim/site
 .config/ncmpcpp
+.config/calcurse/hooks
