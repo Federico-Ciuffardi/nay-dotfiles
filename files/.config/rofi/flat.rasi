@@ -96,7 +96,7 @@ listview {
 	background-color: @bg;
 	cycle: false;
 	dynamic: true;
-	lines: 20;
+	lines: 15;
 	border-color: @bd;
 	border: 1 0 0 0;
 	border-radius: 0;
