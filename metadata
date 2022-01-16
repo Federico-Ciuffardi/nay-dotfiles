@@ -104,3 +104,4 @@
 .config/calcurse/hooks/post-save 755 fede fede
 .config/calcurse/conf 644 fede fede
 .config/calcurse/keys 644 fede fede
+.config/qt5ct/qt5ct.conf 644 fede fede
