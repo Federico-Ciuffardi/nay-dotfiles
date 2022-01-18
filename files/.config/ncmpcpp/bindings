@@ -179,6 +179,9 @@ def_key "v"
 def_key "q"
   show_media_library  
 
+def_key "a"
+  show_browser
+
 def_key "p"
   show_playlist
 
@@ -193,6 +196,9 @@ def_key "]"
 
 def_key "["
   previous
+
+def_key "Q"
+  quit
 
 #def_key "mouse"
 #  mouse_event
@@ -243,8 +249,8 @@ def_key "["
 #  toggle_lyrics_update_on_song_change
 #
 #
-#def_key "delete"
-#  delete_playlist_items
+def_key "d"
+  delete_playlist_items
 #
 #def_key "delete"
 #  delete_browser_items
