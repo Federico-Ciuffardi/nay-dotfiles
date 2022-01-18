@@ -22,7 +22,7 @@ message_delay_time= "1"
 progressbar_look = "=|="
 progressbar_color = "blue"
 progressbar_elapsed_color = white
-progressbar_boldness = yes 
+# progressbar_boldness = yes 
 
 # Colors ..
 colors_enabled = "yes"
@@ -32,10 +32,10 @@ state_line_color = "black"
 state_flags_color = "green"
 main_window_color = "blue" 
 header_window_color = "blue"
-main_window_highlight_color = "white"
+# main_window_highlight_color = "white"
 window_border_color = blue
 active_window_border = blue
-active_column_color = "blue"  
+# active_column_color = "blue"  
 color1 = blue 
 #
 color2 = blue

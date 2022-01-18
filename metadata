@@ -107,3 +107,4 @@
 .config/qt5ct/qt5ct.conf 644 fede fede
 .config/udiskie/config.yml 644 fede fede
 .config/dunst/dunstrcb 644 fede fede
+.config/ncmpcpp/error.log 644 fede fede

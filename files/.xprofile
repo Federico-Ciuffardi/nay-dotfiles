@@ -30,6 +30,7 @@ nitrogen --set-scaled ~/.config/wallpaper &
 # Audio
 # pipewire-pulse &
 start-pulseaudio-x11 &
+mpd &
 # pulseaudio &
 
 # Disk Automount
