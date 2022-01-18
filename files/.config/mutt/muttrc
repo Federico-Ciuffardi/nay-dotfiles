@@ -35,19 +35,10 @@ bind index       <Space> toggle-new
 
 macro pager      u       <pipe-entry>'urlscan'<enter> 'Follow links with urlview'
 
-# set abort_key =  "<Esc>"  
+set abort_key =  "<Esc>"  
 
 bind pager <up> previous-line
 bind pager <down> next-line
-
-##########
-# Colors #
-##########
-ignore *
-unignore from date subject to cc
-unignore x-mailer
-unignore x-spam-status
-unignore x-spam-report
 
 ##########
 # Colors #
@@ -91,15 +82,18 @@ color index         brightcolor154      default        "~U"            # new mes
 color index         brightcolor154      default        "~N"            # new messages
 
 color index_subject default             default         ".*"
+color index_subject brightwhite         default         "~U"            # new messages
 color index_subject default             default         "~N"
 
-color index_flags   yellow              default         ".*"   
-color index_flags   green              default         "~N"   
+color index_flags   yellow             default         ".*"   
+color index_flags   brightyellow       default          "~U"            # new messages
+color index_flags   green              default          "~N"   
 
 color index_author  blue                default         ".*"
+color index_author  brightblue          default          "~U"            # new messages
 color index_author  blue                default         "~N"
 
-color index_date    default             default 
+color index_date    default             default
 color index_size    default             default
 color index_number  default             default
 
