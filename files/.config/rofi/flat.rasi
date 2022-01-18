@@ -1,6 +1,7 @@
 configuration {
-    display-drun: "";
+    display-drun: "🔍";
     display-run: "";
+    display-window: "缾";
     display-window: "缾";
     show-icons: true;
     icon-theme: "Papirus";
@@ -35,11 +36,13 @@ configuration {
 	fg: #ffffff;
 	fg-dark: #aaaaaa;
 	fg-highlight: #ffffff;
-	bg: #25252655;
+	real-bg: #252526dd;
+	bg: #25252600;
 	bg-highlight: #264f78aa;
 	bd: #3E3E3Faa;
 	bd-highlight: #585859cc;
 	bd-outer: #000000;
+	bd-inner: #3E3E3F22;
 
 //	Doom One
 //	fg: #ffffff;
@@ -71,39 +74,49 @@ window {
 }
 
 inputbar {
+	background-color: @real-bg;
 	border-color: @bd-highlight;
-	border: 2 0 0 0;
-	border-radius: 0;
+	padding: 0 0 0 0;
+	border: 1 0 2 0;
+	border-radius: 2;
 }
 
 prompt {
 	text-color: @fg-dark;
-	padding: 0.25em 0.7em 0.4em 0.7em;
+	padding: 0.5em 0.7em 0.5em 0.7em;
 	border: 0 0 0 0;
 	border-radius: 0;
-	font: "Source Code Pro Nerd Font Medium 20";
+	/* font: "Source Code Pro Nerd Font Medium 20"; */
+	font: "Source Code Pro Nerd Font Medium 15";
 }
 
 entry {
+	background-color: @bg;
 	placeholder-color: @fg-dark;
-	placeholder: "Search";
-	padding: 0.3em 0.5em 0.1em 0.1em;
+	placeholder: "";
+	padding: 0.6em 0.5em 0.2em 0.1em;
 	border-radius: 0;
 	font: "Source Code Pro Nerd Font Medium 20";
 }
 
 listview {
-	background-color: @bg;
+  layout: vertical;
+	background-color: @real-bg;
 	cycle: true;
 	dynamic: true;
 	lines: 15;
+  scrollbar: false;
+  /* spacing: 1em; */
 	border-color: @bd;
-	border: 1 0 0 0;
-	border-radius: 0;
+	border: 0 1 1 1;
+	border-radius: 2;
 }
 
 element {
-	padding: 0.3em 0 0.3em 0.3em;
+	border-color: @bd-inner;
+	border: 1 0 1 0;
+	background-color: @bg;
+	padding: 0.3em 0.3em 0.3em 0.3em;
 	border-radius: 0;
 }
 
