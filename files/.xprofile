@@ -32,8 +32,8 @@ nm-applet &
 
 # Audio
 # pipewire-pulse &
-# start-pulseaudio-x11 &
-pulseaudio &
+start-pulseaudio-x11 &
+# pulseaudio &
 
 # Disk Automount
 udiskie --tray &
@@ -42,7 +42,7 @@ udiskie --tray &
 # xscreensaver -no-splash &
 
 # Notification
-# dunst &
+dunst &
 
 # clipboard
 parcellite &
