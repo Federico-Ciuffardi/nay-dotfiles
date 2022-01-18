@@ -27,7 +27,6 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 
 #}}}
 
-
 ###########
 # General #
 ###########
@@ -35,13 +34,6 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 
 # TERM
 export TERM="st-256color" # otherwise it defaults to screen when using `zsh -is`
-
-# GPG Agent
-# GPG_TTY=`tty`
-# export GPG_TTY
-
-# Set autocd
-# setopt autocd
 
 # FZF
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
@@ -94,7 +86,7 @@ zle -N down-line-or-beginning-search
 
 # ranger changing directory
 ranger_cd() {
-  ranger --choosedir="$ranger_choosedir_file"
+  ranger --choosedir="$ranger_choosedir_file" $@
   lwd save "$(cat "$ranger_choosedir_file")"
   . lwd load
 }

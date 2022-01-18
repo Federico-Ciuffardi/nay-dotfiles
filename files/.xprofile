@@ -1,3 +1,6 @@
+# Network
+nm-applet &
+
 # Screen positions
 xrandr --output HDMI-0 --auto --primary
 xrandr --output DVI-I-0 --right-of HDMI-0 --auto
@@ -24,25 +27,16 @@ xset r rate 300 50
 # Wallpaper
 nitrogen --set-scaled ~/.config/wallpaper &
 
-# Compositor
-picom --experimental-backends &
-
-# Network
-nm-applet &
-
 # Audio
 # pipewire-pulse &
 start-pulseaudio-x11 &
 # pulseaudio &
 
 # Disk Automount
-udiskie --tray &
+udiskie --smart-tray --notify &
 
 # Screensaver
 # xscreensaver -no-splash &
-
-# Notification
-dunst &
 
 # clipboard
 parcellite &
@@ -51,15 +45,27 @@ parcellite &
 redshift-gtk -t 6500:5000 &
 
 # remove idle mouse
-
 unclutter -noevents -idle 2.5 &
 
 # kdeconnect
-export $(dbus-launch)
+# export $(dbus-launch)
 kdeconnect-indicator &
-
-# calcurse notifications
-calcurse-notify &
 
 # polkit
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# Compositor
+picom --experimental-backends &
+
+# Notification
+(sleep 1 && dunst) &
+
+# Network dependent
+(
+sleep 30 
+whatsapp-nativefier &
+mattermost-desktop &
+calcurse-notify &
+) & 
+
+

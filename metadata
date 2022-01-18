@@ -105,3 +105,5 @@
 .config/calcurse/conf 644 fede fede
 .config/calcurse/keys 644 fede fede
 .config/qt5ct/qt5ct.conf 644 fede fede
+.config/udiskie/config.yml 644 fede fede
+.config/dunst/dunstrcb 644 fede fede
