@@ -1,6 +1,8 @@
 startup_screen = media_library 
 execute_on_song_change = mpc_notify
 
+mpd_music_dir="~/storage/music"
+
 # Display ..
 song_list_format = " %n | %b | %t | %A | %l"
 song_status_format = "$b$8%t $5● $8%b $5● $8%a"

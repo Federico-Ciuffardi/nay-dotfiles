@@ -15,6 +15,7 @@ set noswapfile
 set spelllang=en,es
 autocmd BufNew,BufRead,BufNewFile /tmp/neomutt-* setlocal spell
 autocmd BufNew,BufRead,BufNewFile *.tex set spell
+let g:tex_comment_nospell=1
 
 " Compile .tex
 autocmd BufEnter *.tex VimtexCompile

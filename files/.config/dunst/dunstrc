@@ -33,7 +33,7 @@
     origin = top-right
 
     # Offset from the origin
-    offset = 50x30
+    offset = 10x35
 
     # Scale factor. It is auto-detected if value is 0.
     scale = 0
@@ -187,7 +187,7 @@
     icon_position = left
 
     # Scale larger icons down to this size, set to 0 to disable
-    max_icon_size = 96
+    max_icon_size = 80
 
     # Paths to default icons.
     icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
