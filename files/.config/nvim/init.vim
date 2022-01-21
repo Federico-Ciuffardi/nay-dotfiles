@@ -10,11 +10,15 @@ set incsearch
 set scrolloff=8
 set ignorecase 
 set noswapfile
+set nocompatible
+filetype plugin on
+syntax on
 
 "spellcheck
 set spelllang=en,es
 autocmd BufNew,BufRead,BufNewFile /tmp/neomutt-* setlocal spell
 autocmd BufNew,BufRead,BufNewFile *.tex set spell
+let g:tex_comment_nospell=1
 
 " Compile .tex
 autocmd BufEnter *.tex VimtexCompile
@@ -517,16 +521,6 @@ nnoremap <leader>gb :GBranch<cr>
 
 "}}}
 
-"""""""""""
-" vimwiki "
-"""""""""""
-"{{{
-
-let g:vimwiki_list = [{'path': '~/.local/share/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
-command TODO :F TODO ~/.local/share/vimwiki/* <cr>
-
-"}}}
-
 """""""
 " far "
 """""""
@@ -716,7 +710,6 @@ set t_Co=256
 set t_ut=
 colorscheme codedark
 set noshowmode
-syntax on " syntax highlighting on
 
 let t:is_transparent = 0
 function! Toggle_transparent_background()
@@ -734,6 +727,24 @@ nnoremap <C-t> :call Toggle_transparent_background()<CR>
 " neovide bg
 hi Normal guibg=#1E1E1E
 highlight Folded gui=bold guibg=#1E1E1E guifg=#5E5E5E
+"}}}
+
+"""""""""""
+" vimwiki "
+"""""""""""
+"{{{
+
+let g:vimwiki_list = [{'path': '~/.local/share/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+hi VimwikiHeader1 cterm=bold ctermfg=231
+hi VimwikiHeader2 cterm=bold ctermfg=231
+hi VimwikiHeader3 cterm=bold ctermfg=231
+hi VimwikiHeader4 cterm=bold ctermfg=231
+hi VimwikiHeader5 cterm=bold ctermfg=231
+hi VimwikiHeader6 cterm=bold ctermfg=231
+" hi VimwikiLink cterm=underline ctermfg=195 guifg=#52B6FF gui=underline
+
+command TODO :F TODO ~/.local/share/vimwiki/* <cr>
+
 "}}}
 
 """""""""
