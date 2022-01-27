@@ -813,7 +813,7 @@ let g:neovide_cursor_antialiasing=v:true
 let g:neovide_refresh_rate=60
 let g:neovide_transparency=0.94
 
-set guifont=Source\ Code\ Pro:h16
+set guifont=FiraCode\ Nerd\ Font\ Mono:style=Medium:size=13:antialias=true
 nnoremap <C-+> :silent! let &guifont = substitute(
  \ &guifont,
  \ ':h\zs\d\+',
