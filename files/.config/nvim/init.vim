@@ -17,8 +17,13 @@ syntax on
 "spellcheck
 set spelllang=en,es
 autocmd BufNew,BufRead,BufNewFile /tmp/neomutt-* setlocal spell
-autocmd BufNew,BufRead,BufNewFile *.tex set spell
-let g:tex_comment_nospell=1
+autocmd BufNew,BufRead,BufNewFile *.Tex set spell
+let g:vimtex_quickfix_ignore_filters = [
+      \ 'Underfull',
+      \ 'Overfull',
+      \ 'Package beamerthememetropolis',
+      \]
+
 
 " Compile .tex
 autocmd BufEnter *.tex VimtexCompile
@@ -210,6 +215,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
 
 Plug 'lervag/vimtex'
+
+Plug 'habamax/vim-godot'
 
 " Plug 'puremourning/vimspector'
 
