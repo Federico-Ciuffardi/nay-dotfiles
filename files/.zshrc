@@ -33,7 +33,8 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 #{{{
 
 # TERM
-export TERM="st-256color" # otherwise it defaults to screen when using `zsh -is`
+
+source ~/.profile
 
 # FZF
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'

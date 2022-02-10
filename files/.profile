@@ -6,7 +6,7 @@
 #{{{
 
 export TERMINAL="st"
-export TERM="st-256color"
+export TERM="xterm-256color" #"st-256color"
 
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -63,7 +63,7 @@ export last_wd_file="$HOME/.local/share/last_wd"
 export NS3DIR="$HOME/workspaces/ns3_ws/bake/source/ns-3.34"
 
 # ros2build
-export ROS2WS="$HOME/storage/workspaces/ros2_ws/"
+export ROS2WS="$HOME/storage/workspaces/ros2_ws"
 
 # fzf
 export FZF_DEFAULT_OPTS='--bind="ctrl-d:preview-down,ctrl-u:preview-up,ctrl-l:accept"  --preview "preview {}" '
