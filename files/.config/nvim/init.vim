@@ -9,7 +9,7 @@ set smarttab
 set incsearch
 set scrolloff=8
 set ignorecase 
-set noswapfile
+" set noswapfile
 set nocompatible
 filetype plugin on
 syntax on

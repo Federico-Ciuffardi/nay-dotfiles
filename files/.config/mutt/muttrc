@@ -26,6 +26,9 @@ bind index,pager b       sidebar-toggle-visible
 bind index,pager J       next-new
 bind index,pager K       previous-new 
 
+bind index,pager r       group-reply
+bind index,pager R       reply
+
 bind index,pager N       search-opposite
 bind index,pager N       search-opposite
 
