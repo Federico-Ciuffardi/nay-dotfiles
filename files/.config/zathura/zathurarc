@@ -9,7 +9,9 @@ set page-padding 1
 set selection-clipboard clipboard
 set scroll-page-aware true
 set selection-notification false
-set recolor true
+set recolor false
+set adjust-open "width"
+set guioptions ""
 
 set recolor-darkcolor "#FFFFFF"
 set recolor-lightcolor "#121212"
@@ -44,8 +46,9 @@ set notification-fg "#151515"
 map i recolor
 map K scroll half-up
 map J scroll half-down
+map s adjust_window best-fit
+map S adjust_window width
 map r reload
 map R rotate
-map i recolor
 map p print
 
