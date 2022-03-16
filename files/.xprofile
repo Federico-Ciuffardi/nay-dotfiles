@@ -37,7 +37,7 @@ mpd &
 udiskie --smart-tray --notify &
 
 # Screensaver
-# xscreensaver -no-splash &
+xscreensaver -no-splash &
 
 # clipboard
 parcellite &
