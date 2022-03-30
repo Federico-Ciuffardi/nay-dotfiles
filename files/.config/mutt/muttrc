@@ -10,7 +10,10 @@ macro index,pager i2 '<sync-mailbox><enter-command>source /home/fede/.config/mut
 ############
 set mailcap_path 	= ~/.config/mutt/mailcap
 set date_format = "%d/%m/%y %H:%M"
-set sort = threads 
+set sort="threads"
+set strict_threads="yes"
+set collapse_all
+unset collapse_unread
 set sort_aux = reverse-last-date-received
 set fast_reply=yes
 set include=yes
@@ -20,6 +23,8 @@ macro compose A "<shell-escape>bash $HOME/.config/mutt/filepicker<enter><enter-c
 ################
 # Key bindings #
 ################
+bind index - collapse-thread
+bind index _ collapse-all
 
 bind index,pager b       sidebar-toggle-visible
 
@@ -81,24 +86,28 @@ color bold black default
 color underline black default
 color normal default default
 
-color index         brightcolor154      default        "~U"            # new messages
-color index         brightcolor154      default        "~N"            # new messages
+color index_subject   brightcolor253     default    "~v"            # new messages
+                      
+color index           yellow             default    "~U"            # new messages
+color index           default            default    "~N"            # new messages
+                      
+color index_subject   brightcolor154     default    "~U"            # new messages
+color index_subject   default            default    ".*"
+color index_subject   default            default    "~N"
+                      
+color index_flags     yellow             default    ".*"   
+color index_flags     brightyellow       default     "~U"            # new messages
+color index_flags     brightcolor154     default     "~N"   
+                      
+color index_author    blue                default    ".*"
+color index_author    brightblue          default    "~v"            # new messages
+color index_author    brightcolor50       default    "~U"            # new messages
+color index_author    brightcolor50       default    "~N"
+                      
+color index_date      default             default
+                      
+color index_size      default             default
+color index_number    default             default
 
-color index_subject default             default         ".*"
-color index_subject brightwhite         default         "~U"            # new messages
-color index_subject default             default         "~N"
-
-color index_flags   yellow             default         ".*"   
-color index_flags   brightyellow       default          "~U"            # new messages
-color index_flags   green              default          "~N"   
-
-color index_author  blue                default         ".*"
-color index_author  brightblue          default          "~U"            # new messages
-color index_author  blue                default         "~N"
-
-color index_date    default             default
-color index_size    default             default
-color index_number  default             default
-
-color status          color15 color8
-color sidebar_divider color8 color8 
+color status          color15             color8
+color sidebar_divider color8              color8 

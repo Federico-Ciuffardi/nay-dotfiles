@@ -753,6 +753,8 @@ hi VimwikiHeader6 cterm=bold ctermfg=231
 
 command TODO :F TODO ~/.local/share/vimwiki/* <cr>
 
+let g:vimwiki_listsyms = '⭕✅'
+let g:vimwiki_markdown_link_ext = 1
 "}}}
 
 """""""""
