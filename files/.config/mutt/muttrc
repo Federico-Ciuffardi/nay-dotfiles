@@ -86,28 +86,44 @@ color bold black default
 color underline black default
 color normal default default
 
-color index_subject   brightcolor253     default    "~v"            # new messages
-                      
-color index           yellow             default    "~U"            # new messages
-color index           default            default    "~N"            # new messages
-                      
-color index_subject   brightcolor154     default    "~U"            # new messages
-color index_subject   default            default    ".*"
-color index_subject   default            default    "~N"
-                      
-color index_flags     yellow             default    ".*"   
-color index_flags     brightyellow       default     "~U"            # new messages
-color index_flags     brightcolor154     default     "~N"   
-                      
-color index_author    blue                default    ".*"
-color index_author    brightblue          default    "~v"            # new messages
-color index_author    brightcolor50       default    "~U"            # new messages
-color index_author    brightcolor50       default    "~N"
-                      
-color index_date      default             default
-                      
-color index_size      default             default
-color index_number    default             default
 
+color body          brightcolor154             default "~U"
+color header        brightcolor154             default "~U"
+color index         brightcolor154             default "~U"
+color index_author  brightcolor154             default "~U"
+color index_flags   brightcolor154             default "~U"
+color index_subject brightcolor154             default "~U"
+color index_tag     brightcolor154             default "~U"
+color status        brightcolor154             default "~U"
+
+color body          brightcolor154             default "~N"
+color header        brightcolor154             default "~N"
+color index         brightcolor154             default "~N"
+color index_author  brightcolor154             default "~N"
+color index_flags   brightcolor154             default "~N"
+color index_subject brightcolor154             default "~N"
+color index_tag     brightcolor154             default "~N"
+color status        brightcolor154             default "~N"
+
+color body          brightcolor253             default "~v"
+color header        brightcolor253             default "~v"
+color index         brightcolor253             default "~v"
+color index_author  brightcolor253             default "~v"
+color index_flags   brightcolor253             default "~v"
+color index_subject brightcolor253             default "~v"
+color index_tag     brightcolor253             default "~v"
+color status        brightcolor253             default "~v"
+
+color body          white             default ".*"
+color header        white             default ".*"
+color index         white             default ".*"
+color index_author  blue              default ".*"
+color index_flags   white             default ".*"
+color index_subject white             default ".*"
+color index_tag     white             default ".*"
+color status        white             default ".*"
+
+
+color index_number  white             default
 color status          color15             color8
 color sidebar_divider color8              color8 
