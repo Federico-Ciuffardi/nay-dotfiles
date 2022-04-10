@@ -20,6 +20,15 @@ set include=yes
 alternates federico.ciuffardi@outlook.com|federico.ciuffardi@fing.edu.uy|fciuffardi@fing.edu.uy
 macro compose A "<shell-escape>bash $HOME/.config/mutt/filepicker<enter><enter-command>source $HOME/.config/mutt/tmpfile<enter><shell-escape>bash $HOME/.config/mutt/filepicker clean<enter>" "Attach with your file manager"
 
+set index_format="%C "
+
+#set index_format="%4C %Z %{%b %d} %-15.15n (%4l) %s"
+#set index_format="%Z %3C %{%b %d} %-17.17n (%4l) %s"
+#set index_format="%Z %3C %{%b %d} %-17.17n (%5c) %s"
+#set index_format="%Z %3C %{%b %d} %-17.17n - %s"
+#set index_format="%3C %Z %[!%m.%d.%y] %-19.19n - %?X?%X& ? %?M?*%M*&%02e/%02E? %s%> %?y?[%Y]?"
+#set index_format="%3C %Z %[!%m.%d.%y] %-19.19n - %?M?(%3M)&%02e/%02E? %s%> %?y?[%Y]?"
+set index_format="%3C │ %Z │ %[!%d/%m/%y] │ %-30.30n │ %?M?%3M&   ? │ %s%> %?y?[%Y]?"
 ################
 # Key bindings #
 ################
@@ -51,6 +60,7 @@ bind pager <down> next-line
 ##########
 # Colors #
 ##########
+
 color header blue default ".*"
 color header white default "^(Date)"
 color header blue default "^(From)"
@@ -60,7 +70,7 @@ color header white default "^(CC|BCC)"
 
 mono bold bold
 mono underline underline
-mono indicator reverse
+color indicator default color239
 mono error bold
 color normal default default
 color sidebar_highlight blue default
@@ -104,15 +114,6 @@ color index_flags   brightcolor154             default "~N"
 color index_subject brightcolor154             default "~N"
 color index_tag     brightcolor154             default "~N"
 color status        brightcolor154             default "~N"
-
-color body          brightcolor253             default "~v"
-color header        brightcolor253             default "~v"
-color index         brightcolor253             default "~v"
-color index_author  brightcolor253             default "~v"
-color index_flags   brightcolor253             default "~v"
-color index_subject brightcolor253             default "~v"
-color index_tag     brightcolor253             default "~v"
-color status        brightcolor253             default "~v"
 
 color body          white             default ".*"
 color header        white             default ".*"
