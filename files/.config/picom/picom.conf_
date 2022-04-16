@@ -1,0 +1,14 @@
+backend = "glx";
+
+# Blurred transparency
+blur: {
+  method = "dual_kawase";
+  strength = 3;
+}
+
+# Force transparency on programs
+opacity-rule = [
+];
+
+# Shadows
+shadow = false;

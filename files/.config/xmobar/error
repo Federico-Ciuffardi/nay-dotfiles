@@ -1,0 +1,365 @@
+XMonad will use ghc to recompile, because "/home/fede/.xmonad/build" does not exist.
+Error detected while loading xmonad configuration file: /home/fede/.xmonad/xmonad.hs
+
+xmonad.hs:476:6: error:
+    • Couldn't match type: (XConfig l0 -> KeyMask, KeySym)
+                     with: [Char]
+      Expected: String
+        Actual: (XConfig l0 -> KeyMask, KeySym)
+    • In the expression: (modMask, xK_space)
+      In the expression: ((modMask, xK_space), switchLayer)
+      In the expression:
+        [("M-C-r", spawn "xmonad --recompile"),
+         ("M-S-r", spawn "xmonad --restart"), ("M-S-q", io exitSuccess),
+         ("M-S-/", spawn "~/.xmonad/xmonad_keys.sh"), ....]
+    |
+476 |     ((modMask, xK_space), switchLayer),
+    |      ^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:478:6: error:
+    • Couldn't match type: (XConfig l1 -> KeyMask, KeySym)
+                     with: [Char]
+      Expected: String
+        Actual: (XConfig l1 -> KeyMask, KeySym)
+    • In the expression: (modMask, xK_Right)
+      In the expression: ((modMask, xK_Right), windowGo R False)
+      In the expression:
+        [("M-C-r", spawn "xmonad --recompile"),
+         ("M-S-r", spawn "xmonad --restart"), ("M-S-q", io exitSuccess),
+         ("M-S-/", spawn "~/.xmonad/xmonad_keys.sh"), ....]
+    |
+478 |     ((modMask, xK_Right), windowGo R False),
+    |      ^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:479:6: error:
+    • Couldn't match type: (XConfig l2 -> KeyMask, KeySym)
+                     with: [Char]
+      Expected: String
+        Actual: (XConfig l2 -> KeyMask, KeySym)
+    • In the expression: (modMask, xK_Left)
+      In the expression: ((modMask, xK_Left), windowGo L False)
+      In the expression:
+        [("M-C-r", spawn "xmonad --recompile"),
+         ("M-S-r", spawn "xmonad --restart"), ("M-S-q", io exitSuccess),
+         ("M-S-/", spawn "~/.xmonad/xmonad_keys.sh"), ....]
+    |
+479 |     ((modMask, xK_Left), windowGo L False),
+    |      ^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:480:6: error:
+    • Couldn't match type: (XConfig l3 -> KeyMask, KeySym)
+                     with: [Char]
+      Expected: String
+        Actual: (XConfig l3 -> KeyMask, KeySym)
+    • In the expression: (modMask, xK_Up)
+      In the expression: ((modMask, xK_Up), windowGo U False)
+      In the expression:
+        [("M-C-r", spawn "xmonad --recompile"),
+         ("M-S-r", spawn "xmonad --restart"), ("M-S-q", io exitSuccess),
+         ("M-S-/", spawn "~/.xmonad/xmonad_keys.sh"), ....]
+    |
+480 |     ((modMask, xK_Up), windowGo U False),
+    |      ^^^^^^^^^^^^^^^^
+
+xmonad.hs:481:6: error:
+    • Couldn't match type: (XConfig l4 -> KeyMask, KeySym)
+                     with: [Char]
+      Expected: String
+        Actual: (XConfig l4 -> KeyMask, KeySym)
+    • In the expression: (modMask, xK_Down)
+      In the expression: ((modMask, xK_Down), windowGo D False)
+      In the expression:
+        [("M-C-r", spawn "xmonad --recompile"),
+         ("M-S-r", spawn "xmonad --restart"), ("M-S-q", io exitSuccess),
+         ("M-S-/", spawn "~/.xmonad/xmonad_keys.sh"), ....]
+    |
+481 |     ((modMask, xK_Down), windowGo D False),
+    |      ^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:483:6: error:
+    • Couldn't match type: (XConfig l9 -> KeyMask, KeySym)
+                     with: [Char]
+      Expected: String
+        Actual: (XConfig l9 -> KeyMask, KeySym)
+    • In the expression: (modMask .|. controlMask, xK_Right)
+      In the expression:
+        ((modMask .|. controlMask, xK_Right), windowSwap R False)
+      In the expression:
+        [("M-C-r", spawn "xmonad --recompile"),
+         ("M-S-r", spawn "xmonad --restart"), ("M-S-q", io exitSuccess),
+         ("M-S-/", spawn "~/.xmonad/xmonad_keys.sh"), ....]
+    |
+483 |     ((modMask .|. controlMask, xK_Right), windowSwap R False),
+    |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:483:19: error:
+    • Couldn't match type ‘Foreign.C.Types.CUInt’
+                     with ‘XConfig l9 -> KeyMask’
+      Expected: XConfig l9 -> KeyMask
+        Actual: KeyMask
+    • In the second argument of ‘(.|.)’, namely ‘controlMask’
+      In the expression: modMask .|. controlMask
+      In the expression: (modMask .|. controlMask, xK_Right)
+    |
+483 |     ((modMask .|. controlMask, xK_Right), windowSwap R False),
+    |                   ^^^^^^^^^^^
+
+xmonad.hs:484:6: error:
+    • Couldn't match type: (XConfig l10 -> KeyMask, KeySym)
+                     with: [Char]
+      Expected: String
+        Actual: (XConfig l10 -> KeyMask, KeySym)
+    • In the expression: (modMask .|. controlMask, xK_Left)
+      In the expression:
+        ((modMask .|. controlMask, xK_Left), windowSwap L False)
+      In the expression:
+        [("M-C-r", spawn "xmonad --recompile"),
+         ("M-S-r", spawn "xmonad --restart"), ("M-S-q", io exitSuccess),
+         ("M-S-/", spawn "~/.xmonad/xmonad_keys.sh"), ....]
+    |
+484 |     ((modMask .|. controlMask, xK_Left), windowSwap L False),
+    |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:484:19: error:
+    • Couldn't match type ‘Foreign.C.Types.CUInt’
+                     with ‘XConfig l10 -> KeyMask’
+      Expected: XConfig l10 -> KeyMask
+        Actual: KeyMask
+    • In the second argument of ‘(.|.)’, namely ‘controlMask’
+      In the expression: modMask .|. controlMask
+      In the expression: (modMask .|. controlMask, xK_Left)
+    |
+484 |     ((modMask .|. controlMask, xK_Left), windowSwap L False),
+    |                   ^^^^^^^^^^^
+
+xmonad.hs:485:6: error:
+    • Couldn't match type: (XConfig l11 -> KeyMask, KeySym)
+                     with: [Char]
+      Expected: String
+        Actual: (XConfig l11 -> KeyMask, KeySym)
+    • In the expression: (modMask .|. controlMask, xK_Up)
+      In the expression:
+        ((modMask .|. controlMask, xK_Up), windowSwap U False)
+      In the expression:
+        [("M-C-r", spawn "xmonad --recompile"),
+         ("M-S-r", spawn "xmonad --restart"), ("M-S-q", io exitSuccess),
+         ("M-S-/", spawn "~/.xmonad/xmonad_keys.sh"), ....]
+    |
+485 |     ((modMask .|. controlMask, xK_Up), windowSwap U False),
+    |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:485:19: error:
+    • Couldn't match type ‘Foreign.C.Types.CUInt’
+                     with ‘XConfig l11 -> KeyMask’
+      Expected: XConfig l11 -> KeyMask
+        Actual: KeyMask
+    • In the second argument of ‘(.|.)’, namely ‘controlMask’
+      In the expression: modMask .|. controlMask
+      In the expression: (modMask .|. controlMask, xK_Up)
+    |
+485 |     ((modMask .|. controlMask, xK_Up), windowSwap U False),
+    |                   ^^^^^^^^^^^
+
+xmonad.hs:486:6: error:
+    • Couldn't match type: (XConfig l12 -> KeyMask, KeySym)
+                     with: [Char]
+      Expected: String
+        Actual: (XConfig l12 -> KeyMask, KeySym)
+    • In the expression: (modMask .|. controlMask, xK_Down)
+      In the expression:
+        ((modMask .|. controlMask, xK_Down), windowSwap D False)
+      In the expression:
+        [("M-C-r", spawn "xmonad --recompile"),
+         ("M-S-r", spawn "xmonad --restart"), ("M-S-q", io exitSuccess),
+         ("M-S-/", spawn "~/.xmonad/xmonad_keys.sh"), ....]
+    |
+486 |     ((modMask .|. controlMask, xK_Down), windowSwap D False),
+    |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:486:19: error:
+    • Couldn't match type ‘Foreign.C.Types.CUInt’
+                     with ‘XConfig l12 -> KeyMask’
+      Expected: XConfig l12 -> KeyMask
+        Actual: KeyMask
+    • In the second argument of ‘(.|.)’, namely ‘controlMask’
+      In the expression: modMask .|. controlMask
+      In the expression: (modMask .|. controlMask, xK_Down)
+    |
+486 |     ((modMask .|. controlMask, xK_Down), windowSwap D False),
+    |                   ^^^^^^^^^^^
+
+xmonad.hs:488:6: error:
+    • Couldn't match type: (XConfig l5 -> KeyMask, KeySym)
+                     with: [Char]
+      Expected: String
+        Actual: (XConfig l5 -> KeyMask, KeySym)
+    • In the expression: (modMask, xK_r)
+      In the expression: ((modMask, xK_r), screenGo R False)
+      In the expression:
+        [("M-C-r", spawn "xmonad --recompile"),
+         ("M-S-r", spawn "xmonad --restart"), ("M-S-q", io exitSuccess),
+         ("M-S-/", spawn "~/.xmonad/xmonad_keys.sh"), ....]
+    |
+488 |     ((modMask, xK_r), screenGo R False),
+    |      ^^^^^^^^^^^^^^^
+
+xmonad.hs:489:6: error:
+    • Couldn't match type: (XConfig l6 -> KeyMask, KeySym)
+                     with: [Char]
+      Expected: String
+        Actual: (XConfig l6 -> KeyMask, KeySym)
+    • In the expression: (modMask, xK_l)
+      In the expression: ((modMask, xK_l), screenGo L False)
+      In the expression:
+        [("M-C-r", spawn "xmonad --recompile"),
+         ("M-S-r", spawn "xmonad --restart"), ("M-S-q", io exitSuccess),
+         ("M-S-/", spawn "~/.xmonad/xmonad_keys.sh"), ....]
+    |
+489 |     ((modMask, xK_l), screenGo L False),
+    |      ^^^^^^^^^^^^^^^
+
+xmonad.hs:490:6: error:
+    • Couldn't match type: (XConfig l7 -> KeyMask, KeySym)
+                     with: [Char]
+      Expected: String
+        Actual: (XConfig l7 -> KeyMask, KeySym)
+    • In the expression: (modMask, xK_u)
+      In the expression: ((modMask, xK_u), screenGo U False)
+      In the expression:
+        [("M-C-r", spawn "xmonad --recompile"),
+         ("M-S-r", spawn "xmonad --restart"), ("M-S-q", io exitSuccess),
+         ("M-S-/", spawn "~/.xmonad/xmonad_keys.sh"), ....]
+    |
+490 |     ((modMask, xK_u), screenGo U False),
+    |      ^^^^^^^^^^^^^^^
+
+xmonad.hs:491:6: error:
+    • Couldn't match type: (XConfig l8 -> KeyMask, KeySym)
+                     with: [Char]
+      Expected: String
+        Actual: (XConfig l8 -> KeyMask, KeySym)
+    • In the expression: (modMask, xK_d)
+      In the expression: ((modMask, xK_d), screenGo D False)
+      In the expression:
+        [("M-C-r", spawn "xmonad --recompile"),
+         ("M-S-r", spawn "xmonad --restart"), ("M-S-q", io exitSuccess),
+         ("M-S-/", spawn "~/.xmonad/xmonad_keys.sh"), ....]
+    |
+491 |     ((modMask, xK_d), screenGo D False),
+    |      ^^^^^^^^^^^^^^^
+
+xmonad.hs:493:6: error:
+    • Couldn't match type: (XConfig l13 -> KeyMask, KeySym)
+                     with: [Char]
+      Expected: String
+        Actual: (XConfig l13 -> KeyMask, KeySym)
+    • In the expression: (modMask .|. controlMask, xK_r)
+      In the expression:
+        ((modMask .|. controlMask, xK_r), screenSwap R False)
+      In the expression:
+        [("M-C-r", spawn "xmonad --recompile"),
+         ("M-S-r", spawn "xmonad --restart"), ("M-S-q", io exitSuccess),
+         ("M-S-/", spawn "~/.xmonad/xmonad_keys.sh"), ....]
+    |
+493 |     ((modMask .|. controlMask, xK_r), screenSwap R False),
+    |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:493:19: error:
+    • Couldn't match type ‘Foreign.C.Types.CUInt’
+                     with ‘XConfig l13 -> KeyMask’
+      Expected: XConfig l13 -> KeyMask
+        Actual: KeyMask
+    • In the second argument of ‘(.|.)’, namely ‘controlMask’
+      In the expression: modMask .|. controlMask
+      In the expression: (modMask .|. controlMask, xK_r)
+    |
+493 |     ((modMask .|. controlMask, xK_r), screenSwap R False),
+    |                   ^^^^^^^^^^^
+
+xmonad.hs:494:6: error:
+    • Couldn't match type: (XConfig l14 -> KeyMask, KeySym)
+                     with: [Char]
+      Expected: String
+        Actual: (XConfig l14 -> KeyMask, KeySym)
+    • In the expression: (modMask .|. controlMask, xK_l)
+      In the expression:
+        ((modMask .|. controlMask, xK_l), screenSwap L False)
+      In the expression:
+        [("M-C-r", spawn "xmonad --recompile"),
+         ("M-S-r", spawn "xmonad --restart"), ("M-S-q", io exitSuccess),
+         ("M-S-/", spawn "~/.xmonad/xmonad_keys.sh"), ....]
+    |
+494 |     ((modMask .|. controlMask, xK_l), screenSwap L False),
+    |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:494:19: error:
+    • Couldn't match type ‘Foreign.C.Types.CUInt’
+                     with ‘XConfig l14 -> KeyMask’
+      Expected: XConfig l14 -> KeyMask
+        Actual: KeyMask
+    • In the second argument of ‘(.|.)’, namely ‘controlMask’
+      In the expression: modMask .|. controlMask
+      In the expression: (modMask .|. controlMask, xK_l)
+    |
+494 |     ((modMask .|. controlMask, xK_l), screenSwap L False),
+    |                   ^^^^^^^^^^^
+
+xmonad.hs:495:6: error:
+    • Couldn't match type: (XConfig l15 -> KeyMask, KeySym)
+                     with: [Char]
+      Expected: String
+        Actual: (XConfig l15 -> KeyMask, KeySym)
+    • In the expression: (modMask .|. controlMask, xK_u)
+      In the expression:
+        ((modMask .|. controlMask, xK_u), screenSwap U False)
+      In the expression:
+        [("M-C-r", spawn "xmonad --recompile"),
+         ("M-S-r", spawn "xmonad --restart"), ("M-S-q", io exitSuccess),
+         ("M-S-/", spawn "~/.xmonad/xmonad_keys.sh"), ....]
+    |
+495 |     ((modMask .|. controlMask, xK_u), screenSwap U False),
+    |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:495:19: error:
+    • Couldn't match type ‘Foreign.C.Types.CUInt’
+                     with ‘XConfig l15 -> KeyMask’
+      Expected: XConfig l15 -> KeyMask
+        Actual: KeyMask
+    • In the second argument of ‘(.|.)’, namely ‘controlMask’
+      In the expression: modMask .|. controlMask
+      In the expression: (modMask .|. controlMask, xK_u)
+    |
+495 |     ((modMask .|. controlMask, xK_u), screenSwap U False),
+    |                   ^^^^^^^^^^^
+
+xmonad.hs:496:6: error:
+    • Couldn't match type: (XConfig l16 -> KeyMask, KeySym)
+                     with: [Char]
+      Expected: String
+        Actual: (XConfig l16 -> KeyMask, KeySym)
+    • In the expression: (modMask .|. controlMask, xK_d)
+      In the expression:
+        ((modMask .|. controlMask, xK_d), screenSwap D False)
+      In the expression:
+        [("M-C-r", spawn "xmonad --recompile"),
+         ("M-S-r", spawn "xmonad --restart"), ("M-S-q", io exitSuccess),
+         ("M-S-/", spawn "~/.xmonad/xmonad_keys.sh"), ....]
+    |
+496 |     ((modMask .|. controlMask, xK_d), screenSwap D False),
+    |      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+xmonad.hs:496:19: error:
+    • Couldn't match type ‘Foreign.C.Types.CUInt’
+                     with ‘XConfig l16 -> KeyMask’
+      Expected: XConfig l16 -> KeyMask
+        Actual: KeyMask
+    • In the second argument of ‘(.|.)’, namely ‘controlMask’
+      In the expression: modMask .|. controlMask
+      In the expression: (modMask .|. controlMask, xK_d)
+    |
+496 |     ((modMask .|. controlMask, xK_d), screenSwap D False),
+    |                   ^^^^^^^^^^^
+
+Please check the file for errors.
+
+xmonad: xmessage: executeFile: does not exist (No such file or directory)

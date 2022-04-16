@@ -110,3 +110,5 @@
 .config/ncmpcpp/error.log 644 fede fede
 .config/okular/keybinds.shortcuts 644 fede fede
 .config/tig/config 664 fede fede
+.config/picom/picom.conf_ 644 fede fede
+.config/xmobar/error 644 fede fede
