@@ -23,20 +23,20 @@ export WM="dwm"
 #{{{
 
 # bin lookup
-export MY_BIN="$HOME/bin"
-export CABAL_BIN="$HOME/.cabal/bin"
-export PATH="$PATH:$MY_BIN/misc:$CABAL_BIN:$HOME/.local/bin"
+export MY_BIN="$HOME/.local/share/mybin"
+export PATH="$PATH:$MY_BIN/path:$CABAL_BIN:$HOME/.local/bin"
 
 # others
-export DMENU_BIN=$MY_BIN/dmenu
-export I3_BIN=$MY_BIN/i3
-export BSPWM_BIN=$MY_BIN/bspwm
-export DWM_BIN=$MY_BIN/dwm
-export TMUX_BIN=$MY_BIN/tmux
-export AUTOSTART_BIN=$MY_BIN/autostart
-export STATUSBAR_BIN=$MY_BIN/statusbar
-export STATUSBAR_AUX_BIN=$MY_BIN/statusbar/aux
-export BASH_LIB_BIN=$MY_BIN/lib
+export WALLPAPER_FILE="$HOME/.local/share/wallpaper/wallpaper"
+export DMENU_BIN="$MY_BIN/dmenu"
+export I3_BIN="$MY_BIN/i3"
+export BSPWM_BIN="$MY_BIN/bspwm"
+export DWM_BIN="$MY_BIN/dwm"
+export TMUX_BIN="$MY_BIN/tmux"
+export AUTOSTART_BIN="$MY_BIN/autostart"
+export STATUSBAR_BIN="$MY_BIN/statusbar"
+export STATUSBAR_AUX_BIN="$MY_BIN/statusbar/aux"
+export BASH_LIB_BIN="$MY_BIN/lib"
 
 #}}}
 
