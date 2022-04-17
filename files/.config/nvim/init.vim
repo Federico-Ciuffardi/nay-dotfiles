@@ -557,6 +557,7 @@ let g:coc_global_extensions = [
       \ 'coc-python',
       \ 'coc-vimtex',
       \ 'coc-snippets',
+      \ 'coc-rust-analyzer',
       \ ]
 
 "" don't give |ins-completion-menu| messages.
