@@ -1,11 +1,11 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-settings 6.03 for fede on Sun Mar 20 20:21:49 2022.
+# Written by xscreensaver-settings 6.03 for fede on Sun Apr 17 01:07:34 2022.
 # https://www.jwz.org/xscreensaver/
 
-timeout:	1:30:00
-cycle:		0:05:00
-lock:		False
-lockTimeout:	0:00:00
+timeout:	0:01:00
+cycle:		0:01:00
+lock:		True
+lockTimeout:	0:02:00
 passwdTimeout:	0:00:30
 visualID:	default
 installColormap:    True
@@ -37,7 +37,7 @@ textLiteral:	XScreenSaver
 textFile:	
 textProgram:	fortune
 textURL:	https://en.wikipedia.org/w/index.php?title=Special:NewPages&feed=rss
-dialogTheme:	default
+dialogTheme:	darkgray
 
 programs:								      \
 				maze -root -ignorant			    \n\
