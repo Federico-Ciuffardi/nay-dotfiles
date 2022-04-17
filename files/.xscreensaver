@@ -1,11 +1,11 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-settings 6.03 for fede on Sun Apr 17 01:31:49 2022.
+# Written by xscreensaver-settings 6.03 for fede on Sun Apr 17 02:17:54 2022.
 # https://www.jwz.org/xscreensaver/
 
-timeout:	0:01:00
-cycle:		0:01:00
+timeout:	0:15:00
+cycle:		0:02:00
 lock:		True
-lockTimeout:	0:02:00
+lockTimeout:	0:01:00
 passwdTimeout:	0:00:30
 visualID:	default
 installColormap:    True
