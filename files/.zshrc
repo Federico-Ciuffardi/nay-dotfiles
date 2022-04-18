@@ -215,19 +215,19 @@ zle -N zle-line-init
 ## exec on preexec hook
 function vi_preexec() {
 	# ^X to ^C
-	stty intr '^C' 
+	# stty intr '^C' 
 	# re set beam
 	echo -ne '\e[5 q'
 }
 
 ## exec on precmd hook
 function vi_precmd() {
-	# ^C to ^X
-	stty intr '^X'
+# 	# ^C to ^X
+# 	stty intr '^X'
 }
 
 # keybindings
-bindkey -M viins '^C' vi-cmd-mode
+# bindkey -M viins '^C' vi-cmd-mode
 
 bindkey "^[[A"   up-line-or-beginning-search
 bindkey "^[[B"  down-line-or-beginning-search
