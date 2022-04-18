@@ -20,8 +20,6 @@ set include=yes
 alternates federico.ciuffardi@outlook.com|federico.ciuffardi@fing.edu.uy|fciuffardi@fing.edu.uy
 macro compose A "<shell-escape>bash $HOME/.config/mutt/filepicker<enter><enter-command>source $HOME/.config/mutt/tmpfile<enter><shell-escape>bash $HOME/.config/mutt/filepicker clean<enter>" "Attach with your file manager"
 
-set index_format="%C "
-
 #set index_format="%4C %Z %{%b %d} %-15.15n (%4l) %s"
 #set index_format="%Z %3C %{%b %d} %-17.17n (%4l) %s"
 #set index_format="%Z %3C %{%b %d} %-17.17n (%5c) %s"

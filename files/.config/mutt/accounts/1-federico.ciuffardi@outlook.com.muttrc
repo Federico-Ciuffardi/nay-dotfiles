@@ -1,14 +1,13 @@
 # vim: filetype=neomuttrc
 # muttrc file for account federico.ciuffardi@outlook.com
-set realname = "federico.ciuffardi"
+set realname = "Federico Ciuffardi"
 set from = "federico.ciuffardi@outlook.com"
 set sendmail = "msmtp -a federico.ciuffardi@outlook.com"
-alias me federico.ciuffardi <federico.ciuffardi@outlook.com>
+alias me Federico Ciuffardi <federico.ciuffardi@outlook.com>
 set folder = "/home/fede/.local/share/mail/federico.ciuffardi@outlook.com"
 set header_cache = /home/fede/.cache/mutt-wizard/federico.ciuffardi@outlook.com/headers
 set message_cachedir = /home/fede/.cache/mutt-wizard/federico.ciuffardi@outlook.com/bodies
 set mbox_type = Maildir
-
 
 bind index,pager gg noop
 bind index,pager g noop
@@ -24,7 +23,7 @@ macro index S "<shell-escape>mymailsync federico.ciuffardi@outlook.com<enter>" "
 macro index \Cr "<shell-escape>mymailsync federico.ciuffardi@outlook.com<enter>" "run mbsync to sync federico.ciuffardi@outlook.com"
 macro index <F5> "<shell-escape>mymailsync federico.ciuffardi@outlook.com<enter>" "run mbsync to sync federico.ciuffardi@outlook.com"
 
-mailboxes "=Archive" "=Archives/2020" "=Deleted" "=Drafts" "=INBOX" "=Junk" "=Notes" "=Outbox" "=Queue" "=Sent" "=Trash"
+mailboxes "=Archive" "=Deleted" "=Drafts" "=INBOX" "=Junk" "=Notes" "=Outbox" "=Queue" "=Sent" "=Trash"
 macro index,pager ga "<change-folder>=Archive<enter>" "go to archive"
 macro index,pager Ma ";<save-message>=Archive<enter>" "move mail to archive"
 macro index,pager Ca ";<copy-message>=Archive<enter>" "copy mail to archive"
