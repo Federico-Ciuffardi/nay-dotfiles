@@ -754,15 +754,21 @@ hi VimwikiHeader6 cterm=bold ctermfg=231
 
 command TODO :F TODO ~/.local/share/vimwiki/* <cr>
 
-let g:vimwiki_listsyms = '⭕✅'
+let g:vimwiki_listsyms = ' x'
 let g:vimwiki_markdown_link_ext = 1
 "}}}
+
 
 """""""""
 " Maps "
 """""""""
 "{{{
 command! -nargs=1 -complete=file Diff :vertical diffsplit <args>
+" taskell
+command! Taskell :terminal 'taskell' '%:p:h/taskell.md'
+autocmd TermOpen * startinsert
+autocmd TermClose * :bd
+nnoremap <leader>t :Taskell<CR>
 
 " Copy Cut Paste
 vnoremap <C-C> "+y
