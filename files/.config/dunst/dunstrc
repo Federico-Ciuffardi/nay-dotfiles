@@ -300,14 +300,16 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     highlight  = "#1068B0"
-    background = "#2b2b2b"
+    background = "#1D2021"
     foreground = "#ffffff"
+    frame_color = "#e0e0e0"
     timeout = 10
 
 [urgency_normal]
     highlight  = "#1068B0"
-    background = "#2b2b2b"
+    background = "#1D2021"
     foreground = "#ffffff"
+    frame_color = "#e0e0e0"
     timeout = 0
 
 [urgency_critical]
