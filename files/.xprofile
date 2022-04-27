@@ -30,8 +30,8 @@ xset r rate 300 50
 nitrogen --set-scaled $WALLPAPER_FILE &
 
 # Audio
-# pipewire-pulse &
-start-pulseaudio-x11 &
+pipewire-pulse &
+# start-pulseaudio-x11 &
 mpd &
 # pulseaudio &
 
