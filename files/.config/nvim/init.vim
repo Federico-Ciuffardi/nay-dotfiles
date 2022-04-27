@@ -830,20 +830,20 @@ let g:neovide_cursor_antialiasing=v:true
 let g:neovide_refresh_rate=60
 let g:neovide_transparency=0.94
 
-set guifont=FiraCode\ Nerd\ Font\ Mono:style=Medium:size=13:antialias=true
-nnoremap <C-+> :silent! let &guifont = substitute(
+set guifont=FiraCode\ Nerd\ Font\ Mono:h13
+nnoremap <silent> <C-+> :let &guifont = substitute(
  \ &guifont,
  \ ':h\zs\d\+',
  \ '\=eval(submatch(0)+1)',
  \ '')<CR>
-nnoremap <C-_> :silent! let &guifont = substitute(
+nnoremap <silent> <C-_> :let &guifont = substitute(
  \ &guifont,
  \ ':h\zs\d\+',
  \ '\=eval(submatch(0)-1)',
  \ '')<CR>
-nnoremap <C-)> :silent! let &guifont = substitute(
+nnoremap <silent> <C-)> :let &guifont = substitute(
  \ &guifont,
  \ ':h\zs\d\+',
- \ '\=eval(16)',
+ \ '\=eval(13)',
  \ '')<CR>
 "}}}
