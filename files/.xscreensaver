@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-settings 6.03 for fede on Sun Apr 17 02:17:54 2022.
+# Written by xscreensaver-settings 6.03 for fede on Wed Apr 27 22:59:11 2022.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:15:00
@@ -35,7 +35,7 @@ selected:	139
 textMode:	program
 textLiteral:	XScreenSaver
 textFile:	
-textProgram:	fortune
+textProgram:	fortune && echo '-'
 textURL:	https://en.wikipedia.org/w/index.php?title=Special:NewPages&feed=rss
 dialogTheme:	darkgray
 
