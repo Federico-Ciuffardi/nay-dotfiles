@@ -22,12 +22,15 @@ let g:vimtex_quickfix_ignore_filters = [
       \ 'Underfull',
       \ 'Overfull',
       \ 'Package beamerthememetropolis',
+      \ 'Unused global option',
+      \ 'Package hyperref Warning: Token not allowed in a PDF string (Unicode):',
       \]
 
 
 " Compile .tex
 autocmd BufEnter *.tex VimtexCompile
 let g:vimtex_view_general_viewer = 'okular'
+let g:vimtex_view_enabled = 0
 
 " limit the width of text to 72 characters when editing a mail on neomutt
 autocmd BufNew,BufRead,BufNewFile /tmp/neomutt-* set tw=72
@@ -254,6 +257,8 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-unimpaired'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+
+Plug 'puremourning/vimspector'
 
 call plug#end()
 "}}}
