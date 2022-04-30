@@ -24,7 +24,8 @@ export WM="dwm"
 
 # bin lookup
 export MY_BIN="$HOME/.local/share/mybin"
-export PATH="$PATH:$MY_BIN/path:$CABAL_BIN:$HOME/.local/bin"
+export DOTNET_BIN="$PATH:/home/fede/.dotnet/tools"
+export PATH="$PATH:$MY_BIN/path:$DOTNET_BIN:$HOME/.local/bin"
 
 # others
 export WALLPAPER_FILE="$HOME/.local/share/wallpaper/wallpaper"

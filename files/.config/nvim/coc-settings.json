@@ -15,6 +15,11 @@
       "host": "127.0.0.1",
       "filetypes": ["gdscript"],
       "port": 6008
+    },
+    "csharp-ls": {
+      "command": "csharp-ls",
+      "filetypes": ["cs"],
+      "rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"]
     }
   },
 	"list.insertMappings": {
