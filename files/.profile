@@ -6,7 +6,7 @@
 #{{{
 
 export TERMINAL="st"
-export TERM="xterm-256color" #"st-256color"
+export TERM="st-256color" #"xterm-256color"
 
 export EDITOR="nvim"
 export VISUAL="nvim"

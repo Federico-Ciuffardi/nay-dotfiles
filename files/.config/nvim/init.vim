@@ -207,60 +207,64 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+" Declare used plugins
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'chrisbra/Colorizer'
-
-Plug 'honza/vim-snippets'
-
+"" programming related
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-Plug 'josa42/coc-sh', {'do': 'yarn install --frozen-lockfile'}
-
 Plug 'lervag/vimtex'
-
 Plug 'habamax/vim-godot'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
-" Plug 'puremourning/vimspector'
-
+"" Visual
 Plug 'Federico-Ciuffardi/vim-code-dark'
 Plug 'bling/vim-airline'
+Plug 'chrisbra/Colorizer'
 
+"" Search and/or replace
 Plug 'brooth/far.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'stsewd/fzf-checkout.vim'
 
+"" Integration
+""" tmux
+Plug 'christoomey/vim-tmux-navigator'
+""" git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
+"" Operators, Motions and Commands
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-unimpaired'
 
-Plug 'lambdalisue/suda.vim'
-
-Plug 'vimwiki/vimwiki'
-
+"" Undo, Swap, and fold
 Plug 'mbbill/undotree'
 Plug 'chrisbra/recover.vim'
 Plug 'zhimsel/vim-stay'
 Plug 'Konfekt/FastFold'
 
-Plug 'easymotion/vim-easymotion'
-
+"" Misc
+""" Start Screen
 Plug 'mhinz/vim-startify'
-
+""" Notes
+Plug 'vimwiki/vimwiki'
+""" Smooth motion
 Plug 'Federico-Ciuffardi/comfortable-motion.vim'
-
-Plug 'tpope/vim-abolish'
-
-Plug 'tpope/vim-unimpaired'
-
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
-
-Plug 'puremourning/vimspector'
+""" Save as sudo
+Plug 'lambdalisue/suda.vim'
 
 call plug#end()
+"}}}
+
+""""""""""""""
+" Easymotion "
+""""""""""""""
+"{{{
+map \ <Plug>(easymotion-prefix)
 "}}}
 
 """"""""""""
@@ -553,16 +557,13 @@ vnoremap <silent> <leader>r :Farr<cr>
 """""""
 "{{{
 
-" Config
-    " \ 'coc-highlight',
-    " \ 'coc-sh',
-    " \ 'coc-clangd',
 let g:coc_global_extensions = [
       \ 'coc-clangd',
       \ 'coc-python',
       \ 'coc-vimtex',
       \ 'coc-snippets',
       \ 'coc-rust-analyzer',
+      \ 'coc-sh',
       \ ]
 
 "" don't give |ins-completion-menu| messages.

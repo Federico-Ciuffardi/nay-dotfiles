@@ -130,20 +130,14 @@ fzf-find() {
   return $ret
 }
 
-fzf-find-widget1() {
-  fzf-find 1
-}
-
+fzf-find-widget1() { fzf-find 1 }
 zle     -N   fzf-find-widget1
 bindkey '' fzf-find-widget1
 
 
-fzf-find-widget5() {
-  fzf-find 5
-}
-
-zle     -N   fzf-find-widget5
-bindkey '^@' fzf-find-widget5
+fzf-find-widget10() { fzf-find 10 }
+zle     -N   fzf-find-widget10
+bindkey '^P' fzf-find-widget10
 
 #}}}
 
@@ -174,7 +168,7 @@ fzf-lwd-widget() {
   return $ret
 }
 zle     -N   fzf-lwd-widget
-bindkey '^P' fzf-lwd-widget
+bindkey '^@' fzf-lwd-widget
 
 #}}}
 
@@ -222,6 +216,8 @@ function vi_preexec() {
 
 ## exec on precmd hook
 function vi_precmd() {
+  # starting window title
+  set_terminal_title
 # 	# ^C to ^X
 # 	stty intr '^X'
 }
@@ -243,8 +239,8 @@ bindkey -M vicmd "j" down-line-or-beginning-search
 
 # cd hook
 function chpwd() {
-    # pwd > "$last_wd_file"
-    lwd save
+  lwd save
+  print -Pn "\e]0;`pwd`\a" 
 }
 
 # precm and preexec hooks
@@ -304,7 +300,5 @@ fi
 # cd to last working directoy
 . lwd load
 
-# starting window title
-print -Pn "\e]0;`pwd`\a" 
 
 #}}}

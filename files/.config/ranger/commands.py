@@ -29,7 +29,6 @@ class lwd_fzf(Command):
             fzf_file = os.path.abspath(stdout.rstrip('\n'))
             self.fm.cd(fzf_file)
 
-
 class fzf_select(Command):
     def execute(self):
         import subprocess
@@ -39,7 +38,7 @@ class fzf_select(Command):
         if len(args) > 1:
             depth = args[1]
         else:
-            depth = "5"
+            depth = "10"
 
         # match only directories
         command="find -L . -maxdepth "+depth+" \\( -path '*/' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) -prune \
