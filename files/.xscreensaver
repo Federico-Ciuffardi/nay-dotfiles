@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-settings 6.03 for fede on Wed Apr 27 22:59:11 2022.
+# Written by xscreensaver-settings 6.03 for fede on Sun May  1 03:00:45 2022.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:15:00
@@ -47,7 +47,7 @@ programs:								      \
 -				greynetic -root				    \n\
 -				helix -root				    \n\
 -				hopalong -root				    \n\
-				imsmap -root -ncolors 255		    \n\
+-				imsmap -root -ncolors 255		    \n\
 -				noseguy -root				    \n\
 -				pyro -root				    \n\
 -				qix -root				    \n\
@@ -56,7 +56,7 @@ programs:								      \
 				decayscreen -root			    \n\
 -				flame -root				    \n\
 -				halo -root				    \n\
-				slidescreen -root			    \n\
+-				slidescreen -root			    \n\
 -				pedal -root				    \n\
 -				bouboule -root				    \n\
 -				braid -root -delay 50382 -cycles 244	      \
@@ -76,21 +76,21 @@ programs:								      \
 -				moire -root				    \n\
 - GL: 				morph3d -root				    \n\
 -				mountain -root				    \n\
-				munch -root				    \n\
+-				munch -root				    \n\
 -				penrose -root -ncolors 255 -size 18	    \n\
-  GL: 				pipes -root -cycles 30 -size 824	      \
+- GL: 				pipes -root -cycles 30 -size 824	      \
 				  -no-fisheye				    \n\
 -				rd-bomb -root				    \n\
 - GL: 				rubik -root				    \n\
 -				sierpinski -root			    \n\
-				slip -root				    \n\
+-				slip -root				    \n\
 - GL: 				sproingies -root			    \n\
 -				starfish -root				    \n\
 -				strange -root				    \n\
-				swirl -root				    \n\
-				triangle -root				    \n\
+-				swirl -root				    \n\
+-				triangle -root				    \n\
 -				xjack -root				    \n\
-				xlyap -root				    \n\
+-				xlyap -root				    \n\
 - GL: 				atlantis -root				    \n\
 				bsod -root -no-windows -no-nt -no-2k	      \
 				  -no-msdos -no-glados -no-amiga	      \
@@ -140,16 +140,16 @@ programs:								      \
 -				webcollage -root			    \n\
 -				xflame -root				    \n\
 -				xmatrix -root				    \n\
-  GL: 				gflux -root				    \n\
+- GL: 				gflux -root				    \n\
 -				nerverot -root				    \n\
 -				xrayswarm -root				    \n\
 -				xspirograph -root			    \n\
 - GL: 				circuit -root				    \n\
 - GL: 				dangerball -root			    \n\
 - GL: 				dnalogo -root				    \n\
-  GL: 				engine -root -titles			    \n\
+- GL: 				engine -root -titles			    \n\
 - GL: 				flipscreen3d -root			    \n\
-  GL: 				gltext -root				    \n\
+- GL: 				gltext -root				    \n\
 - GL: 				menger -root				    \n\
 - GL: 				molecule -root				    \n\
 -				rotzoomer -root				    \n\
@@ -172,7 +172,7 @@ programs:								      \
 -				halftone -root				    \n\
 - GL: 				juggler3d -root				    \n\
 - GL: 				lavalite -root				    \n\
-				polyominoes -root			    \n\
+-				polyominoes -root			    \n\
 - GL: 				queens -root				    \n\
 - GL: 				sballs -root				    \n\
 - GL: 				spheremonics -root			    \n\
@@ -182,7 +182,7 @@ programs:								      \
 				apple2 -root				    \n\
 - GL: 				atunnel -root -light			    \n\
 -				barcode -root				    \n\
-  GL: 				blinkbox -root				    \n\
+- GL: 				blinkbox -root				    \n\
 - GL: 				blocktube -root -delay 48855		    \n\
 - GL: 				bouncingcow -root			    \n\
 -				cloudlife -root				    \n\
@@ -214,20 +214,20 @@ programs:								      \
 				interaggregate -root			    \n\
 -				intermomentary -root			    \n\
 -				memscroller -root			    \n\
-  GL: 				noof -root				    \n\
+- GL: 				noof -root				    \n\
 				pacman -root				    \n\
 - GL: 				pinion -root				    \n\
 - GL: 				polyhedra -root				    \n\
 - GL: 				providence -root			    \n\
 				substrate -root				    \n\
-				wormhole -root				    \n\
+-				wormhole -root				    \n\
 - GL: 				antmaze -root				    \n\
 - GL: 				boing -root -size 0.1476 -lighting	      \
 				  -no-scanlines				    \n\
 -				boxfit -root				    \n\
 - GL: 				carousel -root				    \n\
 -				celtic -root				    \n\
-  GL: 				crackberg -root -nsubdivs 4 -no-crack	      \
+- GL: 				crackberg -root -nsubdivs 4 -no-crack	      \
 				  -color plain				    \n\
 - GL: 				cube21 -root				    \n\
 -				fiberlamp -root				    \n\
@@ -259,8 +259,8 @@ programs:								      \
 - GL: 				geodesic -root				    \n\
 -				hexadrop -root				    \n\
 - GL: 				kaleidocycle -root			    \n\
-  GL: 				quasicrystal -root -contrast 14		    \n\
-  GL: 				unknownpleasures -root			    \n\
+- GL: 				quasicrystal -root -contrast 14		    \n\
+  GL: 				unknownpleasures -root -no-ortho	    \n\
 -				binaryring -root			    \n\
 - GL: 				cityflow -root -delay 0 -count 1256 -skew     \
 				  13 -wave-speed 17 -waves 9		    \n\
@@ -277,7 +277,7 @@ programs:								      \
 - GL: 				energystream -root			    \n\
 - GL: 				hexstrut -root				    \n\
 - GL: 				hydrostat -root				    \n\
-  GL: 				raverhoop -root				    \n\
+- GL: 				raverhoop -root				    \n\
 - GL: 				splodesic -root				    \n\
 - GL: 				unicrud -root				    \n\
 - GL: 				esper -root				    \n\
@@ -287,9 +287,9 @@ programs:								      \
 -				glitchpeg -root				    \n\
 - GL: 				handsy -root				    \n\
 - GL: 				maze3d -root				    \n\
-  GL: 				peepers -root				    \n\
+- GL: 				peepers -root				    \n\
 - GL: 				razzledazzle -root			    \n\
-				vfeedback -root -tv-color 281		    \n\
+-				vfeedback -root -tv-color 281		    \n\
 - GL: 				deepstars -root -smear 0.1		    \n\
 - GL: 				gravitywell -root			    \n\
 -				scooter -root -cycles 443 -count 31 -size     \
@@ -298,13 +298,13 @@ programs:								      \
 - GL: 				gibson -root				    \n\
 - GL: 				beats -root				    \n\
 - GL: 				covid19 -root				    \n\
-  GL: 				headroom -root -delay 16794 -speed 5.4656   \n\
+- GL: 				headroom -root -delay 16794 -speed 5.4656   \n\
 - GL: 				sphereeversion -root			    \n\
-				unicode -root				    \n\
-				binaryhorizon -root			    \n\
-				marbling -root				    \n\
-  GL: 				mapscroller -root			    \n\
-  GL: 				squirtorus -root			    \n\
+-				unicode -root				    \n\
+-				binaryhorizon -root			    \n\
+-				marbling -root				    \n\
+- GL: 				mapscroller -root			    \n\
+- GL: 				squirtorus -root			    \n\
 
 
 pointerHysteresis:  10
