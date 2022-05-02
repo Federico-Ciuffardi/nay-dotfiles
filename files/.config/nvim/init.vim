@@ -262,6 +262,13 @@ Plug 'airblade/vim-rooter'
 call plug#end()
 "}}}
 
+"""""""""""""
+" Comentary "
+"""""""""""""
+"{{{
+autocmd FileType vimwiki setlocal commentstring=<!---\ %s\ -->
+"}}}
+
 """"""""""
 " Rooter "
 """"""""""
@@ -440,6 +447,7 @@ autocmd BufNew,BufRead *.c,*.cpp setlocal foldmethod=indent
 autocmd BufNew,BufRead *.py setlocal foldmethod=indent
 autocmd BufNew,BufRead *.pas setlocal foldmethod=marker
 autocmd BufNew,BufRead *.vim setlocal foldmethod=marker
+autocmd BufNew,BufRead *.md setlocal foldmethod=marker
 autocmd BufEnter * silent! normal zO
 
 " FastFold base config
@@ -760,13 +768,17 @@ highlight Folded gui=bold guibg=#1E1E1E guifg=#5E5E5E
 "{{{
 
 let g:vimwiki_list = [{'path': '~/.local/share/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
+
 hi VimwikiHeader1 cterm=bold ctermfg=231
 hi VimwikiHeader2 cterm=bold ctermfg=231
 hi VimwikiHeader3 cterm=bold ctermfg=231
 hi VimwikiHeader4 cterm=bold ctermfg=231
 hi VimwikiHeader5 cterm=bold ctermfg=231
 hi VimwikiHeader6 cterm=bold ctermfg=231
+
 " hi VimwikiLink cterm=underline ctermfg=195 guifg=#52B6FF gui=underline
+
+let g:vimwiki_folding = 'custom'
 
 command TODO :F TODO ~/.local/share/vimwiki/* <cr>
 
