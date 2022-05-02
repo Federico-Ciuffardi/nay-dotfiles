@@ -4,14 +4,23 @@ from shutil import copyfile
 
 old_hook_init = ranger.api.hook_init
 
-def on_cd(s):
-    os.system("lwd save '" + s.new.path + "'")
-    # f = open(os.getenv("last_wd_file"), "w")
-    # f.write(s.new.path)
-    # f.close()
+
+
 
 def hook_init(fm):
+    def on_cd(s):
+        os.system("lwd save '" + s.new.path + "'")
+
+    def on_execute_before():
+        cwd = fm.thisdir
+        selected_files = cwd.get_selection()
+
+        for file in selected_files:
+            os.system("lwd save '" + file.path + "'")
+
+
     fm.signal_bind("cd", on_cd)
+    fm.signal_bind("execute.before", on_execute_before)
     # fm.notify("Hello World")
     return old_hook_init(fm)
 

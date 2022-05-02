@@ -240,7 +240,7 @@ bindkey -M vicmd "j" down-line-or-beginning-search
 # cd hook
 function chpwd() {
   lwd save
-  print -Pn "\e]0;`pwd`\a" 
+  set_terminal_title
 }
 
 # precm and preexec hooks
