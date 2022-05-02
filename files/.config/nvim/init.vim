@@ -7,6 +7,8 @@
 set autoindent
 set smarttab
 set incsearch
+:set fdo-=search
+
 set scrolloff=8
 set ignorecase 
 " set noswapfile
