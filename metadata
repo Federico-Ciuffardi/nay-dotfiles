@@ -119,3 +119,5 @@
 .config/picom/.old/picom.conf_0 644 fede fede
 .local/share/wallpaper/wallpaper_8 644 fede fede
 .config/btop/btop.conf 644 fede fede
+.config/task/taskrc 644 fede fede
+.config/task/hooks/on-modify.timewarrior 755 fede fede

@@ -27,7 +27,14 @@ class lwd_fzf(Command):
         stdout, stderr = fzf.communicate()
         if fzf.returncode == 0:
             fzf_file = os.path.abspath(stdout.rstrip('\n'))
-            self.fm.cd(fzf_file)
+            if os.path.isdir(fzf_file):
+                self.fm.cd(fzf_file)
+            else:
+                for comp in str.split(fzf_file,'/'):
+                    if len(comp) > 0 and comp[0] == '.':
+                        self.fm.set_option('show_hidden', True)
+                self.fm.select_file(fzf_file)
+                self.fm.execute_file(File(os.path.expanduser(fzf_file)))
 
 class fzf_select(Command):
     def execute(self):
@@ -41,10 +48,7 @@ class fzf_select(Command):
             depth = "10"
 
         # match only directories
-        command="find -L . -maxdepth "+depth+" \\( -path '*/' -o -fstype 'sysfs' -o -fstype 'devfs' -o -fstype 'devtmpfs' -o -fstype 'proc' \\) -prune \
-                 -o -type f -print \
-                 -o -type d -print \
-                 -o -type l -print 2> /dev/null | cut -b3- | tail -n +2 | fzf +m --height=100%"
+        command="sf "+depth
         fzf = self.fm.execute_command(command, universal_newlines=True, stdout=subprocess.PIPE)
         stdout, stderr = fzf.communicate()
         if fzf.returncode == 0:

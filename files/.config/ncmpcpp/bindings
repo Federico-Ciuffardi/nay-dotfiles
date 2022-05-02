@@ -180,7 +180,7 @@ def_key "q"
   show_media_library  
 
 def_key "a"
-  show_browser
+  add_item_to_playlist
 
 def_key "p"
   show_playlist
