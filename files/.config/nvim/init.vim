@@ -7,7 +7,6 @@
 set autoindent
 set smarttab
 set incsearch
-:set fdo-=search
 
 set scrolloff=8
 set ignorecase 
@@ -443,13 +442,13 @@ set foldmethod=marker
 
 " unfold on jump
 set foldopen+=block,hor,insert,jump,mark,search,tag,undo
+" set foldclose
 
 " set the fold method by filename
 autocmd BufNew,BufRead *.c,*.cpp setlocal foldmethod=indent
 autocmd BufNew,BufRead *.py setlocal foldmethod=indent
-autocmd BufNew,BufRead *.pas setlocal foldmethod=marker
-autocmd BufNew,BufRead *.vim setlocal foldmethod=marker
-autocmd BufNew,BufRead *.md setlocal foldmethod=marker
+autocmd BufNew,BufRead *.md setlocal foldopen=all
+autocmd BufNew,BufRead *.md setlocal foldclose=all
 autocmd BufEnter * silent! normal zO
 
 " FastFold base config
