@@ -19,17 +19,13 @@ unalternates *
 unset signature
 
 set query_command = "mail-query '%s' /home/fede/.local/share/mail/fciuffardi@fing.edu.uy"
-macro index S "<shell-escape>mymailsync fciuffardi@fing.edu.uy<enter>" "run mbsync to sync fciuffardi@fing.edu.uy"
 macro index \Cr "<shell-escape>mymailsync fciuffardi@fing.edu.uy<enter>" "run mbsync to sync fciuffardi@fing.edu.uy"
 macro index <F5> "<shell-escape>mymailsync fciuffardi@fing.edu.uy<enter>" "run mbsync to sync fciuffardi@fing.edu.uy"
 
 mailboxes "=Archive" "=Deleted" "=Drafts" "=INBOX" "=Junk" "=Notes" "=Outbox" "=Queue" "=Sent" "=Trash"
 macro index,pager ga "<change-folder>=Archive<enter>" "go to archive"
-macro index,pager Ma ";<save-message>=Archive<enter>" "move mail to archive"
 macro index,pager Ca ";<copy-message>=Archive<enter>" "copy mail to archive"
-macro index,pager ga "<change-folder>=Archives/2020<enter>" "go to archive"
-macro index,pager Ma ";<save-message>=Archives/2020<enter>" "move mail to archive"
-macro index,pager Ca ";<copy-message>=Archives/2020<enter>" "copy mail to archive"
+macro index,pager s ":set confirmappend=no delete=yes auto_tag=yes\n<save-message>=Archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
 set postponed = "+Drafts"
 macro index,pager gd "<change-folder>=Drafts<enter>" "go to drafts"
 macro index,pager Md ";<save-message>=Drafts<enter>" "move mail to drafts"
