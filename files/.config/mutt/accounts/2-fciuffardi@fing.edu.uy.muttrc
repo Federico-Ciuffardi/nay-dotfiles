@@ -25,7 +25,7 @@ macro index <F5> "<shell-escape>mymailsync fciuffardi@fing.edu.uy<enter>" "run m
 mailboxes "=Archive" "=Deleted" "=Drafts" "=INBOX" "=Junk" "=Notes" "=Outbox" "=Queue" "=Sent" "=Trash"
 macro index,pager ga "<change-folder>=Archive<enter>" "go to archive"
 macro index,pager Ca ";<copy-message>=Archive<enter>" "copy mail to archive"
-macro index,pager s ":set confirmappend=no delete=yes auto_tag=yes\n<save-message>=Archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
+macro index,pager S ":set confirmappend=no delete=yes auto_tag=yes\n<save-message>=Archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
 set postponed = "+Drafts"
 macro index,pager gd "<change-folder>=Drafts<enter>" "go to drafts"
 macro index,pager Md ";<save-message>=Drafts<enter>" "move mail to drafts"
