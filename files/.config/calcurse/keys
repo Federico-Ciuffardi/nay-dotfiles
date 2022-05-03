@@ -17,7 +17,7 @@ generic-copy  c
 generic-paste  p ^V 
 generic-change-view  TAB 
 generic-prev-view  KEY_BTAB 
-generic-import  i I 
+generic-import  I 
 generic-export  x X 
 generic-goto  g G 
 generic-other-cmd  o O 
@@ -50,7 +50,7 @@ view-item  v V RET
 pipe-item  | 
 flag-item  ! 
 repeat  r 
-edit-note  n N 
+edit-note  n N i 
 view-note  > 
 raise-priority  + 
 lower-priority  - 
