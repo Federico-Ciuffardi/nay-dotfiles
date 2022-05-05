@@ -52,13 +52,13 @@ print(json.dumps(new))
 
 def extract_tags_from(json_obj):
     # Extract attributes for use as tags.
-    tags = ["d:"+json_obj['description']]
+    tags = ["d|"+json_obj['description']]
 
     if 'project' in json_obj:
-        tags.append("P:"+json_obj['project'])
+        tags.append("P|"+json_obj['project'])
 
     if 'tags' in json_obj:
-        tags.extend(list(map(lambda s: "T:"+s,json_obj['tags'])))
+        tags.extend(list(map(lambda s: "T|"+s,json_obj['tags'])))
 
     return tags
 

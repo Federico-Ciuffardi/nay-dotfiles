@@ -37,3 +37,15 @@ include dark-blue-256.theme
 #include no-color.theme
 
 news.version=2.6.0
+
+uda.taskwarrior-tui.shortcuts.1=rund dmenu_task_add
+uda.taskwarrior-tui.shortcuts.2=rund dmenu_task_add
+uda.taskwarrior-tui.shortcuts.3=rund dmenu_task_add
+uda.taskwarrior-tui.shortcuts.4=rund dmenu_task_add
+uda.taskwarrior-tui.shortcuts.5=rund dmenu_task_add
+uda.taskwarrior-tui.shortcuts.6=rund dmenu_timew_start
+uda.taskwarrior-tui.shortcuts.7=rund dmenu_timew_start
+uda.taskwarrior-tui.shortcuts.8=rund dmenu_timew_start
+uda.taskwarrior-tui.shortcuts.9=rund dmenu_timew_start
+uda.taskwarrior-tui.keyconfig.shortcut8=n
+uda.taskwarrior-tui.keyconfig.shortcut.8=n

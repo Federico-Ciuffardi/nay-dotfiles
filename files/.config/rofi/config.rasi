@@ -2,7 +2,7 @@
 
 configuration {
   /* location: 2; */
-  modi: "window,drun";
+  modi: "window,drun,run";
   fixed-num-lines: false;
   display-window: "缾";
   display-run: "";
