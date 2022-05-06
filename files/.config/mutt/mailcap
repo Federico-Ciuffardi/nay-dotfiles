@@ -9,5 +9,8 @@ application/postscript ; /usr/bin/xdg-open %s
 text/html; firefox --new-window %s
 
 text/plain; nvim %s
+
+text/calendar; calcurse-import %s
+
 # text/html; firefox --new-window %s & sleep 1; test=test -n "$DISPLAY"; nametemplate=%s.html; copiousoutput
 # text/html; w3m -I %{charset} -T text/html; copiousoutput;

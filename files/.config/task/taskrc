@@ -36,6 +36,16 @@ include dark-blue-256.theme
 #include solarized-light-256.theme
 #include no-color.theme
 
+uda.priority.values=C,H,M,L,O
+
+color.uda.priority.C=color214
+color.uda.priority.H=color220
+color.uda.priority.M=color221
+color.uda.priority.L=color222
+color.uda.priority.O=color248
+urgency.uda.priority.C.coefficient=10.0
+urgency.uda.priority.O.coefficient=0.5
+
 news.version=2.6.0
 
 uda.taskwarrior-tui.shortcuts.1=rund dmenu_task_add
