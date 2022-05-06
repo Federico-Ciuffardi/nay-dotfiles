@@ -121,3 +121,4 @@
 .config/btop/btop.conf 644 fede fede
 .config/task/taskrc 644 fede fede
 .config/task/hooks/on-modify.timewarrior 755 fede fede
+.config/ncmpcpp/patterns.list 644 fede fede
