@@ -1,40 +1,17 @@
-# [Created by task 2.6.2 4/23/2022 16:20:29]
-# Taskwarrior program configuration file.
-# For more documentation, see https://taskwarrior.org or try 'man task', 'man task-color',
-# 'man task-sync' or 'man taskrc'
-
-# Here is an example of entries that use the default, override and blank values
-#   variable=foo   -- By specifying a value, this overrides the default
-#   variable=      -- By specifying no value, this means no default
-#   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
-
-# You can also refence environment variables:
-#   variable=$HOME/task
-#   variable=$VALUE
-
-# Use the command 'task show' to see all defaults and overrides
-
-weekstart=Monday
-
-# Files
+########
+# PATH #
+########
 data.location=~/.local/share/task
 hooks.location=~/.config/task/hooks
 
-# Color theme (uncomment one to use)
-#include light-16.theme
-#include light-256.theme
-#include dark-16.theme
-#include dark-256.theme
-#include dark-red-256.theme
-#include dark-green-256.theme
-include dark-blue-256.theme
-#include dark-violets-256.theme
-#include dark-yellow-green.theme
-#include dark-gray-256.theme
-#include dark-gray-blue-256.theme
-#include solarized-dark-256.theme
-#include solarized-light-256.theme
-#include no-color.theme
+########
+# MISC #
+########
+weekstart=Monday
+
+############
+# PRIORITY #
+############
 
 uda.priority.values=C,H,M,L,O
 
@@ -59,3 +36,81 @@ uda.taskwarrior-tui.shortcuts.8=rund dmenu_timew_start
 uda.taskwarrior-tui.shortcuts.9=rund dmenu_timew_start
 uda.taskwarrior-tui.keyconfig.shortcut8=n
 uda.taskwarrior-tui.keyconfig.shortcut.8=n
+
+#########
+# THEME #
+#########
+
+rule.precedence.color=deleted,completed,active,recurring,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,tagged,uda.
+
+# General decoration
+color.label=
+color.label.sort=
+color.alternate=on gray2
+color.header=rgb013
+color.footnote=rgb013
+color.warning=bold red
+color.error=white on red
+color.debug=rgb013
+
+# Task state
+color.completed=color119
+color.deleted=color1
+color.active=color0 on color77
+color.recurring=color163
+color.scheduled=on rgb012
+color.until=
+color.blocked=white on rgb001
+color.blocking=white on rgb002
+
+# Project
+color.project.none=
+
+# Priority
+color.uda.priority.C=color214
+color.uda.priority.H=color220
+color.uda.priority.M=color221
+color.uda.priority.L=color228
+color.uda.priority.O=color248
+
+# Tags
+color.tag.next=rgb550
+color.tag.none=
+color.tagged=
+
+# Due
+color.due.today=color208
+color.due=color215
+color.overdue=color9
+
+# Report: burndown
+color.burndown.done=on gray4
+color.burndown.pending=on rgb004
+color.burndown.started=on rgb015
+
+# Report: history
+color.history.add=color0 on rgb015
+color.history.delete=color0 on rgb035
+color.history.done=color0 on rgb025
+
+# Report: summary
+color.summary.background=on color235
+color.summary.bar=on color119 
+
+# Command: calendar
+color.calendar.due.today=color0 on color216
+color.calendar.due=color0 on color215
+color.calendar.holiday=color255 on rgb013
+color.calendar.overdue=color0 on color9
+color.calendar.today=color0 on rgb115
+color.calendar.weekend=on color235
+color.calendar.weeknumber=rgb015
+
+# Command: sync
+color.sync.added=gray4
+color.sync.changed=rgb015
+color.sync.rejected=rgb004
+
+# Command: undo
+color.undo.after=rgb035
+color.undo.before=rgb013

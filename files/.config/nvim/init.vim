@@ -770,12 +770,15 @@ highlight Folded gui=bold guibg=#1E1E1E guifg=#5E5E5E
 
 let g:vimwiki_list = [{'path': '~/.local/share/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
 
-hi VimwikiHeader1 cterm=bold ctermfg=231
-hi VimwikiHeader2 cterm=bold ctermfg=231
-hi VimwikiHeader3 cterm=bold ctermfg=231
-hi VimwikiHeader4 cterm=bold ctermfg=231
-hi VimwikiHeader5 cterm=bold ctermfg=231
-hi VimwikiHeader6 cterm=bold ctermfg=231
+hi VimwikiHeader1 cterm=bold ctermfg=39
+hi VimwikiHeader2 cterm=bold ctermfg=75
+hi VimwikiHeader3 cterm=bold ctermfg=81
+hi VimwikiHeader4 cterm=bold ctermfg=117
+hi VimwikiHeader5 cterm=bold ctermfg=159
+hi VimwikiHeader6 cterm=bold ctermfg=195
+
+hi VimwikiList cterm=bold ctermfg=255
+hi VimwikiHeaderChar cterm=bold ctermfg=252
 
 " hi VimwikiLink cterm=underline ctermfg=195 guifg=#52B6FF gui=underline
 
