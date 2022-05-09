@@ -24,6 +24,7 @@ def hook_shift_recurrence(task):
     if is_new_local_recurrence_child_task(task):
         parent = tw.tasks.get(uuid=task['parent']['uuid'])
         parent_due_shift = task['due'] - parent['due']
+        parent['until'] += parent_due_shift
         for attr in time_attributes:
             if parent[attr]:
                 task[attr] = parent[attr] + parent_due_shift
