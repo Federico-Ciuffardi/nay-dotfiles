@@ -126,3 +126,5 @@
 .config/task/hooks/shift-recurrence/pirate_add_shift_recurrence.py 644 fede fede
 .config/task/hooks/on-modify-pirate 755 fede fede
 .config/task/hooks/on-add-pirate 755 fede fede
+.config/task/pending.data 644 fede fede
+.config/task/completed.data 644 fede fede
