@@ -27,4 +27,4 @@ def hook_shift_recurrence(task):
         for attr in time_attributes:
             if parent[attr]:
                 task[attr] = parent[attr] + parent_due_shift
-        # parent['until'] += parent_due_shift
+        parent['until'] = task['until']
