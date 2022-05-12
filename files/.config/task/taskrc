@@ -41,7 +41,7 @@ uda.taskwarrior-tui.keyconfig.shortcut.8=n
 # THEME #
 #########
 
-rule.precedence.color=deleted,completed,active,recurring,keyword.,tag.,project.,overdue,scheduled,due.today,due,blocked,blocking,tagged,uda.
+rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,recurring,blocked,blocking,tagged,uda.
 
 # General decoration
 color.label=
