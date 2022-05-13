@@ -4,7 +4,7 @@ import sys
 import os
 from tasklib import TaskWarrior
 
-time_attributes = ('wait', 'scheduled', 'until')
+time_attributes = ('wait', 'scheduled')
 
 def is_new_local_recurrence_child_task(task):
     # Do not affect tasks not spun by recurrence
@@ -17,7 +17,7 @@ def is_new_local_recurrence_child_task(task):
     if (task['modified'] - task['entry']).total_seconds() < 0:
         return True
 
-tw = TaskWarrior(data_location=os.getenv('HOME')+"/.local/share/task")
+tw = TaskWarrior(data_location=os.getenv('HOME')+"/.local/share/task") # modified because https://github.com/tbabej/task.shift-recurrence/issues/15
 tw.overrides.update(dict(recurrence="no", hooks="no"))
 
 def hook_shift_recurrence(task):
@@ -27,4 +27,7 @@ def hook_shift_recurrence(task):
         for attr in time_attributes:
             if parent[attr]:
                 task[attr] = parent[attr] + parent_due_shift
-        parent['until'] = task['until']
+        # if parent until is not modified the recurrent task will be deleted 
+        # this fix forces: until = due
+        parent['until'] = task['due']
+        task['until']   = task['due']
