@@ -31,4 +31,4 @@ def hook_shift_recurrence(task):
         # this fix forces: until = due
         task['until']   = task['due']
         parent['until'] = task['due']
-        parent.save()
+        tw.save_task(parent)
