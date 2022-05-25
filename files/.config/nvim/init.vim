@@ -447,8 +447,8 @@ set foldopen+=block,hor,insert,jump,mark,search,tag,undo
 " set the fold method by filename
 autocmd BufNew,BufRead *.c,*.cpp setlocal foldmethod=indent
 autocmd BufNew,BufRead *.py setlocal foldmethod=indent
-autocmd BufNew,BufRead *.md setlocal foldopen=all
-autocmd BufNew,BufRead *.md setlocal foldclose=all
+" autocmd BufNew,BufRead *.md setlocal foldopen=all
+" autocmd BufNew,BufRead *.md setlocal foldclose=all
 autocmd BufEnter * silent! normal zO
 
 " FastFold base config
