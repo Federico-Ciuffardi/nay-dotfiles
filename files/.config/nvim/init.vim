@@ -3,55 +3,34 @@
 """"""""
 "{{{
 
-" misc 
+" space as leader
+noremap <Space> <Nop>
+let mapleader = "\<Space>"
+
+" misc
+set nocompatible
+syntax on
+"" set noswapfile
+"" filetype plugin on
+
+" indentation
 set autoindent
 set smarttab
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set breakindent
+set breakindentopt=shift:2
+
+" search
 set incsearch
-
-set scrolloff=8
 set ignorecase 
-" set noswapfile
-set nocompatible
-filetype plugin on
-syntax on
 
-"spellcheck
-set spelllang=en,es
-autocmd BufNew,BufRead,BufNewFile /tmp/neomutt-* setlocal spell
-autocmd BufNew,BufRead,BufNewFile *.Tex set spell
-let g:vimtex_quickfix_ignore_filters = [
-      \ 'Underfull',
-      \ 'Overfull',
-      \ 'Package beamerthememetropolis',
-      \ 'Unused global option',
-      \ 'Package hyperref Warning: Token not allowed in a PDF string (Unicode):',
-      \]
-
-
-" Compile .tex
-autocmd BufEnter *.tex VimtexCompile
-let g:vimtex_view_general_viewer = 'okular'
-let g:vimtex_view_enabled = 0
-
-" limit the width of text to 72 characters when editing a mail on neomutt
-autocmd BufNew,BufRead,BufNewFile /tmp/neomutt-* set tw=72
+" movement
+set scrolloff=8
 
 " vertical line mark
 set colorcolumn=90
-
-" refresh on file changes
-"" Triger `autoread` when files changes on disk
-autocmd WinEnter,FocusGained,BufEnter,CursorHold,CursorHoldI *
-        \ if mode() !~ '\v(c|r.?|!|t)' && getcmdwintype() == '' | checktime | endif
-
-"" Notification after file change
-autocmd FileChangedShellPost *
-        \  echo "File updated." | echohl None
-
-set tabstop=2
-" tab char
-set shiftwidth=2
-set expandtab
 
 " Mouse support
 set mouse=a
@@ -68,10 +47,26 @@ set clipboard=unnamedplus
 " move to start of the line
 set startofline
 
+" limit the width of text to 72 characters when editing a mail on neomutt
+autocmd BufNew,BufRead,BufNewFile /tmp/neomutt-* set tw=72
+
+"spellcheck
+set spelllang=en,es
+autocmd BufNew,BufRead,BufNewFile /tmp/neomutt-* setlocal spell
+autocmd BufNew,BufRead,BufNewFile *.Tex set spell
+
+" refresh on file changes
+"" Triger `autoread` when files changes on disk
+autocmd WinEnter,FocusGained,BufEnter,CursorHold,CursorHoldI *
+        \ if mode() !~ '\v(c|r.?|!|t)' && getcmdwintype() == '' | checktime | endif
+
+"" Notification after file change
+autocmd FileChangedShellPost *
+        \  echo "File updated." | echohl None
+
 " Enable autocompletion:
 set wildoptions+=pum
 set wildmode=longest:full,full
-" set wildmode=longest,list,full
 
 " Disables automatic commenting on newline:
 augroup NoCommentOnNewLine 
@@ -123,10 +118,6 @@ endif
 
 noremap <S-Q> q
 
-" space as leader
-noremap <Space> <Nop>
-let mapleader = "\<Space>"
-
 " swap g<command> and <command> 
 nnoremap j gj
 nnoremap k gk
@@ -177,23 +168,13 @@ inoremap ! !<C-g>u
 inoremap ? ?<C-g>u
 inoremap <Space> <Space><C-g>u
 
-" Moving text
-vnoremap<silent> <C-K> :m '<-2<CR>gv=gv
-vnoremap<silent> <C-J> :m '>+1<CR>gv=gv
-" inoremap<silent> <C-K> <esc>:m .-2<CR>==i
-" inoremap<silent> <C-J> <esc>:m .+1<CR>==i
-" nnoremap<silent> <C-K> :m .-2<CR>==
-" nnoremap<silent> <C-J> :m .+1<CR>==
-
 " Word replace
 nnoremap cn *``cgn
 nnoremap cN *``cgN
 
-" W
-set breakindent
-set breakindentopt=shift:2
-" set showbreak=\\\\\
-" set showbreak=↳
+" improve command line
+nnoremap : :<C-f>i
+
 "}}}
 
 """""""""""""""""""""
@@ -282,7 +263,6 @@ let g:rooter_targets = '
 
 let g:rooter_patterns = ['.git', '=src']
 "}}}
-
 
 """"""""""""""
 " Easymotion "
@@ -703,6 +683,26 @@ nmap <silent><C-C> :call coc#float#close_all() <CR>
 
 " :nnoremap <C-E> :CocCommand explorer<CR>
 " autocmd BufEnter * if (winnr("$") == 1 &&  &filetype == 'coc-explorer') | q | endif
+
+"}}}
+
+""""""""""
+" vimtex "
+""""""""""
+"{{{
+
+let g:vimtex_quickfix_ignore_filters = [
+      \ 'Underfull',
+      \ 'Overfull',
+      \ 'Package beamerthememetropolis',
+      \ 'Unused global option',
+      \ 'Package hyperref Warning: Token not allowed in a PDF string (Unicode):',
+      \]
+
+" Compile .tex
+autocmd BufEnter *.tex VimtexCompile
+let g:vimtex_view_general_viewer = 'okular'
+let g:vimtex_view_enabled = 0
 
 "}}}
 
