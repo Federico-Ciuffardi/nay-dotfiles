@@ -90,10 +90,10 @@ augroup END
 set hidden
 
 "" Go to the previous buffer open
-nmap K :bprev<cr>
+noremap K :bprev<cr>
 
 "" Go to the next buffer open
-nmap J :bnext<cr>
+noremap J :bnext<cr>
 
 "" close on no buffer
 autocmd BufEnter * if (winnr("$") == 0) | q | endif
