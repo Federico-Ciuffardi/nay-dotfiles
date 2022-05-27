@@ -28,7 +28,7 @@ def hook_shift_recurrence(task):
             if parent[attr]:
                 task[attr] = parent[attr] + parent_due_shift
         # if parent until is not modified the recurrent task will be deleted 
-        # this fix forces: until = due
-        task['until']   = task['due']
-        parent['until'] = task['due']
-        tw.save_task(parent)
+        # this fix forces: parent['until'] = task['until'] = task['due']
+        task['until'] = task['due']
+        # parent['until'] = task['due']
+        # tw.save_task(parent)
