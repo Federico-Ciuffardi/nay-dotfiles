@@ -174,6 +174,7 @@ nnoremap cN *``cgN
 
 " improve command line
 nnoremap : :<C-f>i
+nnoremap <C-;> :
 
 "}}}
 
