@@ -24,7 +24,7 @@ set breakindentopt=shift:2
 
 " search
 set incsearch
-set ignorecase 
+" set ignorecase 
 
 " movement
 set scrolloff=8
