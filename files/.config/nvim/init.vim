@@ -261,7 +261,7 @@ let g:rooter_targets = '
 \*.gd
 \'
 
-let g:rooter_patterns = ['.git', '=src']
+let g:rooter_patterns = ['.git']
 "}}}
 
 """"""""""""""
