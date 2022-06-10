@@ -1,9 +1,8 @@
 {
   "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
   "suggest.noselect": false,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "haskell"
-  ],
+  "coc.preferences.semanticTokensHighlights": false, 
+  "coc.preferences.formatOnSaveFiletypes": ["cpp"],
   "languageserver": {
     "haskell": {
       "command": "haskell-language-server-wrapper",
@@ -22,6 +21,8 @@
       "rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"]
     }
   },
+  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/14.0.3/clangd_14.0.3/bin/clangd",
+  "clangd.arguments": ["--header-insertion=never", "--clang-tidy"],
 	"list.insertMappings": {
 		"<C-r>": "do:refresh",
 		"<C-f>": "feedkeys:\\<C-f>",
@@ -29,70 +30,5 @@
 		"<C-n>": "normal:j",
 		"<C-p>": "normal:k",
 		"<C-t>": "action:tabe"
-	},
-  "coc.preferences.semanticTokensHighlights": false, 
-  "explorer.icon.enableNerdfont": true,
-  "explorer.quitOnOpen": false,
-  "explorer.position": "left",
-  "explorer.file.showHiddenFiles": true,
-  "explorer.file.column.clip.copy": "",
-  "explorer.file.column.clip.cut": "",
-  "explorer.width": 30,
-  "explorer.keyMappings.global": {
-    "gk": "expandablePrev",
-    "gj": "expandableNext",
-
-    "<space>": "toggleSelection",
-    "<tab>": "actionMenu",
-
-    "h": "collapse",
-    "K": ["toggleSelection", "nodePrev"],
-    "<2-LeftMouse>": [
-      "expandable?",
-      ["expanded?", "collapse", "expand"],
-      "open"
-    ],
-    "o": ["expanded?", "collapse", "expand"],
-    "<cr>": ["expandable?", "cd", "open"],
-    "L": "open:vsplit",
-    "l": ["expandable?", "cd", "open"],
-    "<bs>": "gotoParent",
-    "gp": "preview:labeling",
-
-    "Y": "copyFile",
-    "X": "cutFile",
-    "P": "pasteFile",
-    "dd": "delete",
-
-    "T": "addFile",
-    "D": "addDirectory",
-    "r": "rename",
-
-    ".": "toggleHidden",
-    "R": "refresh",
-
-    "?": "help",
-    "q": "quit",
-    "<esc>": "esc",
-    "!": "systemExecute",
-    "gd": "listDrive",
-
-    "f": "search",
-    "F": "searchRecursive",
-
-    "gf": "gotoSource:file",
-    "gb": "gotoSource:buffer",
-
-    "[[": "sourcePrev",
-    "]]": "sourceNext",
-
-    "[d": "diagnosticPrev",
-    "]d": "diagnosticNext",
-
-    "[c": "gitPrev",
-    "]c": "gitNext",
-    "<<": "gitStage",
-    ">>": "gitUnstage"
-  },
-  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/14.0.3/clangd_14.0.3/bin/clangd"
+	}
 }

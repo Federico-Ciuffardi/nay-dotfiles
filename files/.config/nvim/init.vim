@@ -30,7 +30,7 @@ set incsearch
 set scrolloff=8
 
 " vertical line mark
-set colorcolumn=90
+set colorcolumn=80
 
 " Mouse support
 set mouse=a
@@ -116,7 +116,10 @@ if !exists('g:vscode')
   nnoremap <silent> q :call CondQuit()<CR>
 endif
 
-noremap <S-Q> q
+" marks and others
+nnoremap m q
+nnoremap M m
+nnoremap gm `
 
 " swap g<command> and <command> 
 nnoremap j gj
@@ -830,7 +833,7 @@ inoremap <C-E> <C-O>$a
 inoremap <C-C> <ESC>
 
 " J to M
-nnoremap M J
+nnoremap <C-Enter> J
 
 " double esc removes hl
 nmap <ESC><ESC> :silent! nohl<CR>
