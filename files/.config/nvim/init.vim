@@ -258,11 +258,10 @@ autocmd FileType vimwiki setlocal commentstring=<!---\ %s\ -->
 " Rooter "
 """"""""""
 "{{{
-let g:rooter_targets = '
-\*.c,*.h,
-\*.cpp,*.hpp
-\*.gd
-\'
+" \*.c,*.h,
+" \*.cpp,*.hpp
+" \*.gd
+let g:rooter_targets = '*'
 
 let g:rooter_patterns = ['.git']
 "}}}
