@@ -1,5 +1,5 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-settings 6.03 for fede on Sun May  1 03:00:45 2022.
+# Written by xscreensaver-settings 6.04 for fede on Sun Jun 12 17:33:26 2022.
 # https://www.jwz.org/xscreensaver/
 
 timeout:	0:15:00
@@ -305,6 +305,8 @@ programs:								      \
 -				marbling -root				    \n\
 - GL: 				mapscroller -root			    \n\
 - GL: 				squirtorus -root			    \n\
+  GL: 				chompytower -root			    \n\
+  GL: 				nakagin -root				    \n\
 
 
 pointerHysteresis:  10
