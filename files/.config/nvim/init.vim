@@ -121,6 +121,9 @@ nnoremap m q
 nnoremap M m
 nnoremap gm `
 
+" J to M
+nnoremap H J
+
 " swap g<command> and <command> 
 nnoremap j gj
 nnoremap k gk
@@ -441,7 +444,7 @@ let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 " Bindings
 "" toggle fold with L or H
 nnoremap L zA
-nnoremap H zA
+" nnoremap H zA
 "" close fold with H and open with L
 " nnoremap L zO
 " nnoremap H zC
@@ -830,9 +833,6 @@ inoremap <silent> <C-S> <C-O>:call Save()<CR>
 inoremap <C-A> <C-O>^i
 inoremap <C-E> <C-O>$a
 inoremap <C-C> <ESC>
-
-" J to M
-nnoremap <C-Enter> J
 
 " double esc removes hl
 nmap <ESC><ESC> :silent! nohl<CR>
