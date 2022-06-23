@@ -576,7 +576,7 @@ vnoremap <silent> <leader>r :Farr<cr>
 "" coc extensions
 let g:coc_global_extensions = [
       \ 'coc-clangd',
-      \ 'coc-python',
+      \ 'coc-pyright',
       \ 'coc-vimtex',
       \ 'coc-snippets',
       \ 'coc-rust-analyzer',
