@@ -36,6 +36,8 @@ zinit light zdharma-continuum/fast-syntax-highlighting
 
 source ~/.profile
 
+[ -f /.dockerenv ] && TERM="xterm-256color"
+
 # FZF
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 
