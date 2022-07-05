@@ -2,7 +2,7 @@
   "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
   "suggest.noselect": false,
   "coc.preferences.semanticTokensHighlights": false, 
-  "coc.preferences.formatOnSaveFiletypes": ["python"],
+  "coc.preferences.formatOnSaveFiletypes": ["python","cpp"],
   "languageserver": {
     "haskell": {
       "command": "haskell-language-server-wrapper",
