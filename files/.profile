@@ -83,7 +83,7 @@ export LESS="-RF"
 
 # go
 export GOROOT="$HOME/.local/share/go"
-export GOPATH="$GOROOT/bin"
+# export GOPATH="$GOROOT/bin"
 
 #}}}
 
