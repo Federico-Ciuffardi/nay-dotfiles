@@ -13,15 +13,17 @@ weekstart=Monday
 # PRIORITY #
 ############
 
-uda.priority.values=C,H,M,L,O
+uda.priority.values=C,H,M,L,N
 
-color.uda.priority.C=color214
-color.uda.priority.H=color220
+urgency.uda.priority.C.coefficient=10.0
+urgency.uda.priority.N.coefficient=-1.0
+
+color.uda.priority.C=color196
+color.uda.priority.H=color208
 color.uda.priority.M=color221
 color.uda.priority.L=color222
-color.uda.priority.O=color248
-urgency.uda.priority.C.coefficient=10.0
-urgency.uda.priority.O.coefficient=0.5
+color.uda.priority.N=color248
+
 
 news.version=2.6.0
 
@@ -41,7 +43,7 @@ uda.taskwarrior-tui.keyconfig.shortcut.8=n
 # THEME #
 #########
 
-rule.precedence.color=deleted,completed,active,keyword.,tag.,project.,overdue,scheduled,due.today,due,recurring,blocked,blocking,tagged,uda.
+rule.precedence.color=deleted,completed,active,overdue,uda.,due.today,due,keyword.,tag.,project.,scheduled,blocked,blocking,tagged,recurring
 
 # General decoration
 color.label=
@@ -58,20 +60,20 @@ color.completed=color119
 color.deleted=color1
 color.active=color0 on color77
 color.recurring=color163
-color.scheduled=on rgb012
+color.scheduled=
 color.until=
-color.blocked=white on rgb001
-color.blocking=white on rgb002
+# color.blocked=white on rgb001
+# color.blocking=white on rgb002
 
 # Project
 color.project.none=
 
 # Priority
-color.uda.priority.C=color214
-color.uda.priority.H=color220
-color.uda.priority.M=color221
-color.uda.priority.L=color228
-color.uda.priority.O=color248
+# color.uda.priority.C=color214
+# color.uda.priority.H=color220
+# color.uda.priority.M=color221
+# color.uda.priority.L=color228
+# color.uda.priority.O=color248
 
 # Tags
 color.tag.next=rgb550
@@ -94,8 +96,8 @@ color.history.delete=color0 on rgb035
 color.history.done=color0 on rgb025
 
 # Report: summary
-color.summary.background=on color235
-color.summary.bar=on color119 
+# color.summary.background=on color235
+# color.summary.bar=on color119 
 
 # Command: calendar
 color.calendar.due.today=color0 on color216

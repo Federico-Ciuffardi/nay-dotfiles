@@ -86,10 +86,10 @@ handle_extension() {
             ## Preview as markdown conversion
             pandoc -s -t markdown -- "${FILE_PATH}" && exit 5
             exit 1;;
-        ods|odp)
-            ## Preview as text conversion (unsupported by pandoc for markdown)
-            odt2txt "${FILE_PATH}" && exit 5
-            exit 1;;
+        # ods|odp)
+        #     ## Preview as text conversion (unsupported by pandoc for markdown)
+        #     odt2txt "${FILE_PATH}" && exit 5
+        #     exit 1;;
         ## XLSX
         xlsx)
             ## Preview as csv conversion
