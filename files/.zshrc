@@ -1,3 +1,8 @@
+##########
+# termux #
+##########
+ls / &>/dev/null || termux-chroot
+
 ###########
 # Plugins #
 ###########
