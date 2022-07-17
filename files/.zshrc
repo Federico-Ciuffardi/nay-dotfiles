@@ -1,11 +1,13 @@
 ##########
 # termux #
 ##########
+
+if ! ls / &>/dev/null ; then
+  termux-chroot
+  exit 0
+fi
+
 if [ "$(cat /etc/hostname)" = "Termux" ] ; then
-  if ! ls / &>/dev/null ; then
-    termux-chroot
-    exit 0
-  fi
   GPG_TTY=$(tty)
   unset LD_PRELOAD
 fi
