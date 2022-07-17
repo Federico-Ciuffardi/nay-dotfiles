@@ -82,7 +82,7 @@ export QT_QPA_PLATFORMTHEME="qt5ct" # qt theming with qt5ct
 export LESS="-RF"
 
 # go
-export GOROOT="$HOME/.local/share/go"
+# export GOROOT="$HOME/.local/share/go"
 # export GOPATH="$GOROOT/bin"
 
 #}}}
