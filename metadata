@@ -1,130 +1,130 @@
-.Xresources 644 fede fede
-.config/Xmodmap 644 fede fede
-.config/alacritty/alacritty.yml 644 fede fede
-.config/aliasrc 644 fede fede
-.config/bspwm/bspwmrc 755 fede fede
-.config/conky/conky.conf 644 fede fede
-.config/conky/conky.conf1 644 fede fede
-.config/desmume/Castlevania_Dawn_of_Sorrow.dsv 644 fede fede
-.config/desmume/Castlevania_Order_of_Ecclesia.dsv 644 fede fede
-.config/desmume/config 644 fede fede
-.config/desmume/config.cfg 644 fede fede
-.config/dunst/dunstrc 644 fede fede
-.config/dunst/notification_sound 755 fede fede
-.config/i3/config 644 fede fede
-.config/i3/config.save 644 fede fede
-.config/i3/config.save.1 644 fede fede
-.config/i3blocks/config 644 fede fede
-.config/kitty/kitty.conf 644 fede fede
-.config/lf/draw_img 755 fede fede
-.config/lf/image 755 fede fede
-.config/lf/lfrc 644 fede fede
-.config/lf/preview 755 fede fede
-.config/lf/scope 644 fede fede
-.config/mimeapps.list 664 fede fede
-.config/mutt/.mailsynclastrun 644 fede fede
-.config/mutt/accounts/1-federico.ciuffardi@outlook.com.muttrc 644 fede fede
-.config/mutt/filepicker 644 fede fede
-.config/mutt/mailcap 644 fede fede
-.config/mutt/muttrc 644 fede fede
-.config/newsboat/config 644 fede fede
-.config/newsboat/urls 644 fede fede
-.config/nvim/coc-settings.json 644 fede fede
-.config/nvim/init.vim 644 fede fede
-.config/parcellite/parcelliterc 644 fede fede
-.config/picom/picom.conf 644 fede fede
-.config/polybar/config 644 fede fede
-.config/qutebrowser/autoconfig.yml 644 fede fede
-.config/qutebrowser/bookmarks/urls 644 fede fede
-.config/qutebrowser/config.py 644 fede fede
-.config/qutebrowser/quickmarks 644 fede fede
-.config/ranger/commands.py 644 fede fede
-.config/ranger/defaults/commands_full.py 644 fede fede
-.config/ranger/defaults/rc.conf.def 644 fede fede
-.config/ranger/plugins/__init__.py 644 fede fede
-.config/ranger/plugins/ranger_devicons/__init__.py 644 fede fede
-.config/ranger/plugins/ranger_devicons/devicons.py 644 fede fede
-.config/ranger/plugins/update_last_wd.py 644 fede fede
-.config/ranger/rc.conf 644 fede fede
-.config/ranger/rifle.conf 644 fede fede
-.config/ranger/scope.sh 755 fede fede
-.config/redshift/redshift.conf 644 fede fede
-.config/rofi/Arc-Dark-transparency.rasi 644 fede fede
-.config/rofi/config.rasi 644 fede fede
-.config/rofi/launcher.rasi 644 fede fede
-.config/sxhkd/sxhkdrc 644 fede fede
-.config/sxiv/exec/key-handler 744 fede fede
-.config/termite/config 644 fede fede
-.config/tridactyl/themes/base16-grayscale-dark.css 644 fede fede
-.config/tridactyl/tridactylrc 644 fede fede
-.config/urlscan/config.json 644 fede fede
-.config/user-dirs.dirs 600 fede fede
-.config/xmobar/trayer-padding-icon.sh 755 fede fede
-.config/xmobar/xmobarrc0 755 fede fede
-.config/xmobar/xmobarrc1 755 fede fede
-.config/zathura/zathurarc 644 fede fede
-.haskeline 644 fede fede
-.mozilla/firefox/custom_config/chrome/chrome/numbered_tabs.css 644 fede fede
-.mozilla/firefox/custom_config/chrome/chrome/remove_fs_transition.css 644 fede fede
-.mozilla/firefox/custom_config/chrome/content/css_scrollbar_width_color.css 644 fede fede
-.mozilla/firefox/custom_config/chrome/userChrome.css 644 fede fede
-.mozilla/firefox/custom_config/chrome/userContent.css 644 fede fede
-.mozilla/firefox/custom_config/search.json.mozlz4 644 fede fede
-.mozilla/firefox/custom_config/user.js 644 fede fede
-.profile 644 fede fede
-.tmux.conf 644 fede fede
-.xinitrc 644 fede fede
-.xprofile 644 fede fede
-.xscreensaver 644 fede fede
-.zprofile 644 fede fede
-.zshrc 644 fede fede
-.config/mpv/mpv.conf 644 fede fede
-.local/share/nvim/site/spell/es.utf-8.spl 644 fede fede
-.local/share/nvim/site/spell/es.utf-8.sug 644 fede fede
-.gnupg/dirmngr.conf 644 fede fede
-.gnupg/gpg-agent.conf 644 fede fede
-.config/flameshot/flameshot.ini 644 fede fede
-.config/mpv/input.conf 644 fede fede
-.local/share/nvim/site/autoload/plug.vim 644 fede fede
-.mbsyncrc 644 fede fede
-.config/msmtp/config 644 fede fede
-.config/mutt/accounts/2-fciuffardi@fing.edu.uy.muttrc 644 fede fede
-.config/ncmpcpp/bindings 664 fede fede
-.config/ncmpcpp/config 664 fede fede
-.config/mpd/mpd.conf 664 fede fede
-.local/share/nvim/site/autoload/plug.vim.old 644 fede fede
-.config/rofi/flat.rasi 664 fede fede
-.gtkrc-2.0 644 fede fede
-.config/gtk-3.0/settings.ini 644 fede fede
-.config/calcurse/caldav/config 644 fede fede
-.config/calcurse/hooks/pre-load 755 fede fede
-.config/calcurse/hooks/post-save 755 fede fede
-.config/calcurse/conf 644 fede fede
-.config/calcurse/keys 644 fede fede
-.config/qt5ct/qt5ct.conf 644 fede fede
-.config/udiskie/config.yml 644 fede fede
-.config/ncmpcpp/error.log 644 fede fede
-.config/okular/keybinds.shortcuts 644 fede fede
-.config/tig/config 664 fede fede
-.config/xmobar/error 644 fede fede
-.local/share/wallpaper/wallpaper_4 644 fede fede
-.local/share/wallpaper/wallpaper_0 644 fede fede
-.local/share/wallpaper/wallpaper_6 644 fede fede
-.local/share/wallpaper/wallpaper 644 fede fede
-.local/share/wallpaper/wallpaper_1 644 fede fede
-.local/share/wallpaper/wallpaper_2 644 fede fede
-.config/picom/picom_noround.conf 644 fede fede
-.config/picom/picom_round.conf 644 fede fede
-.config/picom/.old/picom1.conf 644 fede fede
-.config/picom/.old/picom.conf_0 644 fede fede
-.local/share/wallpaper/wallpaper_8 644 fede fede
-.config/btop/btop.conf 644 fede fede
-.config/task/taskrc 644 fede fede
-.config/task/hooks/on-modify.timewarrior 755 fede fede
-.config/ncmpcpp/patterns.list 644 fede fede
-.config/task/hooks/shift-recurrence/__pycache__/pirate_add_shift_recurrence.cpython-310.pyc 600 fede fede
-.config/task/hooks/shift-recurrence/pirate_add_shift_recurrence.py 644 fede fede
-.config/task/hooks/on-modify-pirate 755 fede fede
-.config/task/hooks/on-add-pirate 755 fede fede
-.config/task/pending.data 644 fede fede
-.config/task/completed.data 644 fede fede
+.Xresources 644
+.config/Xmodmap 644
+.config/alacritty/alacritty.yml 644
+.config/aliasrc 644
+.config/bspwm/bspwmrc 755
+.config/conky/conky.conf 644
+.config/conky/conky.conf1 644
+.config/desmume/Castlevania_Dawn_of_Sorrow.dsv 644
+.config/desmume/Castlevania_Order_of_Ecclesia.dsv 644
+.config/desmume/config 644
+.config/desmume/config.cfg 644
+.config/dunst/dunstrc 644
+.config/dunst/notification_sound 755
+.config/i3/config 644
+.config/i3/config.save 644
+.config/i3/config.save.1 644
+.config/i3blocks/config 644
+.config/kitty/kitty.conf 644
+.config/lf/draw_img 755
+.config/lf/image 755
+.config/lf/lfrc 644
+.config/lf/preview 755
+.config/lf/scope 644
+.config/mimeapps.list 664
+.config/mutt/.mailsynclastrun 644
+.config/mutt/accounts/1-federico.ciuffardi@outlook.com.muttrc 644
+.config/mutt/filepicker 644
+.config/mutt/mailcap 644
+.config/mutt/muttrc 644
+.config/newsboat/config 644
+.config/newsboat/urls 644
+.config/nvim/coc-settings.json 644
+.config/nvim/init.vim 644
+.config/parcellite/parcelliterc 644
+.config/picom/picom.conf 644
+.config/polybar/config 644
+.config/qutebrowser/autoconfig.yml 644
+.config/qutebrowser/bookmarks/urls 644
+.config/qutebrowser/config.py 644
+.config/qutebrowser/quickmarks 644
+.config/ranger/commands.py 644
+.config/ranger/defaults/commands_full.py 644
+.config/ranger/defaults/rc.conf.def 644
+.config/ranger/plugins/__init__.py 644
+.config/ranger/plugins/ranger_devicons/__init__.py 644
+.config/ranger/plugins/ranger_devicons/devicons.py 644
+.config/ranger/plugins/update_last_wd.py 644
+.config/ranger/rc.conf 644
+.config/ranger/rifle.conf 644
+.config/ranger/scope.sh 755
+.config/redshift/redshift.conf 644
+.config/rofi/Arc-Dark-transparency.rasi 644
+.config/rofi/config.rasi 644
+.config/rofi/launcher.rasi 644
+.config/sxhkd/sxhkdrc 644
+.config/sxiv/exec/key-handler 744
+.config/termite/config 644
+.config/tridactyl/themes/base16-grayscale-dark.css 644
+.config/tridactyl/tridactylrc 644
+.config/urlscan/config.json 644
+.config/user-dirs.dirs 600
+.config/xmobar/trayer-padding-icon.sh 755
+.config/xmobar/xmobarrc0 755
+.config/xmobar/xmobarrc1 755
+.config/zathura/zathurarc 644
+.haskeline 644
+.mozilla/firefox/custom_config/chrome/chrome/numbered_tabs.css 644
+.mozilla/firefox/custom_config/chrome/chrome/remove_fs_transition.css 644
+.mozilla/firefox/custom_config/chrome/content/css_scrollbar_width_color.css 644
+.mozilla/firefox/custom_config/chrome/userChrome.css 644
+.mozilla/firefox/custom_config/chrome/userContent.css 644
+.mozilla/firefox/custom_config/search.json.mozlz4 644
+.mozilla/firefox/custom_config/user.js 644
+.profile 644
+.tmux.conf 644
+.xinitrc 644
+.xprofile 644
+.xscreensaver 644
+.zprofile 644
+.zshrc 644
+.config/mpv/mpv.conf 644
+.local/share/nvim/site/spell/es.utf-8.spl 644
+.local/share/nvim/site/spell/es.utf-8.sug 644
+.gnupg/dirmngr.conf 644
+.gnupg/gpg-agent.conf 644
+.config/flameshot/flameshot.ini 644
+.config/mpv/input.conf 644
+.local/share/nvim/site/autoload/plug.vim 644
+.mbsyncrc 644
+.config/msmtp/config 644
+.config/mutt/accounts/2-fciuffardi@fing.edu.uy.muttrc 644
+.config/ncmpcpp/bindings 664
+.config/ncmpcpp/config 664
+.config/mpd/mpd.conf 664
+.local/share/nvim/site/autoload/plug.vim.old 644
+.config/rofi/flat.rasi 664
+.gtkrc-2.0 644
+.config/gtk-3.0/settings.ini 644
+.config/calcurse/caldav/config 644
+.config/calcurse/hooks/pre-load 755
+.config/calcurse/hooks/post-save 755
+.config/calcurse/conf 644
+.config/calcurse/keys 644
+.config/qt5ct/qt5ct.conf 644
+.config/udiskie/config.yml 644
+.config/ncmpcpp/error.log 644
+.config/okular/keybinds.shortcuts 644
+.config/tig/config 664
+.config/xmobar/error 644
+.local/share/wallpaper/wallpaper_4 644
+.local/share/wallpaper/wallpaper_0 644
+.local/share/wallpaper/wallpaper_6 644
+.local/share/wallpaper/wallpaper 644
+.local/share/wallpaper/wallpaper_1 644
+.local/share/wallpaper/wallpaper_2 644
+.config/picom/picom_noround.conf 644
+.config/picom/picom_round.conf 644
+.config/picom/.old/picom1.conf 644
+.config/picom/.old/picom.conf_0 644
+.local/share/wallpaper/wallpaper_8 644
+.config/btop/btop.conf 644
+.config/task/taskrc 644
+.config/task/hooks/on-modify.timewarrior 755
+.config/ncmpcpp/patterns.list 644
+.config/task/hooks/shift-recurrence/__pycache__/pirate_add_shift_recurrence.cpython-310.pyc 600
+.config/task/hooks/shift-recurrence/pirate_add_shift_recurrence.py 644
+.config/task/hooks/on-modify-pirate 755
+.config/task/hooks/on-add-pirate 755
+.config/task/pending.data 644
+.config/task/completed.data 644
