@@ -16,11 +16,11 @@ weekstart=Monday
 uda.priority.values=C,H,M,L,N,B
 
 urgency.uda.priority.C.coefficient=10.0
-urgency.uda.priority.N.coefficient=-1.0
-urgency.uda.priority.B.coefficient=-10.0
+urgency.uda.priority.N.coefficient=-5.0
+urgency.uda.priority.B.coefficient=-20.0
 
 color.uda.priority.C=color196
-color.uda.priority.H=color208
+color.uda.priority.H=color214
 color.uda.priority.M=color221
 color.uda.priority.L=color222
 color.uda.priority.N=color248
@@ -45,7 +45,7 @@ uda.taskwarrior-tui.keyconfig.shortcut.8=n
 # THEME #
 #########
 
-rule.precedence.color=deleted,completed,active,overdue,uda.H,uda.B,due.today,due,uda.,keyword.,tag.,project.,scheduled,blocked,blocking,tagged,recurring
+rule.precedence.color=deleted,completed,active,overdue,due.today,due,uda.,keyword.,tag.,project.,scheduled,blocked,blocking,tagged,recurring
 
 # General decoration
 color.label=

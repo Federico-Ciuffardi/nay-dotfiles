@@ -221,6 +221,7 @@ Plug 'christoomey/vim-tmux-navigator'
 """ git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'rhysd/conflict-marker.vim'
 
 "" Operators, Motions and Commands
 Plug 'tpope/vim-commentary'
@@ -795,7 +796,6 @@ let g:vimwiki_listsyms = ' x'
 let g:vimwiki_markdown_link_ext = 1
 "}}}
 
-
 """""""""
 " Maps "
 """""""""
@@ -879,3 +879,24 @@ nnoremap <silent> <C-)> :let &guifont = substitute(
  \ '\=eval(13)',
  \ '')<CR>
 "}}}
+
+"""""""""""""""""""
+" conflict marker "
+"""""""""""""""""""
+"{{{
+" disable the default highlight group
+let g:conflict_marker_highlight_group = ''
+
+" Include text after begin and end markers
+let g:conflict_marker_begin = '^<<<<<<< \@='
+let g:conflict_marker_common_ancestors = '^||||||| .*$'
+let g:conflict_marker_separator = '^=======$'
+let g:conflict_marker_end   = '^>>>>>>> \@='
+
+highlight ConflictMarkerBegin ctermbg=34 
+highlight ConflictMarkerOurs ctermbg=22  
+highlight ConflictMarkerTheirs ctermbg=27 
+highlight ConflictMarkerEnd ctermbg=39 
+highlight ConflictMarkerCommonAncestorsHunk ctermbg=yellow
+"}}}
+
