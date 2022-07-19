@@ -122,7 +122,7 @@
 .config/task/taskrc 644
 .config/task/hooks/on-modify.timewarrior 755
 .config/ncmpcpp/patterns.list 644
-.config/task/hooks/shift-recurrence/__pycache__/pirate_add_shift_recurrence.cpython-310.pyc 600
+.config/task/hooks/shift-recurrence/__pycache__/pirate_add_shift_recurrence.cpython-310.pyc 644
 .config/task/hooks/shift-recurrence/pirate_add_shift_recurrence.py 644
 .config/task/hooks/on-modify-pirate 755
 .config/task/hooks/on-add-pirate 755
