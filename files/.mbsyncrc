@@ -48,27 +48,27 @@ MaxMessages 0
 ExpireUnread no
 # End profile
 
-IMAPStore fciuffardi@irobot.com-remote
-Host outlook.office365.com
-Port 993
-User fciuffardi@irobot.com
-PassCmd "pass fciuffardi@irobot.com"
-AuthMechs LOGIN
-SSLType IMAPS
-CertificateFile /etc/ssl/certs/ca-certificates.crt
-
-MaildirStore fciuffardi@irobot.com-local
-Subfolders Verbatim
-Path /home/fede/.local/share/mail/fciuffardi@irobot.com/
-Inbox /home/fede/.local/share/mail/fciuffardi@irobot.com/INBOX
-
-Channel fciuffardi@irobot.com
-Expunge Both
-Master :fciuffardi@irobot.com-remote:
-Slave :fciuffardi@irobot.com-local:
-Patterns * !"[Gmail]/All Mail"
-Create Both
-SyncState *
-MaxMessages 0
-ExpireUnread no
+# IMAPStore fciuffardi@irobot.com-remote
+# Host outlook.office365.com
+# Port 993
+# User fciuffardi@irobot.com
+# PassCmd "pass fciuffardi@irobot.com"
+# AuthMechs LOGIN
+# SSLType IMAPS
+# CertificateFile /etc/ssl/certs/ca-certificates.crt
+# 
+# MaildirStore fciuffardi@irobot.com-local
+# Subfolders Verbatim
+# Path /home/fede/.local/share/mail/fciuffardi@irobot.com/
+# Inbox /home/fede/.local/share/mail/fciuffardi@irobot.com/INBOX
+# 
+# Channel fciuffardi@irobot.com
+# Expunge Both
+# Master :fciuffardi@irobot.com-remote:
+# Slave :fciuffardi@irobot.com-local:
+# Patterns * !"[Gmail]/All Mail"
+# Create Both
+# SyncState *
+# MaxMessages 0
+# ExpireUnread no
 # End profile
