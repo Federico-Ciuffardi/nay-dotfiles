@@ -128,3 +128,4 @@
 .config/task/hooks/on-add-pirate 755
 .config/task/pending.data 644
 .config/task/completed.data 644
+.config/mutt/accounts/3-fciuffardi@irobot.com.muttrc 644

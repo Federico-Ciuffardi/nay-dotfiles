@@ -20,3 +20,14 @@ tls on
 tls_starttls on
 tls_trust_file	/etc/ssl/certs/ca-certificates.crt
 logfile /home/fede/.config/msmtp/msmtp.log
+
+account fciuffardi@irobot.com
+host smtp.office365.com
+port 587
+from fciuffardi@irobot.com
+user fciuffardi@irobot.com
+passwordeval "pass fciuffardi@irobot.com"
+auth on
+tls on
+tls_trust_file	/etc/ssl/certs/ca-certificates.crt
+logfile /home/fede/.config/msmtp/msmtp.log
