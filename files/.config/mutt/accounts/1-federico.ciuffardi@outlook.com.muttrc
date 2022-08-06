@@ -4,9 +4,9 @@ set realname = "Federico Ciuffardi"
 set from = "federico.ciuffardi@outlook.com"
 set sendmail = "msmtp -a federico.ciuffardi@outlook.com"
 alias me Federico Ciuffardi <federico.ciuffardi@outlook.com>
-set folder = "/home/fede/.local/share/mail/federico.ciuffardi@outlook.com"
-set header_cache = /home/fede/.cache/mutt-wizard/federico.ciuffardi@outlook.com/headers
-set message_cachedir = /home/fede/.cache/mutt-wizard/federico.ciuffardi@outlook.com/bodies
+set folder = "~/.local/share/mail/federico.ciuffardi@outlook.com"
+set header_cache = ~/.cache/mutt-wizard/federico.ciuffardi@outlook.com/headers
+set message_cachedir = ~/.cache/mutt-wizard/federico.ciuffardi@outlook.com/bodies
 set mbox_type = Maildir
 
 bind index,pager gg noop
@@ -18,7 +18,7 @@ unmailboxes *
 unalternates *
 unset signature
 
-set query_command = "mail-query '%s' /home/fede/.local/share/mail/federico.ciuffardi@outlook.com"
+set query_command = "mail-query '%s' ~/.local/share/mail/federico.ciuffardi@outlook.com"
 macro index \Cr "<shell-escape>mymailsync federico.ciuffardi@outlook.com<enter>" "run mbsync to sync federico.ciuffardi@outlook.com"
 macro index <F5> "<shell-escape>mymailsync federico.ciuffardi@outlook.com<enter>" "run mbsync to sync federico.ciuffardi@outlook.com"
 

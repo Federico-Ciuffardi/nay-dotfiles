@@ -591,31 +591,19 @@ set signcolumn=yes
 
 "" Bindings
 
-""" Navigate autocompletion with tab, s-tab, c-j and c-k
-inoremap <silent><expr> <tab>
-      \ pumvisible() ? "\<c-n>" :
-      \ <sid>check_back_space() ? "\<tab>" :
-      \ coc#refresh()
-inoremap <expr><s-tab> pumvisible() ? "\<c-p>" : "\<c-h>"
 
-inoremap <silent><expr> <c-j>
-      \ pumvisible() ? "\<c-n>" :
-      \ <sid>check_back_space() ? "\<c-j>" :
-      \ coc#refresh()
-inoremap <expr><c-k> pumvisible() ? "\<c-p>" : "\<c-k>"
+""" Use <C-n>, <C-p>, <up> and <down> to navigate completion list: >
+inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"
+inoremap <silent><expr> <C-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-k>"
+inoremap <silent><expr> <down> coc#pum#visible() ? coc#pum#next(0) : "\<down>"
+inoremap <silent><expr> <up> coc#pum#visible() ? coc#pum#prev(0) : "\<up>"
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+""" Use <PageDown> and <PageUp> to scroll:
+inoremap <silent><expr> <PageDown> coc#pum#visible() ? coc#pum#scroll(1) : "\<PageDown>"
+inoremap <silent><expr> <PageUp> coc#pum#visible() ? coc#pum#scroll(0) : "\<PageUp>"
 
-""" Use <c-space> to trigger/complete completion.
-inoremap <silent><expr> <c-space> pumvisible() ? coc#_select_confirm() : coc#refresh()
-
-""" Make <CR> auto-select the first completion item and notify coc.nvim to
-""" format on enter, <cr> could be remapped by other vim plugin
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+""" accept complete trigger
+inoremap <silent><expr> <c-space> coc#refresh()
 
 """ navigate diagnostics
 nmap <silent> [e <Plug>(coc-diagnostic-prev)

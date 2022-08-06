@@ -129,3 +129,5 @@
 .config/task/pending.data 644
 .config/task/completed.data 644
 .config/mutt/accounts/3-fciuffardi@irobot.com.muttrc 644
+.config/dunst/dunstrca 644
+.config/picom/picom1.conf 644

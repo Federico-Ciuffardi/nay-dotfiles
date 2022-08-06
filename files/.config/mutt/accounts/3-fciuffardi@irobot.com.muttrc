@@ -4,9 +4,9 @@ set realname = "Federico Ciuffardi"
 set from = "fciuffardi@irobot.com"
 set sendmail = "msmtp -a fciuffardi@irobot.com"
 alias me Federico Ciuffardi <fciuffardi@irobot.com>
-set folder = "/home/fede/.local/share/mail/fciuffardi@irobot.com"
-set header_cache = /home/fede/.cache/mutt-wizard/fciuffardi@irobot.com/headers
-set message_cachedir = /home/fede/.cache/mutt-wizard/fciuffardi@irobot.com/bodies
+set folder = "~/.local/share/mail/fciuffardi@irobot.com"
+set header_cache = ~/.cache/mutt-wizard/fciuffardi@irobot.com/headers
+set message_cachedir = ~/.cache/mutt-wizard/fciuffardi@irobot.com/bodies
 set mbox_type = Maildir
 
 bind index,pager gg noop
@@ -18,7 +18,7 @@ unmailboxes *
 unalternates *
 unset signature
 
-set query_command = "mail-query '%s' /home/fede/.local/share/mail/fciuffardi@irobot.com"
+set query_command = "mail-query '%s' ~/.local/share/mail/fciuffardi@irobot.com"
 macro index \Cr "<shell-escape>mymailsync fciuffardi@irobot.com<enter>" "run mbsync to sync fciuffardi@irobot.com"
 macro index <F5> "<shell-escape>mymailsync fciuffardi@irobot.com<enter>" "run mbsync to sync fciuffardi@irobot.com"
 
