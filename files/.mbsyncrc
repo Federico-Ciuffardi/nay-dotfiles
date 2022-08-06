@@ -9,8 +9,8 @@ CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 MaildirStore federico.ciuffardi@outlook.com-local
 Subfolders Verbatim
-Path /home/fede/.local/share/mail/federico.ciuffardi@outlook.com/
-Inbox /home/fede/.local/share/mail/federico.ciuffardi@outlook.com/INBOX
+Path ~/.local/share/mail/federico.ciuffardi@outlook.com/
+Inbox ~/.local/share/mail/federico.ciuffardi@outlook.com/INBOX
 
 Channel federico.ciuffardi@outlook.com
 Expunge Both
@@ -34,8 +34,8 @@ CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 MaildirStore fciuffardi@fing.edu.uy-local
 Subfolders Verbatim
-Path /home/fede/.local/share/mail/fciuffardi@fing.edu.uy/
-Inbox /home/fede/.local/share/mail/fciuffardi@fing.edu.uy/INBOX
+Path ~/.local/share/mail/fciuffardi@fing.edu.uy/
+Inbox ~/.local/share/mail/fciuffardi@fing.edu.uy/INBOX
 
 Channel fciuffardi@fing.edu.uy
 Expunge Both
@@ -59,8 +59,8 @@ ExpireUnread no
 # 
 # MaildirStore fciuffardi@irobot.com-local
 # Subfolders Verbatim
-# Path /home/fede/.local/share/mail/fciuffardi@irobot.com/
-# Inbox /home/fede/.local/share/mail/fciuffardi@irobot.com/INBOX
+# Path ~/.local/share/mail/fciuffardi@irobot.com/
+# Inbox ~/.local/share/mail/fciuffardi@irobot.com/INBOX
 # 
 # Channel fciuffardi@irobot.com
 # Expunge Both

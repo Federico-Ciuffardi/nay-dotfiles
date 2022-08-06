@@ -7,7 +7,7 @@ passwordeval "pass federico.ciuffardi@outlook.com"
 auth on
 tls on
 tls_trust_file	/etc/ssl/certs/ca-certificates.crt
-logfile /home/fede/.config/msmtp/msmtp.log
+logfile ~/.config/msmtp/msmtp.log
 
 account fciuffardi@fing.edu.uy
 host smtp.fing.edu.uy
@@ -19,7 +19,7 @@ auth on
 tls on
 tls_starttls on
 tls_trust_file	/etc/ssl/certs/ca-certificates.crt
-logfile /home/fede/.config/msmtp/msmtp.log
+logfile ~/.config/msmtp/msmtp.log
 
 # account fciuffardi@irobot.com
 # host smtp.office365.com
@@ -30,4 +30,4 @@ logfile /home/fede/.config/msmtp/msmtp.log
 # auth on
 # tls on
 # tls_trust_file	/etc/ssl/certs/ca-certificates.crt
-# logfile /home/fede/.config/msmtp/msmtp.log
+# logfile ~/.config/msmtp/msmtp.log
