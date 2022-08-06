@@ -25,7 +25,7 @@ export WM="dwm"
 # bin lookup
 export MY_BIN="$HOME/.local/share/mybin"
 export DOTNET_BIN="$PATH:/home/fede/.dotnet/tools"
-export PATH="$PATH:$MY_BIN/path:$DOTNET_BIN:$HOME/.local/bin"
+export PATH="$PATH:$MY_BIN/path:$DOTNET_BIN:$HOME/.local/bin:$HOME/.cargo/bin"
 
 # others
 export WALLPAPER_FILE="$HOME/.local/share/wallpaper/wallpaper"
@@ -97,3 +97,4 @@ if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]
 fi
 
 #}}}
+. "$HOME/.cargo/env"
