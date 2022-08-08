@@ -71,4 +71,4 @@ mattermost-desktop &
 calcurse-notify &
 ) & 
 
-
+[ -f ~/.xprofile-custom ] && bash ~/.xprofile-custom

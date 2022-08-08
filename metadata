@@ -132,3 +132,4 @@
 .config/dunst/dunstrca 644
 .config/picom/picom1.conf 644
 .config/mutt/common.muttrc 664
+.config/task/hooks/shift-recurrence/__pycache__/pirate_add_shift_recurrence.cpython-38.pyc 644

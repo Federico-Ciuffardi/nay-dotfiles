@@ -300,5 +300,5 @@ fi
 # cd to last working directoy
 . lwd load
 
-
+[ -f ~/.zshrc-custom ] && source ~/.zshrc-custom
 #}}}
