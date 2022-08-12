@@ -247,6 +247,8 @@ Plug 'Federico-Ciuffardi/comfortable-motion.vim'
 Plug 'lambdalisue/suda.vim'
 """ Root on porjects
 Plug 'airblade/vim-rooter'
+""" images
+Plug 'edluffy/hologram.nvim'
 
 call plug#end()
 "}}}
@@ -755,6 +757,10 @@ nnoremap <C-t> :call Toggle_transparent_background()<CR>
 " neovide bg
 hi Normal guibg=#1E1E1E
 highlight Folded gui=bold guibg=#1E1E1E guifg=#5E5E5E
+
+
+" coc
+hi CocSemClass ctermfg=43 ctermbg=NONE
 "}}}
 
 """""""""""

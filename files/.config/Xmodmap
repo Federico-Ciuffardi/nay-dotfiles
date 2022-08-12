@@ -4,6 +4,7 @@ clear mod1
 clear mod4
 
 ! remap
+keycode 9 = grave
 !! capslock to super
 keycode 66 = Escape
 !! alt to super
@@ -18,3 +19,11 @@ keycode 135 = Control_R
 add mod1 = Super_L Super_R
 add mod4 = Alt_L Alt_R Escape
 add control = Control_R Control_L
+
+! arrows with win+jkl; 
+keycode 133 = Mode_switch
+
+keycode 43 = h H Left Left
+keycode 44 = j J Down Down
+keycode 45 = k K Up Up
+keycode 46 = l L Right Right

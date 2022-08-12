@@ -4,8 +4,8 @@
 nm-applet &
 
 # Screen positions
-xrandr --output HDMI-0 --auto --primary
-xrandr --output HDMI-0 --right-of DP-0 --auto
+xrandr --output HDMI-0 --auto --primary &> /dev/null
+xrandr --output HDMI-0 --right-of DP-0 --auto &> /dev/null
 
 # Temporarily turning the touch-pad off while typing
 syndaemon -K -i 0.5 -R -d &
@@ -30,7 +30,7 @@ xset r rate 300 50
 nitrogen --set-scaled $WALLPAPER_FILE &
 
 # Audio
-pipewire-pulse &
+pipewire-pulse &>/dev/null &
 # start-pulseaudio-x11 &
 mpd &
 # pulseaudio &
@@ -39,7 +39,7 @@ mpd &
 udiskie --smart-tray --notify &
 
 # Screensaver
-xscreensaver -no-splash &
+xscreensaver -no-splash &>/dev/null &
 
 # clipboard
 parcellite &
@@ -55,13 +55,13 @@ unclutter -noevents -idle 2.5 &
 kdeconnect-indicator &
 
 # polkit
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &>/dev/null &
 
 # Compositor
-picom --experimental-backends &
+picom --experimental-backends &>/dev/null &
 
 # Notification
-(sleep 1 && dunst) &
+(sleep 5 && dunst) &
 
 # Network dependent
 (
