@@ -94,8 +94,8 @@
 .config/mpd/mpd.conf 664
 .local/share/nvim/site/autoload/plug.vim.old 644
 .config/rofi/flat.rasi 664
-.gtkrc-2.0 664
-.config/gtk-3.0/settings.ini 664
+.gtkrc-2.0 644
+.config/gtk-3.0/settings.ini 644
 .config/calcurse/caldav/config 644
 .config/calcurse/hooks/pre-load 755
 .config/calcurse/hooks/post-save 755
