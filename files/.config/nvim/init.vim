@@ -2,7 +2,6 @@
 " Base "
 """"""""
 "{{{
-
 " space as leader
 noremap <Space> <Nop>
 let mapleader = "\<Space>"
