@@ -68,7 +68,6 @@ picom --experimental-backends &>/dev/null &
 sleep 30 
 whatsapp-nativefier &
 mattermost-desktop &
-calcurse-notify &
 ) & 
 
 [ -f ~/.xprofile-custom ] && bash ~/.xprofile-custom
