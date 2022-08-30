@@ -15,11 +15,11 @@ syntax on
 " indentation
 set autoindent
 set smarttab
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 set breakindent
-set breakindentopt=shift:2
+set breakindentopt=shift:4
 
 " search
 set incsearch
@@ -508,12 +508,13 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit', 
   \ 'ctrl-l': 'e'}
 
+nnoremap <c-g> :GFiles?<cr>
+
 nnoremap <C-P>      :Files<cr>
 nnoremap <leader>;  :Commands<cr>
 nnoremap <leader>f  :BLines<cr>
 nnoremap <leader>F  :Rg<cr>
 nnoremap <leader>gf :GFiles<cr>
-nnoremap <leader>gs :GFiles?<cr>
 nnoremap <leader>gc :BCommits<cr>
 nnoremap <leader>gC :Commits<cr>
 nnoremap <leader>m  :Maps<cr>
@@ -785,7 +786,7 @@ let g:vimwiki_folding = 'custom'
 
 command TODO :F TODO ~/.local/share/vimwiki/* <cr>
 
-let g:vimwiki_listsyms = ' x'
+let g:vimwiki_listsyms = ' 🕙.x'
 let g:vimwiki_markdown_link_ext = 1
 "}}}
 
