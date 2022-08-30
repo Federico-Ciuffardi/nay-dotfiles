@@ -15,12 +15,15 @@ syntax on
 " indentation
 set autoindent
 set smarttab
-set tabstop=4
-set shiftwidth=4
 set expandtab
 set breakindent
-set breakindentopt=shift:4
 set smartcase
+set tabstop=2
+set shiftwidth=2
+set breakindentopt=shift:2
+autocmd BufNew,BufRead *.c,*.cpp setlocal tabstop=4
+autocmd BufNew,BufRead *.c,*.cpp setlocal shiftwidth=4
+autocmd BufNew,BufRead *.c,*.cpp setlocal breakindentopt=shift:4
 
 " search
 set incsearch
@@ -447,6 +450,10 @@ let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 " Bindings
 "" toggle fold with L or H
 nnoremap L zA
+nnoremap <LEFT> zc
+nnoremap <DOWN> zc
+nnoremap <UP> zo
+nnoremap <RIGHT> zo
 " nnoremap H zA
 "" close fold with H and open with L
 " nnoremap L zO
