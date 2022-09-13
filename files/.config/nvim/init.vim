@@ -586,11 +586,11 @@ vnoremap <silent> <leader>r :Farr<cr>
 
 "" coc extensions
 let g:coc_global_extensions = [
+      \ 'coc-explorer',
       \ 'coc-clangd',
       \ 'coc-pyright',
       \ 'coc-vimtex',
       \ 'coc-snippets',
-      \ 'coc-rust-analyzer',
       \ 'coc-sh',
       \ ]
 
@@ -601,6 +601,7 @@ set signcolumn=yes
 
 "" Bindings
 
+nmap <C-e> <Cmd>CocCommand explorer<CR>
 
 """ Use <C-n>, <C-p>, <up> and <down> to navigate completion list: >
 inoremap <silent><expr> <C-j> coc#pum#visible() ? coc#pum#next(1) : "\<C-j>"

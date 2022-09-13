@@ -22,7 +22,7 @@
       "rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"]
     }
   },
-  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/14.0.3/clangd_14.0.3/bin/clangd",
+  "clangd.path": "/usr/bin/clangd-12",
   "clangd.arguments": ["--header-insertion=never", "--clang-tidy"],
   "clangd.inlayHints.enable": false,
 	"list.insertMappings": {
