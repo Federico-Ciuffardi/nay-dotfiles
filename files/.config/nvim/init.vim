@@ -922,6 +922,10 @@ if !exists('g:vscode')
   nnoremap <silent> q :call CondQuit()<CR>
 endif
 
+let bufferline = get(g:, 'bufferline', {})
+let bufferline.auto_hide = v:true
+let bufferline.animation = v:false
+
 " Wipeout buffer
 "                          :BufferWipeout
 " Close commands
