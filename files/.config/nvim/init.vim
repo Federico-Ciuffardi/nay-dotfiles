@@ -90,38 +90,37 @@ augroup AutomaticWindowSizing
 augroup END
 
 " buffers
-set hidden
+" set hidden
 
-"" Go to the previous buffer open
-noremap K :bprev<cr>
+" "" Go to the previous buffer open
+" noremap K :bprev<cr>
 
-"" Go to the next buffer open
-noremap J :bnext<cr>
+" "" Go to the next buffer open
+" noremap J :bnext<cr>
 
-"" close on no buffer
-autocmd BufEnter * if (winnr("$") == 0) | q | endif
+" "" close on no buffer
+" autocmd BufEnter * if (winnr("$") == 0) | q | endif
 
-"" quit closes buffer
-set confirm
-function! CondQuit()
-  if len(getbufinfo({'buflisted':1})) == 1
-    execute "q"
-  else
-    if len(tabpagebuflist()) > 1
-      execute "q"
-    else
-      silent! execute "bd"
-    endif
-  endif
-endfunction
+" "" quit closes buffer
+" set confirm
+" function! CondQuit()
+"   if len(getbufinfo({'buflisted':1})) == 1
+"     execute "q"
+"   else
+"     if len(tabpagebuflist()) > 1
+"       execute "q"
+"     else
+"       silent! execute "bd"
+"     endif
+"   endif
+" endfunction
 
-if !exists('g:vscode')
-  nnoremap <silent> q :call CondQuit()<CR>
-endif
+" if !exists('g:vscode')
+"   nnoremap <silent> q :call CondQuit()<CR>
+" endif
 
 " marks and others
-nnoremap m q
-nnoremap M m
+nnoremap R q
 nnoremap gm `
 
 " J to M
@@ -213,7 +212,6 @@ Plug 'bling/vim-airline'
 Plug 'chrisbra/Colorizer'
 
 "" Search and/or replace
-Plug 'brooth/far.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'stsewd/fzf-checkout.vim'
@@ -252,6 +250,9 @@ Plug 'lambdalisue/suda.vim'
 Plug 'airblade/vim-rooter'
 """ images
 Plug 'edluffy/hologram.nvim'
+""" tabs
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'romgrk/barbar.nvim'
 
 call plug#end()
 "}}}
@@ -566,20 +567,6 @@ nnoremap <leader>gb :GBranch<cr>
 "}}}
 
 """""""
-" far "
-"""""""
-"{{{
-
-" shortcut for far.vim replace
-nnoremap <silent> <leader>r :Farr<cr>
-vnoremap <silent> <leader>r :Farr<cr>
-
-" nnoremap <silent> <C-S-F> :Farf<cr>
-" vnoremap <silent> <C-S-F> :Farf<cr>
-
-"}}}
-
-"""""""
 " coc "
 """""""
 "{{{
@@ -640,6 +627,9 @@ endfunction
 
 """ Highlight the symbol and its references when holding the cursor.
 " autocmd CursorHold * silent call CocActionAsync('highlight')
+
+""" Get references.
+nmap <leader>r <Plug>(coc-references)
 
 """ Symbol renaming.
 nmap <leader>R <Plug>(coc-rename)
@@ -903,3 +893,56 @@ highlight ConflictMarkerEnd ctermbg=39
 highlight ConflictMarkerCommonAncestorsHunk ctermbg=yellow
 "}}}
 
+""""""""""
+" BarBar "
+""""""""""
+" Move to previous/next
+nnoremap <silent>    K <Cmd>BufferPrevious<CR>
+nnoremap <silent>    J <Cmd>BufferNext<CR>
+" Re-order to previous/next
+nnoremap <silent>    <Up> <Cmd>BufferMovePrevious<CR>
+nnoremap <silent>    <Down> <Cmd>BufferMoveNext<CR>
+" Pin/unpin buffer
+nnoremap <silent>    <A-p> <Cmd>BufferPin<CR>
+" Close buffer
+" nnoremap <silent>    q <Cmd>BufferClose<CR>
+set confirm
+function! CondQuit()
+  if len(getbufinfo({'buflisted':1})) == 1
+    execute "q"
+  else
+    if len(tabpagebuflist()) > 1
+      execute "q"
+    else
+      BufferClose
+    endif
+  endif
+endfunction
+if !exists('g:vscode')
+  nnoremap <silent> q :call CondQuit()<CR>
+endif
+
+" Wipeout buffer
+"                          :BufferWipeout
+" Close commands
+"                          :BufferCloseAllButCurrent
+"                          :BufferCloseAllButVisible
+"                          :BufferCloseAllButPinned
+"                          :BufferCloseAllButCurrentOrPinned
+"                          :BufferCloseBuffersLeft
+"                          :BufferCloseBuffersRight
+" Magic buffer-picking mode
+" nnoremap <silent> <C-p>    <Cmd>BufferPick<CR>
+" Sort automatically by...
+" nnoremap <silent> <Space>bb <Cmd>BufferOrderByBufferNumber<CR>
+" nnoremap <silent> <Space>bd <Cmd>BufferOrderByDirectory<CR>
+" nnoremap <silent> <Space>bl <Cmd>BufferOrderByLanguage<CR>
+" nnoremap <silent> <Space>bw <Cmd>BufferOrderByWindowNumber<CR>
+
+" Other:
+" :BarbarEnable - enables barbar (enabled by default)
+" :BarbarDisable - very bad command, should never be used
+
+hi BufferCurrentSign ctermfg=39
+hi BufferVisible ctermfg=242
+hi BufferInactive ctermfg=240 ctermbg=235
