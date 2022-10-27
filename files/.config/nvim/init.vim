@@ -9,6 +9,8 @@ let mapleader = "\<Space>"
 " misc
 set nocompatible
 syntax on
+noremap <F12> <Esc>:syntax sync fromstart<CR>
+nnoremap ml :<C-u>marks<CR>:normal! `
 "" set noswapfile
 "" filetype plugin on
 
@@ -253,7 +255,7 @@ Plug 'edluffy/hologram.nvim'
 """ tabs
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'romgrk/barbar.nvim'
-
+""" better jumplist
 call plug#end()
 "}}}
 
@@ -507,9 +509,9 @@ command! -bang -nargs=* BLines
     \   'rg --with-filename --column --line-number --no-heading --smart-case . '.fnameescape(expand('%:p')), 1,
     \   fzf#vim#with_preview({'options': '--keep-right --delimiter : --nth 4.. --preview "bat -p --color always {}"'}, 'right:60%' ))
 
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1,
-  \   fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
+" command! -bang -nargs=* Rg
+"   \ call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1,
+"   \   fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)
 
 "" Bindings
 let g:fzf_action = {
@@ -529,6 +531,7 @@ nnoremap <leader>gC :Commits<cr>
 nnoremap <leader>m  :Maps<cr>
 nnoremap <leader>?  :Helptags<cr>
 nnoremap <leader>b  :Buffers<cr>
+nnoremap <c-Space>  :Buffers<cr>
 
 "}}}
 
