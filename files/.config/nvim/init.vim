@@ -615,7 +615,6 @@ nmap <silent> ge <Plug>(coc-diagnostic-next)
 nmap <silent> gd <plug>(coc-definition)
 nmap <silent> gy <plug>(coc-type-definition)
 nmap <silent> gi <plug>(coc-implementation)
-nmap <silent> gr <plug>(coc-references)
 
 """ use <leader>d for show documentation in preview window
 nnoremap <silent> <leader>d :call <sid>show_documentation()<cr>
@@ -632,7 +631,8 @@ endfunction
 " autocmd CursorHold * silent call CocActionAsync('highlight')
 
 """ Get references.
-nmap <leader>r <Plug>(coc-references)
+nmap <leader>r :execute "normal \<Plug>(coc-references)"<CR>:set cmdheight=1<CR>
+nmap gr :execute "normal \<Plug>(coc-references)"<CR>:set cmdheight=1<CR>
 
 """ Symbol renaming.
 nmap <leader>R <Plug>(coc-rename)
