@@ -17,7 +17,7 @@ keycode 135 = Control_R
 
 ! modifiers
 add mod1 = Super_L Super_R
-add mod4 = Alt_L Alt_R Escape
+add mod4 = Alt_L Alt_R
 add control = Control_R Control_L
 
 ! arrows with win+jkl; 

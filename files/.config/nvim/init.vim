@@ -2,6 +2,7 @@
 " Base "
 """"""""
 "{{{
+
 " space as leader
 noremap <Space> <Nop>
 let mapleader = "\<Space>"
@@ -11,8 +12,6 @@ set nocompatible
 syntax on
 noremap <F12> <Esc>:syntax sync fromstart<CR>
 nnoremap ml :<C-u>marks<CR>:normal! `
-"" set noswapfile
-"" filetype plugin on
 
 " indentation
 set autoindent
@@ -29,7 +28,6 @@ autocmd BufNew,BufRead *.c,*.cpp setlocal breakindentopt=shift:4
 
 " search
 set incsearch
-" set ignorecase 
 
 " movement
 set scrolloff=8
@@ -90,36 +88,6 @@ augroup AutomaticWindowSizing
   autocmd VimResized * wincmd =
   " autocmd VimResized * call <SID>SetWindowsToEqualWidths()
 augroup END
-
-" buffers
-" set hidden
-
-" "" Go to the previous buffer open
-" noremap K :bprev<cr>
-
-" "" Go to the next buffer open
-" noremap J :bnext<cr>
-
-" "" close on no buffer
-" autocmd BufEnter * if (winnr("$") == 0) | q | endif
-
-" "" quit closes buffer
-" set confirm
-" function! CondQuit()
-"   if len(getbufinfo({'buflisted':1})) == 1
-"     execute "q"
-"   else
-"     if len(tabpagebuflist()) > 1
-"       execute "q"
-"     else
-"       silent! execute "bd"
-"     endif
-"   endif
-" endfunction
-
-" if !exists('g:vscode')
-"   nnoremap <silent> q :call CondQuit()<CR>
-" endif
 
 " marks and others
 nnoremap R q
@@ -270,11 +238,7 @@ autocmd FileType vimwiki setlocal commentstring=<!---\ %s\ -->
 " Rooter "
 """"""""""
 "{{{
-" \*.c,*.h,
-" \*.cpp,*.hpp
-" \*.gd
 let g:rooter_targets = '*'
-
 let g:rooter_patterns = ['.git']
 "}}}
 
@@ -736,7 +700,6 @@ nmap <leader>gp <Plug>(GitGutterPreviewHunk)
 " theming "
 """""""""""
 "{{{
-"
 
 set t_Co=256
 set t_ut=
@@ -880,6 +843,7 @@ nnoremap <silent> <C-)> :let &guifont = substitute(
 " conflict marker "
 """""""""""""""""""
 "{{{
+
 " disable the default highlight group
 let g:conflict_marker_highlight_group = ''
 
@@ -894,11 +858,14 @@ highlight ConflictMarkerOurs ctermbg=22
 highlight ConflictMarkerTheirs ctermbg=27 
 highlight ConflictMarkerEnd ctermbg=39 
 highlight ConflictMarkerCommonAncestorsHunk ctermbg=yellow
+
 "}}}
 
 """"""""""
 " BarBar "
 """"""""""
+"{{{
+
 " Move to previous/next
 nnoremap <silent>    K <Cmd>BufferPrevious<CR>
 nnoremap <silent>    J <Cmd>BufferNext<CR>
@@ -929,27 +896,8 @@ let bufferline = get(g:, 'bufferline', {})
 let bufferline.auto_hide = v:true
 let bufferline.animation = v:false
 
-" Wipeout buffer
-"                          :BufferWipeout
-" Close commands
-"                          :BufferCloseAllButCurrent
-"                          :BufferCloseAllButVisible
-"                          :BufferCloseAllButPinned
-"                          :BufferCloseAllButCurrentOrPinned
-"                          :BufferCloseBuffersLeft
-"                          :BufferCloseBuffersRight
-" Magic buffer-picking mode
-" nnoremap <silent> <C-p>    <Cmd>BufferPick<CR>
-" Sort automatically by...
-" nnoremap <silent> <Space>bb <Cmd>BufferOrderByBufferNumber<CR>
-" nnoremap <silent> <Space>bd <Cmd>BufferOrderByDirectory<CR>
-" nnoremap <silent> <Space>bl <Cmd>BufferOrderByLanguage<CR>
-" nnoremap <silent> <Space>bw <Cmd>BufferOrderByWindowNumber<CR>
-
-" Other:
-" :BarbarEnable - enables barbar (enabled by default)
-" :BarbarDisable - very bad command, should never be used
-
 hi BufferCurrentSign ctermfg=39
 hi BufferVisible ctermfg=242
 hi BufferInactive ctermfg=240 ctermbg=235
+
+"}}}
