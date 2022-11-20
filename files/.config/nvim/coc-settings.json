@@ -1,5 +1,6 @@
 {
   "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
+  "javascript.suggestionActions.enabled": false,
   "suggest.noselect": false,
   "coc.preferences.semanticTokensHighlights": false, 
   "coc.preferences.formatOnSaveFiletypes": [],

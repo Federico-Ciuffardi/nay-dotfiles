@@ -546,6 +546,7 @@ let g:coc_global_extensions = [
       \ 'coc-vimtex',
       \ 'coc-snippets',
       \ 'coc-sh',
+      \ 'coc-tsserver',
       \ ]
 
 "" don't give |ins-completion-menu| messages.
