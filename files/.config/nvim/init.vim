@@ -547,6 +547,8 @@ let g:coc_global_extensions = [
       \ 'coc-snippets',
       \ 'coc-sh',
       \ 'coc-tsserver',
+      \ 'coc-prettier',
+      \ 'coc-eslint',
       \ ]
 
 "" don't give |ins-completion-menu| messages.

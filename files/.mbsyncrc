@@ -23,29 +23,29 @@ MaxMessages 0
 ExpireUnread no
 # End profile
 
-IMAPStore fciuffardi@fing.edu.uy-remote
-Host imap.fing.edu.uy
-Port 143
-User fciuffardi
-PassCmd "pass fciuffardi@fing.edu.uy"
-AuthMechs LOGIN
-SSLType STARTTLS
-CertificateFile /etc/ssl/certs/ca-certificates.crt
-
-MaildirStore fciuffardi@fing.edu.uy-local
-Subfolders Verbatim
-Path ~/.local/share/mail/fciuffardi@fing.edu.uy/
-Inbox ~/.local/share/mail/fciuffardi@fing.edu.uy/INBOX
-
-Channel fciuffardi@fing.edu.uy
-Expunge Both
-Master :fciuffardi@fing.edu.uy-remote:
-Slave :fciuffardi@fing.edu.uy-local:
-Patterns * !"[Gmail]/All Mail"
-Create Both
-SyncState *
-MaxMessages 0
-ExpireUnread no
+#IMAPStore fciuffardi@fing.edu.uy-remote
+#Host imap.fing.edu.uy
+#Port 143
+#User fciuffardi
+#PassCmd "pass fciuffardi@fing.edu.uy"
+#AuthMechs LOGIN
+#SSLType STARTTLS
+#CertificateFile /etc/ssl/certs/ca-certificates.crt
+#
+#MaildirStore fciuffardi@fing.edu.uy-local
+#Subfolders Verbatim
+#Path ~/.local/share/mail/fciuffardi@fing.edu.uy/
+#Inbox ~/.local/share/mail/fciuffardi@fing.edu.uy/INBOX
+#
+#Channel fciuffardi@fing.edu.uy
+#Expunge Both
+#Master :fciuffardi@fing.edu.uy-remote:
+#Slave :fciuffardi@fing.edu.uy-local:
+#Patterns * !"[Gmail]/All Mail"
+#Create Both
+#SyncState *
+#MaxMessages 0
+#ExpireUnread no
 # End profile
 
 # IMAPStore fciuffardi@irobot.com-remote
