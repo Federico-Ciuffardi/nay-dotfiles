@@ -81,8 +81,6 @@
 .config/mpv/mpv.conf 644
 .local/share/nvim/site/spell/es.utf-8.spl 644
 .local/share/nvim/site/spell/es.utf-8.sug 644
-.gnupg/dirmngr.conf 644
-.gnupg/gpg-agent.conf 644
 .config/flameshot/flameshot.ini 644
 .config/mpv/input.conf 644
 .local/share/nvim/site/autoload/plug.vim 644
@@ -96,7 +94,6 @@
 .config/rofi/flat.rasi 664
 .gtkrc-2.0 644
 .config/gtk-3.0/settings.ini 644
-.config/calcurse/caldav/config 644
 .config/calcurse/hooks/pre-load 755
 .config/calcurse/hooks/post-save 755
 .config/calcurse/conf 644
@@ -133,3 +130,4 @@
 .config/picom/picom1.conf 644
 .config/mutt/common.muttrc 664
 .config/task/hooks/shift-recurrence/__pycache__/pirate_add_shift_recurrence.cpython-38.pyc 644
+.gnupg/gpg-agent.conf 644
