@@ -131,3 +131,5 @@
 .config/mutt/common.muttrc 664
 .config/task/hooks/shift-recurrence/__pycache__/pirate_add_shift_recurrence.cpython-38.pyc 644
 .gnupg/gpg-agent.conf 644
+.config/calcurse/caldav/config 644
+.gnupg/dirmngr.conf 644
