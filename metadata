@@ -133,3 +133,4 @@
 .gnupg/gpg-agent.conf 644
 .config/calcurse/caldav/config 644
 .gnupg/dirmngr.conf 644
+.config/task/hooks/shift-recurrence/__pycache__/pirate_add_shift_recurrence.cpython-311.pyc 644
