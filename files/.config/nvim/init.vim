@@ -895,9 +895,9 @@ if !exists('g:vscode')
   nnoremap <silent> q :call CondQuit()<CR>
 endif
 
-let bufferline = get(g:, 'bufferline', {})
-let bufferline.auto_hide = v:true
-let bufferline.animation = v:false
+" let bufferline = get(g:, 'bufferline', {})
+" let bufferline.auto_hide = v:true
+" let bufferline.animation = v:false
 
 hi BufferCurrentSign ctermfg=39
 hi BufferVisible ctermfg=242
