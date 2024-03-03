@@ -403,7 +403,7 @@ set foldopen+=block,hor,insert,jump,mark,search,tag,undo
 " set foldclose
 
 " set the fold method by filename
-autocmd BufNew,BufRead *.c,*.cpp setlocal foldmethod=indent
+autocmd BufNew,BufRead *.c,*.cpp,*.js setlocal foldmethod=indent
 autocmd BufNew,BufRead *.py setlocal foldmethod=indent
 " autocmd BufNew,BufRead *.md setlocal foldopen=all
 " autocmd BufNew,BufRead *.md setlocal foldclose=all
