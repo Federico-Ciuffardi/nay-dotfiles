@@ -1,10 +1,10 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-settings 6.08 for fede on Mon Jan 29 11:27:41 2024.
+# Written by xscreensaver-settings 6.08 for fede on Sun Oct 15 23:59:10 2023.
 # https://www.jwz.org/xscreensaver/
 
-timeout:	0:15:00
+timeout:	0:02:00
 cycle:		0:02:00
-lock:		True
+lock:		False
 lockTimeout:	0:01:00
 passwdTimeout:	0:00:30
 visualID:	default
@@ -26,9 +26,9 @@ dpmsOff:	4:00:00
 grabDesktopImages:  True
 grabVideoFrames:    False
 chooseRandomImages: False
-imageDirectory:	~/storage/media/pictures/crossy_road/
+imageDirectory:	/home/fede/pictures
 
-mode:		random
+mode:		off
 selected:	139
 
 textMode:	program
@@ -37,10 +37,10 @@ textFile:
 textProgram:	fortune && echo '-'
 textURL:	https://en.wikipedia.org/w/index.php?title=Special:NewPages&feed=rss
 dialogTheme:	darkgray
-settingsGeom:	10,46 649,284
+settingsGeom:	10,2208 -1,-1
 
 programs:								      \
--				maze -root -ignorant			    \n\
+				maze -root -ignorant			    \n\
 - GL: 				superquadrics --root			    \n\
 -				attraction --root			    \n\
 -				blitspin --root				    \n\
@@ -53,7 +53,7 @@ programs:								      \
 -				qix --root				    \n\
 -				rocks --root				    \n\
 -				rorschach --root			    \n\
--				decayscreen --root			    \n\
+				decayscreen --root			    \n\
 -				flame --root				    \n\
 -				halo --root				    \n\
 -				slidescreen --root			    \n\
@@ -154,7 +154,7 @@ programs:								      \
 - GL: 				molecule --root				    \n\
 -				rotzoomer --root			    \n\
 -				speedmine --root			    \n\
-- GL: 				starwars -root -no-fade			    \n\
+  GL: 				starwars -root -no-fade			    \n\
 - GL: 				stonerview --root			    \n\
 -				vermiculate --root			    \n\
 -				whirlwindwarp --root			    \n\
@@ -179,7 +179,7 @@ programs:								      \
 -				thornbird --root			    \n\
 -				twang --root				    \n\
 - GL: 				antspotlight --root			    \n\
--				apple2 --root				    \n\
+				apple2 --root				    \n\
 - GL: 				atunnel -root -light			    \n\
 -				barcode --root				    \n\
 - GL: 				blinkbox --root				    \n\
@@ -190,7 +190,7 @@ programs:								      \
 -				eruption --root				    \n\
 - GL: 				flipflop --root				    \n\
 - GL: 				flyingtoasters --root			    \n\
--				fontglide -root -delay 5344 -speed 2.2916     \
+				fontglide -root -delay 5344 -speed 2.2916     \
 				  -linger 10 -mode page			    \n\
 - GL: 				gleidescope --root			    \n\
 - GL: 				glknots --root				    \n\
@@ -202,24 +202,24 @@ programs:								      \
 - GL: 				mirrorblob --root			    \n\
 -				piecewise --root			    \n\
 - GL: 				polytopes --root			    \n\
--				pong --root				    \n\
+				pong --root				    \n\
 -				popsquares --root			    \n\
 - GL: 				surfaces --root				    \n\
--				xanalogtv --root			    \n\
+				xanalogtv --root			    \n\
 -				abstractile --root			    \n\
 -				anemotaxis --root			    \n\
 - GL: 				antinspect --root			    \n\
 -				fireworkx -root -maxlife 49 -shoot	    \n\
 -				fuzzyflakes --root			    \n\
--				interaggregate --root			    \n\
+				interaggregate --root			    \n\
 -				intermomentary --root			    \n\
 -				memscroller --root			    \n\
 - GL: 				noof --root				    \n\
--				pacman --root				    \n\
+				pacman --root				    \n\
 - GL: 				pinion --root				    \n\
 - GL: 				polyhedra --root			    \n\
 - GL: 				providence --root			    \n\
--				substrate --root			    \n\
+				substrate --root			    \n\
 -				wormhole --root				    \n\
 - GL: 				antmaze --root				    \n\
 - GL: 				boing -root -size 0.1476 -lighting	      \
@@ -231,14 +231,14 @@ programs:								      \
 				  -color plain				    \n\
 - GL: 				cube21 --root				    \n\
 -				fiberlamp --root			    \n\
-- GL: 				fliptext -root -speed 0.8557 -size 25	      \
+  GL: 				fliptext -root -speed 0.8557 -size 25	      \
 				  -columns 200 -lines 99		    \n\
 - GL: 				glhanoi --root				    \n\
 - GL: 				tangram --root				    \n\
 - GL: 				timetunnel --root			    \n\
 - GL: 				glschool --root				    \n\
 - GL: 				topblock --root				    \n\
-- GL: 				cubicgrid -root -no-bigdots		    \n\
+  GL: 				cubicgrid -root -no-bigdots		    \n\
 -				cwaves -root -delay 0 -waves 75 -colors	      \
 				  1000					    \n\
 - GL: 				gears --root				    \n\
@@ -260,7 +260,7 @@ programs:								      \
 -				hexadrop --root				    \n\
 - GL: 				kaleidocycle --root			    \n\
 - GL: 				quasicrystal -root -contrast 14		    \n\
-- GL: 				unknownpleasures -root -no-ortho	    \n\
+  GL: 				unknownpleasures -root -no-ortho	    \n\
 -				binaryring --root			    \n\
 - GL: 				cityflow -root -delay 0 -count 1256 -skew     \
 				  13 -wave-speed 17 -waves 9		    \n\
@@ -283,7 +283,7 @@ programs:								      \
 - GL: 				esper --root				    \n\
 - GL: 				vigilance --root			    \n\
 - GL: 				crumbler --root				    \n\
--				filmleader --root			    \n\
+				filmleader --root			    \n\
 -				glitchpeg --root			    \n\
 - GL: 				handsy --root				    \n\
 - GL: 				maze3d --root				    \n\
@@ -305,13 +305,13 @@ programs:								      \
 -				marbling --root				    \n\
 - GL: 				mapscroller --root			    \n\
 - GL: 				squirtorus --root			    \n\
-- GL: 				chompytower --root			    \n\
-- GL: 				nakagin --root				    \n\
-- GL: 				hextrail --root				    \n\
-- GL: 				cubocteversion --root			    \n\
--				droste --root				    \n\
-- GL: 				papercube --root			    \n\
-- GL: 				skulloop --root				    \n\
+  GL: 				chompytower --root			    \n\
+  GL: 				nakagin --root				    \n\
+  GL: 				hextrail --root				    \n\
+  GL: 				cubocteversion --root			    \n\
+				droste --root				    \n\
+  GL: 				papercube --root			    \n\
+  GL: 				skulloop --root				    \n\
 
 
 pointerHysteresis:  10
