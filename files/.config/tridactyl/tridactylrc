@@ -64,6 +64,3 @@ bind <C-A> fillcmdline winmerge
 
 " no indicator
 set modeindicator false
-
-"
-set storageloc local
