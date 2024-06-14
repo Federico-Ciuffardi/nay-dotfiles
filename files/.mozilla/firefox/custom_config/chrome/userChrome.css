@@ -1,5 +1,6 @@
 /* @source https://git.gay/freeplay/Firefox-Onebar
  * @brief Main theme
+ * @modifications removed everithing related to the urlbar
  */
 
 #navigator-toolbox {
@@ -349,6 +350,15 @@ toolbarspring,
  */
 .tabbrowser-tab .tab-close-button {
     display: none !important;
+}
+
+/*
+ * @source Me
+ * @brief Hides close button from tabs
+ */
+#back-button,
+#forward-button {
+  display: none !important;
 }
 
 /*
