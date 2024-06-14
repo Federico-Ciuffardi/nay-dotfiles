@@ -2,18 +2,12 @@
  * @brief Main theme
  */
 
-:root {
-    --urlbar-collapsed-width: 200px;
-    --urlbar-open-width: 300px; /* Only when disable-centering-of-URLbar is enabled */
-}
-
 #navigator-toolbox {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     position: relative !important;
 }
-
 
 /* Hide flexible spaces */
 toolbarspring,
@@ -74,44 +68,6 @@ toolbarspring,
         display: none !important;
     }
 }
-@media not (-moz-bool-pref: "onebar.disable-hiding-navigation-buttons") {
-    #urlbar-container ~ :is(#back-button, #forward-button) {
-        display: none !important;
-    }
-    /* In the customize menu */
-    :is(#wrapper-back-button, #wrapper-forward-button) {
-        opacity: 1 !important;
-    }
-    #wrapper-urlbar-container ~ :is(#wrapper-back-button, #wrapper-forward-button) {
-        opacity: .5 !important;
-    }
-
-    /* Add note in customize menu for nav buttons */
-    #customization-header::after {
-        content: "To hide the back & forward buttons, drag them to the right of the URL bar";
-        background-color: blue;
-        color: white;
-        border-radius: 4px;
-        padding: .4em .7em;
-        margin-top: 1em;
-        display: block;
-        width: max-content;
-    }
-}
-:root[customizing] .urlbar-input-box {
-    visibility: visible !important;
-}
-:root[customizing] .urlbar-input-box::before {
-    content: "https://";
-    margin-block: auto;
-}
-:root[customizing] #urlbar-input {
-    display: none !important;
-}
-
-
-
-
 
 /* Single Tab, *properties* also copy & pasted into "Small Window Fixes" */
 @media (not (-moz-bool-pref: "onebar.disable-single-tab")) {
@@ -160,126 +116,11 @@ toolbarspring,
     max-width: calc(100vw - ((2 * var(--toolbarbutton-inner-padding) + 16px) + (var(--toolbarbutton-outer-padding) * 2)) - var(--tab-block-margin)) !important;
     position: static !important;
 }
-#urlbar-container {
-    min-width: var(--urlbar-collapsed-width) !important;
-    z-index: 10;
-    transition: background-color .2s, width .2s, min-width .2s;
-    position: static !important;
-    width: unset !important;
-}
-#urlbar {
-    position: relative !important;
-    top: unset !important;
-    align-self: flex-start !important;
-    margin-block: auto !important;
-}
-#urlbar[breakout-extend] {
-    position: absolute !important;
-    inset-inline: 20vw !important;
-    width: unset !important;
-}
-@media (-moz-bool-pref: "onebar.disable-centering-of-URLbar") {
-    #urlbar-container {
-        position: relative !important;
-    }
-    #urlbar[breakout-extend] {
-        /* width: 100% !important; */
-        inset-inline: 0 !important;
-    }
-    #urlbar[breakout-extend] .urlbar-input-box {
-        min-width: 400px !important;
-    }
-    #urlbar-container:focus-within, #urlbar-container:hover {
-        min-width: var(--urlbar-open-width) !important;
-    }
-}
-#urlbar-input-container {
-    display: flex !important;
-}
-#urlbar-input-container > :not(.urlbar-input-box) {
-    order: 2;
-}
-.urlbar-input-box {
-    flex-grow: 1 !important;
-    padding-left: .5em !important;
-    width: 100px !important;
-    min-width: 50px !important;
-    transition: width .2s;
-}
-#urlbar-input:not(:focus-within) {
-    mask: linear-gradient(to right, black calc(100% - 20px), transparent);
-}
-#urlbar-background {
-    transition: border .2s;
-}
-#urlbar:hover:not([focused="true"]) > #urlbar-background {
-    --toolbar-field-border-color: var(--toolbar-field-focus-border-color)
-}
-
-/* Truncate https:// when collapsed */
-@media (not (-moz-bool-pref: "onebar.disable-https-truncate")) and (not (-moz-bool-pref: "browser.urlbar.trimHttps")) {
-    #urlbar-input {
-        transition: margin .1s;
-    }
-    .verifiedDomain ~ .urlbar-input-box:not(:focus-within) #urlbar-input:not([style*="--urlbar-scheme-size: 0"]) {
-        --https-size: calc(var(--urlbar-scheme-size) - 4ch);
-        margin-left: calc(0ch - var(--https-size)) !important;
-        mask: linear-gradient(to right, transparent var(--https-size), black calc(var(--https-size) + 1ch) calc(100% - 3ch), transparent) !important;
-    }
-}
 
 /* Hide unimportant buttons until hover */
 :root {
     --in-transition: font-size .2s, padding .2s, margin .2s, max-width .2s, opacity .2s .15s;
     --out-transition: font-size .2s, padding .2s, margin .2s, max-width .2s, opacity .07s;
-}
-#urlbar-container:hover #urlbar-input-container > box:not(#page-action-buttons),
-#urlbar-container:hover #page-action-buttons > *,
-#urlbar-container:hover #userContext-label {
-    transition: var(--in-transition) !important;
-    max-width: 200px;
-}
-@media (-moz-bool-pref: "onebar.disable-autohide-of-URLbar-icons") {
-    #urlbar-container {
-        min-width: var(--urlbar-open-width) !important;
-    }
-}
-@media (not (-moz-bool-pref: "onebar.disable-autohide-of-URLbar-icons")) {
-    #urlbar-container:not(:hover) :where(
-        toolbarbutton,
-        #userContext-label,
-        #star-button-box,
-        .verifiedDomain,
-        #tracking-protection-icon-container,
-        #pageAction-urlbar-_testpilot-containers,
-        #pageActionButton,
-    ) {
-        font-size: 0 !important;
-        max-width: 0 !important;
-        padding-inline: 0 !important;
-        margin-inline: 0 !important;
-        opacity: 0 !important;
-        transition: var(--out-transition) !important;
-    }
-    @media (-moz-bool-pref: "onebar.hide-all-URLbar-icons") {
-        #urlbar-container:not(:hover) :where(#page-action-buttons, #identity-box) > * {
-            font-size: 0 !important;
-            max-width: 0 !important;
-            padding-inline: 0 !important;
-            margin-inline: 0 !important;
-            opacity: 0 !important;
-            transition: var(--out-transition) !important;
-        }
-    }
-}
-#urlbar-container #urlbar[focused="true"] #urlbar-input-container > box,
-#urlbar-container #urlbar[focused="true"] #page-action-buttons > * {
-    font-size: 0 !important;
-    max-width: 0 !important;
-    padding-inline: 0 !important;
-    margin-inline: 0 !important;
-    opacity: 0 !important;
-    transition: var(--out-transition) !important;
 }
 
 /* Other Buttons */
@@ -476,14 +317,6 @@ toolbarspring,
     #scrollbutton-up,
     #scrollbutton-down {
         display: none !important;
-    }
-
-    #navigator-toolbox :is(#urlbar, #urlbar-container) {
-        min-width: unset !important;
-    }
-    #urlbar[breakout-extend] {
-        inset-inline: 15px !important;
-        z-index: 102 !important;
     }
 
     /* Single Tab styling */
