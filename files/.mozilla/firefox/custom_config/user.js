@@ -15,8 +15,8 @@ user_pref("full-screen-api.transition.timeout", 0);
 ////////////
 // Onebar //
 ////////////
-user_pref("onebar.disable-https-truncate", true);
+user_pref("onebar.disable-https-truncate", false);
 user_pref("onebar.hide-all-URLbar-icons", true);
 user_pref("onebar.disable-centering-of-URLbar", false);
-user_pref("onebar.disable-single-tab", true);
+user_pref("onebar.disable-single-tab", false);
 user_pref("onebar.hide-all-tabs-button", true);
