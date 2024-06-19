@@ -22,7 +22,7 @@ set query_command = "mail-query '%s' ~/.local/share/mail/federico.ciuffardi@outl
 macro index \Cr "<shell-escape>mymailsync federico.ciuffardi@outlook.com<enter>" "run mbsync to sync federico.ciuffardi@outlook.com"
 macro index <F5> "<shell-escape>mymailsync federico.ciuffardi@outlook.com<enter>" "run mbsync to sync federico.ciuffardi@outlook.com"
 
-mailboxes "+Archive" "+Deleted" "+Drafts" "+INBOX" "+Junk" "+Notes" "+Outbox" "+Queue" "+Sent" "+Trash"
+mailboxes "=Archive" "=Deleted" "=Drafts" "=INBOX" "=Junk" "=Notes" "=Outbox" "=Queue" "=Sent" "=Trash"
 macro index,pager ga "<change-folder>=Archive<enter>" "go to archive"
 macro index,pager S ":set confirmappend=no delete=yes auto_tag=yes\n<save-message>=Archive\n<sync-mailbox>:set confirmappend=yes delete=ask-yes\n"
 macro index,pager Ca ";<copy-message>=Archive<enter>" "copy mail to archive"
