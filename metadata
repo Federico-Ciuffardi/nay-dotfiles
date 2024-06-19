@@ -79,7 +79,7 @@
 .local/share/nvim/site/spell/es.utf-8.sug 644
 .config/flameshot/flameshot.ini 644
 .config/mpv/input.conf 644
-.local/share/nvim/site/autoload/plug.vim 644
+.local/share/nvim/site/autoload/plug.vim 664
 .mbsyncrc 644
 .config/msmtp/config 644
 .config/mutt/accounts/2-fciuffardi@fing.edu.uy.muttrc 644
@@ -130,3 +130,4 @@
 .config/calcurse/caldav/config 644
 .gnupg/dirmngr.conf 644
 .config/task/hooks/shift-recurrence/__pycache__/pirate_add_shift_recurrence.cpython-311.pyc 644
+.config/mutt/.mw-mailsynclastrun 664
