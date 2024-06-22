@@ -704,8 +704,6 @@ nmap <leader>gp <Plug>(GitGutterPreviewHunk)
 """""""""""
 "{{{
 
-set t_Co=256
-set t_ut=
 colorscheme codedark
 set noshowmode
 
@@ -721,11 +719,6 @@ function! Toggle_transparent_background()
   endif
 endfunction
 nnoremap <C-t> :call Toggle_transparent_background()<CR>
-
-" neovide bg
-hi Normal guibg=#1E1E1E
-highlight Folded gui=bold guibg=#1E1E1E guifg=#5E5E5E
-
 
 " coc
 hi CocSemClass ctermfg=43 ctermbg=NONE

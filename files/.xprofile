@@ -57,7 +57,7 @@ kdeconnect-indicator &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &>/dev/null &
 
 # Compositor
-picom --experimental-backends &>/dev/null &
+picom &>/dev/null &
 
 # Notification
 (sleep 5 && dunst) &
