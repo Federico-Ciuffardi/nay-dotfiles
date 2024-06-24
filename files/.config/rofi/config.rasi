@@ -4,9 +4,9 @@ configuration {
   /* location: 2; */
   modi: "window,drun,run";
   fixed-num-lines: false;
-  display-window: "缾";
+  display-window: ">";
   display-run: "";
-  display-drun: "";
+  display-drun: ">";
   display-emoji: "";
   show-icons: true;
   icon-theme: "Papirus";
