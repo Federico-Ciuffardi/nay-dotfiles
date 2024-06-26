@@ -172,6 +172,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 "" programming related
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'digitaltoad/vim-pug'
 Plug 'lervag/vimtex'
 Plug 'habamax/vim-godot'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
