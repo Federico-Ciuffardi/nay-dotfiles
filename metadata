@@ -79,14 +79,14 @@
 .local/share/nvim/site/spell/es.utf-8.sug 644
 .config/flameshot/flameshot.ini 644
 .config/mpv/input.conf 644
-.local/share/nvim/site/autoload/plug.vim 664
+.local/share/nvim/site/autoload/plug.vim 644
 .mbsyncrc 644
 .config/msmtp/config 644
 .config/mutt/accounts/2-fciuffardi@fing.edu.uy.muttrc 644
 .config/ncmpcpp/bindings 664
 .config/ncmpcpp/config 664
 .config/mpd/mpd.conf 664
-.local/share/nvim/site/autoload/plug.vim.old 644
+.local/share/nvim/site/autoload/plug.vim.old 664
 .config/rofi/flat.rasi 664
 .gtkrc-2.0 644
 .config/gtk-3.0/settings.ini 644
