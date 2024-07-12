@@ -26,6 +26,7 @@ image/jpeg=sxiv.desktop
 x-scheme-handler/tg=userapp-Telegram Desktop-FV7TZ0.desktop
 application/pdf=org.kde.okular.desktop
 x-scheme-handler/postman=Postman.desktop
+x-scheme-handler/discord-455712169795780630=discord-455712169795780630.desktop
 
 [Added Associations]
 application/x-shellscript=notepadqq.desktop;code-oss.desktop;
