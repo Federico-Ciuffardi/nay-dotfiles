@@ -131,3 +131,5 @@
 .gnupg/dirmngr.conf 644
 .config/task/hooks/shift-recurrence/__pycache__/pirate_add_shift_recurrence.cpython-311.pyc 644
 .config/mutt/.mw-mailsynclastrun 664
+.config/picom/picom_.conf 644
+.config/picom/picom2.conf 644

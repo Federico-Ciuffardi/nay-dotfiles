@@ -34,7 +34,8 @@ class lwd_fzf(Command):
                     if len(comp) > 0 and comp[0] == '.':
                         self.fm.set_option('show_hidden', True)
                 self.fm.select_file(fzf_file)
-                self.fm.execute_file(File(os.path.expanduser(fzf_file)))
+                # disabled, not working since some update
+                # self.fm.execute_file(File(os.path.expanduser(fzf_file)))
 
 class fzf_select(Command):
     def execute(self):
@@ -60,7 +61,8 @@ class fzf_select(Command):
                     if len(comp) > 0 and comp[0] == '.':
                         self.fm.set_option('show_hidden', True)
                 self.fm.select_file(fzf_file)
-                self.fm.execute_file(File(os.path.expanduser(fzf_file)))
+                # disabled, not working since some update
+                # self.fm.execute_file(File(os.path.expanduser(fzf_file))) 
 
 class extract(Command):
     def execute(self):

@@ -25,7 +25,7 @@ export WM="dwm"
 # bin lookup
 export MY_BIN="$HOME/.local/share/mybin"
 export DOTNET_BIN="$PATH:/home/fede/.dotnet/tools"
-export PATH="$PATH:$MY_BIN/path:$DOTNET_BIN:$HOME/.local/bin:$HOME/.cargo/bin"
+export PATH="$PATH:$MY_BIN/path:$DOTNET_BIN:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.local/share/gem/ruby/3.2.0/bin:$HOME/.fly/bin"
 
 # others
 export WALLPAPER_FILE="$HOME/.local/share/wallpaper/wallpaper"
@@ -77,6 +77,7 @@ export ranger_choosedir_file="$HOME/.cache/ranger-choosedir"
 
 # qt
 export QT_QPA_PLATFORMTHEME="qt5ct" # qt theming with qt5ct
+export QT_STYLE_OVERRIDE="kvantum"
 
 # less
 export LESS="-RF"
