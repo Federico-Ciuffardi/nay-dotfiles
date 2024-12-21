@@ -732,15 +732,23 @@ hi CocSemClass ctermfg=43 ctermbg=NONE
 
 let g:vimwiki_list = [{'path': '~/.local/share/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
 
-hi VimwikiHeader1 cterm=bold ctermfg=39
-hi VimwikiHeader2 cterm=bold ctermfg=75
-hi VimwikiHeader3 cterm=bold ctermfg=81
-hi VimwikiHeader4 cterm=bold ctermfg=117
-hi VimwikiHeader5 cterm=bold ctermfg=159
-hi VimwikiHeader6 cterm=bold ctermfg=195
+" let g:vimwiki_hl_headers = 1
+" hi VimwikiHeader1 cterm=bold ctermfg=39
+" hi VimwikiHeader2 cterm=bold ctermfg=75
+" hi VimwikiHeader3 cterm=bold ctermfg=81
+" hi VimwikiHeader4 cterm=bold ctermfg=117
+" hi VimwikiHeader5 cterm=bold ctermfg=159
+" hi VimwikiHeader6 cterm=bold ctermfg=195
+
+:hi VimwikiHeader1 gui=bold guifg=#4a8dff
+:hi VimwikiHeader2 gui=bold guifg=#6697ff
+:hi VimwikiHeader3 gui=bold guifg=#79aaff
+:hi VimwikiHeader4 gui=bold guifg=#89bbff
+:hi VimwikiHeader5 gui=bold guifg=#cdddff
+:hi VimwikiHeader6 gui=bold guifg=#FFFFFF
 
 hi VimwikiList cterm=bold ctermfg=255
-hi VimwikiHeaderChar cterm=bold ctermfg=252
+" hi VimwikiHeaderChar cterm=bold ctermfg=252
 
 " hi VimwikiLink cterm=underline ctermfg=195 guifg=#52B6FF gui=underline
 

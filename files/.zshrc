@@ -75,8 +75,8 @@ export ESCDELAY=1
 
 # History search
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 
 # Disable pausing with c-s and resuming with c-q
 stty -ixon
