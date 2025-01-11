@@ -133,3 +133,5 @@
 .config/mutt/.mw-mailsynclastrun 664
 .config/picom/picom_.conf 644
 .config/picom/picom2.conf 644
+.config/picom/picom3.conf 644
+.config/picom/picom4.conf 644

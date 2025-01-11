@@ -301,4 +301,5 @@ fi
 . lwd load
 
 [ -f ~/.zshrc-custom ] && source ~/.zshrc-custom
+[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 #}}}
