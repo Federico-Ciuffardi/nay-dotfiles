@@ -135,3 +135,11 @@
 .config/picom/picom2.conf 644
 .config/picom/picom3.conf 644
 .config/picom/picom4.conf 644
+.config/picom/picom_xrender.conf 644
+.config/picom/.old/picom2.conf 644
+.config/picom/.old/picom_noround.conf 644
+.config/picom/.old/picom_.conf 644
+.config/picom/.old/picom3.conf 644
+.config/picom/.old/picom4.conf 644
+.config/picom/.old/picom1.conf_ 644
+.config/picom/.old/picom_round.conf 644
