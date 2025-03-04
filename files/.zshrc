@@ -302,4 +302,6 @@ fi
 
 [ -f ~/.zshrc-custom ] && source ~/.zshrc-custom
 [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
+[ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
+
 #}}}
