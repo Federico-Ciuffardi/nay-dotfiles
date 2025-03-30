@@ -86,7 +86,7 @@
 .config/ncmpcpp/bindings 664
 .config/ncmpcpp/config 664
 .config/mpd/mpd.conf 664
-.local/share/nvim/site/autoload/plug.vim.old 664
+.local/share/nvim/site/autoload/plug.vim.old 644
 .config/rofi/flat.rasi 664
 .gtkrc-2.0 644
 .config/gtk-3.0/settings.ini 644
