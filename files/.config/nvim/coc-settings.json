@@ -33,5 +33,8 @@
 		"<C-n>": "normal:j",
 		"<C-p>": "normal:k",
 		"<C-t>": "action:tabe"
-	}
+	},
+  "pyright.inlayHints.functionReturnTypes": false,
+  "pyright.inlayHints.variableTypes": false,
+  "pyright.inlayHints.parameterTypes": false
 }
