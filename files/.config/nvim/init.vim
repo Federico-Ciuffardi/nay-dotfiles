@@ -176,6 +176,7 @@ Plug 'digitaltoad/vim-pug'
 Plug 'lervag/vimtex'
 Plug 'habamax/vim-godot'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'habamax/vim-godot'
 
 "" Visual
 Plug 'Federico-Ciuffardi/vim-code-dark'
