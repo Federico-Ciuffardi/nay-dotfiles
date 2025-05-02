@@ -422,10 +422,12 @@ toolbarspring,
 }
 
 
+
 #main-window #urlbar {
   &:not([breakout="true"][breakout-extend="true"]) {
     z-index: -1000 !important;
     opacity: 0 !important;
+    pointer-events: none; /* Disables input interaction */
   }
   &[breakout="true"][breakout-extend="true"] {
     z-index: 1000 !important;
