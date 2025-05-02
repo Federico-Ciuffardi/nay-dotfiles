@@ -4,7 +4,7 @@
 nm-applet &
 
 # Screen positions
-xrandr --output HDMI-0 --auto --output DP-1 --auto --left-of HDMI-0 &> /dev/null
+xrandr --output eDP-1 --mode 1920x1080 --rate 60 --output HDMI-0 --auto --output DP-1 --auto --left-of HDMI-0 &> /dev/null
 
 # Temporarily turning the touch-pad off while typing
 syndaemon -K -i 0.5 -R -d &
