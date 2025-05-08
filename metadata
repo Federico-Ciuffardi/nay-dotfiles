@@ -143,3 +143,5 @@
 .config/picom/.old/picom4.conf 644
 .config/picom/.old/picom1.conf_ 644
 .config/picom/.old/picom_round.conf 644
+.config/alacritty/alacritty.toml 600
+.config/picom/picom_bkp.conf 644

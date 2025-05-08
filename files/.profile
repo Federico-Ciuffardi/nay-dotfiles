@@ -5,15 +5,16 @@
 ##########################
 #{{{
 
-export TERMINAL="st"
+export TERMINAL="alacritty"
 export TERM="st-256color" #"xterm-256color"
 
 export EDITOR="nvim"
 export VISUAL="nvim"
 export DIFFPROG="nvim -d"
 
-export BROWSER="firefox"
 export WM="dwm"
+
+export BROWSER="firefox"
 
 #}}}
 
