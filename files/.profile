@@ -5,7 +5,7 @@
 ##########################
 #{{{
 
-export TERMINAL="alacritty"
+export TERMINAL="st"
 export TERM="st-256color" #"xterm-256color"
 
 export EDITOR="nvim"
