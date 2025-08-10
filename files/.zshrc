@@ -1,7 +1,3 @@
-if [[ ${DEBUG-} =~ ^1|yes|true$ ]]; then
-    set -o xtrace       # Trace the execution of the script (debug)
-fi
-
 ##########
 # termux #
 ##########
