@@ -39,6 +39,7 @@ export AUTOSTART_BIN="$MY_BIN/autostart"
 export STATUSBAR_BIN="$MY_BIN/statusbar"
 export STATUSBAR_AUX_BIN="$MY_BIN/statusbar/aux"
 export BASH_LIB_BIN="$MY_BIN/lib"
+export GOPATH="$HOME/.local/share/go"
 
 #}}}
 
