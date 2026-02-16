@@ -1,6 +1,7 @@
 #! /usr/bin/env bash
 
-nvidia-settings --assign CurrentMetaMode="$(nvidia-settings --query CurrentMetaMode -t | sed 's/}/, ForceFullCompositionPipeline=On}/g')"
+function vsync { nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCompositionPipeline = $@ }" ;}
+[[ $(nvidia-settings -tq CurrentMetaMode | grep ForceFullCompositionPipeline=On) ]] && vsync Off || vsync On
 
 # Network
 nm-applet &
