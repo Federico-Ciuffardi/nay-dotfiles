@@ -1,10 +1,12 @@
 #! /usr/bin/env bash
 
+nvidia-settings --assign CurrentMetaMode="$(nvidia-settings --query CurrentMetaMode -t | sed 's/}/, ForceFullCompositionPipeline=On}/g')"
+
 # Network
 nm-applet &
 
 # Screen positions
-xrandr --output eDP-1 --mode 1920x1080 --rate 60 --output HDMI-0 --auto --output DP-1 --auto --left-of HDMI-0 &> /dev/null
+xrandr --output eDP-1 --mode 1920x1080 --rate 60 --output HDMI-0 --auto --output DP-1 --auto --left-of HDMI-0 &>/dev/null
 brightctl 155
 
 # Temporarily turning the touch-pad off while typing
@@ -18,16 +20,16 @@ xset -dpms
 xset s off
 
 # Speed xrate up
-xset r rate 300 50 
+xset r rate 300 50
 
-# load .Xresources 
+# load .Xresources
 [ -f ~/.Xresources ] && xrdb ~/.Xresources &
 
 # load Xmodmap/Xbindkeys config
 [ -f ~/.config/Xmodmap ] && xmodmap ~/.config/Xmodmap &
 
 # Wallpaper
-nitrogen --set-scaled $WALLPAPER_FILE &
+nitrogen --set-tiled $WALLPAPER_FILE &
 
 # Audio
 pipewire-pulse &>/dev/null &
@@ -65,9 +67,9 @@ picom &>/dev/null &
 
 # Network dependent
 (
-sleep 30 
-whatsapp-nativefier &
-mattermost-desktop &
-) & 
+  sleep 30
+  whatsapp-nativefier &
+  mattermost-desktop &
+) &
 
 [ -f ~/.xprofile-custom ] && bash ~/.xprofile-custom

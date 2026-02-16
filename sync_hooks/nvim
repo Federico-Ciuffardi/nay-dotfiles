@@ -4,4 +4,5 @@ source /usr/lib/naylib
 
 # install vim plug pluggins
 draw_heading "Sync vim pluggins"
-nvim <(figlet Syncing Pluggins...) -c " PlugUpgrade | PlugClean | PlugUpdate | PlugInstall | qa"
+
+draw_spinner "nvim" "gitsyncer "$HOME/.config/nvim" "git@github.com:Federico-Ciuffardi/nvim_config.git"" || exit 1
