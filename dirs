@@ -8,7 +8,6 @@
 .config/mutt
 .config/newsboat
 .config/parcellite
-.config/picom
 .config/polybar
 .config/qutebrowser
 .config/rofi
