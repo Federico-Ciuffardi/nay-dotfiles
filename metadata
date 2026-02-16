@@ -29,8 +29,6 @@
 .config/mutt/muttrc 644
 .config/newsboat/config 644
 .config/newsboat/urls 644
-.config/nvim/coc-settings.json 644
-.config/nvim/init.vim 644
 .config/parcellite/parcelliterc 644
 .config/picom/picom.conf 644
 .config/polybar/config 644
