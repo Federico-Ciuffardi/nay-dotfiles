@@ -5,4 +5,7 @@ source /usr/lib/naylib
 # install vim plug pluggins
 draw_heading "Sync vim pluggins"
 
+# This is a temporary way to be able to use mybin in when bootstrapping
+export MY_BIN="$HOME/.local/share/mybin"
+export PATH="$PATH:$MY_BIN/path"
 draw_spinner "nvim" "gitsyncer "$HOME/.config/nvim" "git@github.com:Federico-Ciuffardi/nvim_config.git"" || exit 1
