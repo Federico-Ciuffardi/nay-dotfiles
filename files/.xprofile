@@ -55,7 +55,7 @@ Arch)
 esac
 
 # Compositor
-picom &>/dev/null &
+picom_distro_conf &>/dev/null &
 
 # Notification
 (sleep 5 && dunst) &
