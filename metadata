@@ -21,7 +21,7 @@
 .config/lf/lfrc 644
 .config/lf/preview 755
 .config/lf/scope 644
-.config/mimeapps.list 644
+.config/mimeapps.list 664
 .config/mutt/.mailsynclastrun 644
 .config/mutt/accounts/1-federico.ciuffardi@outlook.com.muttrc 644
 .config/mutt/filepicker 644

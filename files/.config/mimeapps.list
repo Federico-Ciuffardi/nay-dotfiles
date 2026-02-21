@@ -8,11 +8,11 @@ video/mp4=vlc.desktop
 audio/mpeg=vlc.desktop
 applications/x-terminal-emulator=st.desktop
 x-scheme-handler/discord-523502837364424706=discord-523502837364424706.desktop
-x-scheme-handler/http=firefox.desktop
-x-scheme-handler/https=firefox.desktop
+x-scheme-handler/http=firefox_firefox.desktop
+x-scheme-handler/https=firefox_firefox.desktop
 x-scheme-handler/ftp=firefox.desktop
 x-scheme-handler/chrome=firefox.desktop
-text/html=firefox.desktop
+text/html=firefox_firefox.desktop
 application/x-extension-htm=firefox.desktop
 application/x-extension-html=firefox.desktop
 application/x-extension-shtml=firefox.desktop
@@ -27,6 +27,8 @@ x-scheme-handler/tg=userapp-Telegram Desktop-FV7TZ0.desktop
 application/pdf=org.kde.okular.desktop
 x-scheme-handler/postman=Postman.desktop
 x-scheme-handler/discord-455712169795780630=discord-455712169795780630.desktop
+x-scheme-handler/about=firefox_firefox.desktop
+x-scheme-handler/unknown=firefox_firefox.desktop
 
 [Added Associations]
 application/x-shellscript=notepadqq.desktop;code-oss.desktop;
