@@ -2,21 +2,22 @@
 
 source /usr/lib/naylib
 
-distro_name=$(lsb_release -i | sed 's/.*:\s*//g')
-case "$distro_name" in
-Arch)
-  firefox_config_dir=$HOME/.mozilla/firefox/
-  ;;
-Ubuntu)
-  firefox_config_dir=$HOME/snap/firefox/common/.mozilla/firefox/
-  ;;
-esac
-
 # sync firefox profiles
 draw_heading "Sync firefox profiles"
 firefox --headless -CreateProfile "$USER"
-cd $firefox_config_dir
+
+## cd into firefox config
+distro_name=$(lsb_release -i | sed 's/.*:\s*//g')
+case "$distro_name" in
+Arch)
+  cd $HOME/.mozilla/firefox/
+  ;;
+Ubuntu)
+  cd $HOME/snap/firefox/common/.mozilla/firefox/
+  ;;
+esac
+
 for profile in $(grep path -i profiles.ini | sed 's/Path=//g'); do
   echo "  $profile"
-  cp -r custom_config/* $profile
+  cp -r $HOME/.mozilla/firefox/custom_config/* $profile
 done
