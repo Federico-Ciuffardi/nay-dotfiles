@@ -104,3 +104,4 @@ URxvt.url-launcher: firefox
 URxvt.matcher.button: 1
 
 Xft.rgba: none
+Xft.dpi: 96
