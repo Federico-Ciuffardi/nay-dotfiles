@@ -134,7 +134,7 @@ handle_image() {
         image/svg+xml|image/svg)
           actualsize=$(wc -c < "${FILE_PATH}")
           # if [ $actualsize -le 10240 ]; then
-            inkscape "${FILE_PATH}" --export-area-drawing --export-png="${IMAGE_CACHE_PATH}" --export-width=500 && exit 6
+            inkscape "${FILE_PATH}" --export-area-drawing --export-png="${IMAGE_CACHE_PATH}.png" --export-width=500 && mv "${IMAGE_CACHE_PATH}.png" "${IMAGE_CACHE_PATH}" && exit 6
           # fi
           # rsvg-convert --keep-image-data --keep-aspect-ratio --width "${DEFAULT_SIZE%x*}" "${FILE_PATH}" -o "${IMAGE_CACHE_PATH}.png" \
           #     && mv "${IMAGE_CACHE_PATH}.png" "${IMAGE_CACHE_PATH}" \
