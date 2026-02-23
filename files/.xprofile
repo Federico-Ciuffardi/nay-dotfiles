@@ -1,5 +1,7 @@
 #! /usr/bin/env bash
 
+eval "$(dbus-launch --sh-syntax)"
+
 # Network
 nm-applet &
 
