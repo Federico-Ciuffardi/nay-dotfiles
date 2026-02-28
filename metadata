@@ -198,3 +198,5 @@
 .local/share/wallpaper/wallpaper13 644
 .local/share/wallpaper/wallpaper14 644
 .config/zsh-system-clipboard/method 644
+.local/share/nvim/site/spell/en.utf-8.add.spl 664
+.local/share/nvim/site/spell/en.utf-8.add 664
