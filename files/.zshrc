@@ -248,11 +248,21 @@ function precmd(){
   vi_precmd
 }
 
+# function preexec(){ 
+#   vi_preexec
+#
+# 	# title change
+# 	echo -ne "\e]0;"$1"\a" 
+#
+#   # title change for tmux
+#   [ -z $TMUX ] || echo -ne "\033k"$1"\033\\"
+# }
+#
 function preexec(){ 
   vi_preexec
 
-	# title change
-	echo -ne "\e]0;"$1"\a" 
+  # title change (fixed)
+  print -Pn "%{\e]0;${1}\a%}"
 
   # title change for tmux
   [ -z $TMUX ] || echo -ne "\033k"$1"\033\\"
