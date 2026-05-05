@@ -56,6 +56,9 @@ Arch)
 ;;
 esac
 
+# gsettings
+gsettings set org.gnome.desktop.interface color-scheme prefer-dark
+
 # Compositor
 picom_distro_conf &>/dev/null &
 

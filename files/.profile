@@ -78,8 +78,8 @@ export FZF_DEFAULT_OPTS='--bind="ctrl-d:preview-down,ctrl-u:preview-up,ctrl-l:ac
 export ranger_choosedir_file="$HOME/.cache/ranger-choosedir"
 
 # qt
-export QT_QPA_PLATFORMTHEME="qt5ct" # qt theming with qt5ct
-export QT_STYLE_OVERRIDE="kvantum"
+export QT_QPA_PLATFORMTHEME="qt6ct" # qt theming with qt6ct
+# export QT_STYLE_OVERRIDE="kvantum-dark"
 
 # less
 export LESS="-RF"
