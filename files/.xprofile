@@ -1,9 +1,5 @@
 #! /usr/bin/env bash
 
-export XDG_CURRENT_DESKTOP=dwm
-export XDG_SESSION_TYPE=x11
-export GTK_USE_PORTAL=0
-
 eval "$(dbus-launch --sh-syntax)"
 
 # Network
