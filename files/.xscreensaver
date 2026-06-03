@@ -1,10 +1,10 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-settings 6.08 for fede on Sun Oct 15 23:59:10 2023.
+# Written by xscreensaver-settings 6.08 for fede on Wed Jun  3 12:24:48 2026.
 # https://www.jwz.org/xscreensaver/
 
-timeout:	0:02:00
+timeout:	0:10:00
 cycle:		0:02:00
-lock:		False
+lock:		True
 lockTimeout:	0:01:00
 passwdTimeout:	0:00:30
 visualID:	default
@@ -26,9 +26,9 @@ dpmsOff:	4:00:00
 grabDesktopImages:  True
 grabVideoFrames:    False
 chooseRandomImages: False
-imageDirectory:	/home/fede/pictures
+imageDirectory:	~/Pictures/
 
-mode:		off
+mode:		random
 selected:	139
 
 textMode:	program
@@ -37,7 +37,7 @@ textFile:
 textProgram:	fortune && echo '-'
 textURL:	https://en.wikipedia.org/w/index.php?title=Special:NewPages&feed=rss
 dialogTheme:	darkgray
-settingsGeom:	10,2208 -1,-1
+settingsGeom:	1930,86 2697,216
 
 programs:								      \
 				maze -root -ignorant			    \n\
@@ -205,7 +205,7 @@ programs:								      \
 				pong --root				    \n\
 -				popsquares --root			    \n\
 - GL: 				surfaces --root				    \n\
-				xanalogtv --root			    \n\
+-				xanalogtv --root			    \n\
 -				abstractile --root			    \n\
 -				anemotaxis --root			    \n\
 - GL: 				antinspect --root			    \n\
@@ -289,7 +289,7 @@ programs:								      \
 - GL: 				maze3d --root				    \n\
 - GL: 				peepers --root				    \n\
 - GL: 				razzledazzle --root			    \n\
--				vfeedback -root -tv-color 281		    \n\
+				vfeedback -root -tv-color 281		    \n\
 - GL: 				deepstars -root -smear 0.1		    \n\
 - GL: 				gravitywell --root			    \n\
 -				scooter -root -cycles 443 -count 31 -size     \
@@ -305,13 +305,13 @@ programs:								      \
 -				marbling --root				    \n\
 - GL: 				mapscroller --root			    \n\
 - GL: 				squirtorus --root			    \n\
-  GL: 				chompytower --root			    \n\
-  GL: 				nakagin --root				    \n\
+- GL: 				chompytower --root			    \n\
+- GL: 				nakagin --root				    \n\
   GL: 				hextrail --root				    \n\
   GL: 				cubocteversion --root			    \n\
-				droste --root				    \n\
-  GL: 				papercube --root			    \n\
-  GL: 				skulloop --root				    \n\
+-				droste --root				    \n\
+- GL: 				papercube --root			    \n\
+- GL: 				skulloop --root				    \n\
 
 
 pointerHysteresis:  10

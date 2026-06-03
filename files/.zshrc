@@ -26,19 +26,25 @@ if [ ! -f "$HOME/.zinit/bin/zinit.zsh" ]; then
         print -P "%F{160}▓▒░ The clone has failed.%F"
 fi
 
+# ZINIT BOOTSTRAP
 source "$HOME/.zinit/bin/zinit.zsh"
 
-zinit ice wait lucid
-zinit light "kutsan/zsh-system-clipboard"
+# CORE PLUGINS (lazy-loaded)
+## Completions (deferred)
+zinit ice wait'0a' lucid
+zinit light zsh-users/zsh-completions
 
-zinit ice wait lucid
-zinit light "zsh-users/zsh-completions"
-
-zinit ice wait lucid atload"_zsh_autosuggest_start"
+## Autosuggestions (after prompt is ready)
+zinit ice wait'0c' lucid atload"_zsh_autosuggest_start"
 zinit light zsh-users/zsh-autosuggestions
 
-zinit ice wait lucid
+## Syntax highlighting (last because it's heavy)
+zinit ice wait'0b' lucid
 zinit light zdharma-continuum/fast-syntax-highlighting
+
+## System clipboard (light, safe early load)
+zinit ice wait'0a' lucid
+zinit light kutsan/zsh-system-clipboard
 
 #}}}
 
@@ -86,10 +92,20 @@ setopt correct
 
 # autocomplete
 ##  Enable 
-autoload -U compinit
+# autoload -U compinit
+# zstyle ':completion:*' menu select
+# zmodload zsh/complist
+# compinit
+
+autoload -Uz compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit
+
+if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+  compinit -C
+else
+  compinit
+fi
 
 ## Include hidden files in autocomplete:
 _comp_options+=(globdots)
@@ -287,7 +303,7 @@ function source_ros2(){
 }
 
 # GHCUP
-[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
+# [ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env"
 
 # Load aliases
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc"
@@ -311,7 +327,7 @@ fi
 . lwd load
 
 [ -f ~/.zshrc-custom ] && source ~/.zshrc-custom
-[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
+# [[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh
 # [ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
 # [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 # [ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
