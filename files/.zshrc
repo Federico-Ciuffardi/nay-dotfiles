@@ -278,12 +278,15 @@ function precmd(){
 #   [ -z $TMUX ] || echo -ne "\033k"$1"\033\\"
 # }
 #
+
 function preexec(){ 
   vi_preexec
-
   # title change (fixed)
-  print -Pn "%{\e]0;${1}\a%}"
-
+  if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    print -Pn "%{\e]0;${1} @ $(hostname)\a%}"
+  else
+    print -Pn "%{\e]0;${1}\a%}"
+  fi
   # title change for tmux
   [ -z $TMUX ] || echo -ne "\033k"$1"\033\\"
 }
