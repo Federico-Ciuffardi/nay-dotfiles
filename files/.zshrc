@@ -66,7 +66,7 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 autoload -U colors && colors
 
 # PS
-if [ "$(cat /etc/hostname)" = "server" ] ; then
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
   PS1="%B%{$fg[red]%}[ %{$fg[white]%}%~ %{$fg[red]%}]$%b "
 else
   PS1="%B%{$fg[green]%}[ %{$fg[white]%}%~ %{$fg[green]%}]$%b "
@@ -282,6 +282,15 @@ function preexec(){
 
   # title change for tmux
   [ -z $TMUX ] || echo -ne "\033k"$1"\033\\"
+}
+
+function set_terminal_title() {
+  if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    print -Pn "%{\e]0;@$(hostname): %~\a%}"
+  else
+    print -Pn "%{\e]0;%~\a%}"
+    print -Pn "%{\e]0;@$(hostname): %~\a%}"
+  fi
 }
 
 #}}}
