@@ -292,7 +292,7 @@ function preexec(){
 
 function set_terminal_title() {
   if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    print -Pn "%{\e]0;%~\a%} @ $(hostname)"
+    print -Pn "%{\e]0;%~\a  @ $(hostname)%}"
   else
     print -Pn "%{\e]0;%~\a%}"
   fi
