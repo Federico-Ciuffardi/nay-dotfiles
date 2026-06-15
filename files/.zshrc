@@ -65,9 +65,8 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 # Colors 
 autoload -U colors && colors
 
-PS
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-  PS1="$(echo $USER)@$(hostname) %B%{$fg[green]%}[ %{$fg[white]%}%~ %{$fg[green]%}]$%b"
+  PS1="%B%{$fg[cyan]%}[ %{$fg[white]%}%~ %{$fg[cyan]%}]$%b "
 else
   PS1="%B%{$fg[green]%}[ %{$fg[white]%}%~ %{$fg[green]%}]$%b "
 fi
