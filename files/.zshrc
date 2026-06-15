@@ -67,7 +67,7 @@ autoload -U colors && colors
 
 # PS
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-  PS1="%B%{$fg[red]%}[ %{$fg[white]%}%~ %{$fg[red]%}]$%b "
+  PS1="%B%{$fg[blue]%}[ %{$fg[white]%}%~ %{$fg[blue]%}]$%b "
 else
   PS1="%B%{$fg[green]%}[ %{$fg[white]%}%~ %{$fg[green]%}]$%b "
 fi
