@@ -66,10 +66,15 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 autoload -U colors && colors
 
 # PS
+# if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+#   PS1="%B%{$fg[green]%}[ %{$fg[white]%}%~ %{$fg[green]%}]$%b @$(hostname)"
+# else
+#   PS1="%B%{$fg[green]%}[ %{$fg[white]%}%~ %{$fg[green]%}]$%b "
+# fi
+PS1="%B%{$fg[green]%}[ %{$fg[white]%}%~ %{$fg[green]%}]$%b "
+
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-  PS1="%B%{$fg[blue]%}[ %{$fg[white]%}%~ %{$fg[blue]%}]$%b "
-else
-  PS1="%B%{$fg[green]%}[ %{$fg[white]%}%~ %{$fg[green]%}]$%b "
+  tmux setenv REMOTE_HOST "$(hostname)" 2>/dev/null
 fi
 
 # Man pager
@@ -122,7 +127,7 @@ zle -N down-line-or-beginning-search
 ranger_cd() {
   # ranger --choosedir="$ranger_choosedir_file" $@
   if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    ranger --cmd="set hostname_in_titlebar true" --cmd="set colorscheme solarized" --choosedir="$ranger_choosedir_file" $@
+    ranger --cmd="set hostname_in_titlebar true" --choosedir="$ranger_choosedir_file" $@
   else
     ranger --choosedir="$ranger_choosedir_file" $@
   fi
