@@ -289,7 +289,6 @@ function set_terminal_title() {
     print -Pn "%{\e]0;@$(hostname): %~\a%}"
   else
     print -Pn "%{\e]0;%~\a%}"
-    print -Pn "%{\e]0;@$(hostname): %~\a%}"
   fi
 }
 
