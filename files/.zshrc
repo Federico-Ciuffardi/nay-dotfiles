@@ -65,13 +65,12 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 # Colors 
 autoload -U colors && colors
 
-# PS
-# if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-#   PS1="%B%{$fg[green]%}[ %{$fg[white]%}%~ %{$fg[green]%}]$%b @$(hostname)"
-# else
-#   PS1="%B%{$fg[green]%}[ %{$fg[white]%}%~ %{$fg[green]%}]$%b "
-# fi
-PS1="%B%{$fg[green]%}[ %{$fg[white]%}%~ %{$fg[green]%}]$%b "
+PS
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  PS1="$(echo $USER)@$(hostname) %B%{$fg[green]%}[ %{$fg[white]%}%~ %{$fg[green]%}]$%b"
+else
+  PS1="%B%{$fg[green]%}[ %{$fg[white]%}%~ %{$fg[green]%}]$%b "
+fi
 
 # Man pager
 # export MANPAGER="nvim +'nnoremap <leader>f :Lines<cr>' +'set laststatus=0' +'set ft=man' -"
@@ -292,7 +291,7 @@ function preexec(){
 
 function set_terminal_title() {
   if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    print -Pn "%{\e]0;%~\a  @ $(hostname)%}"
+    print -Pn "%{\e]0;%~ @ $(hostname)\a%}"
   else
     print -Pn "%{\e]0;%~\a%}"
   fi
