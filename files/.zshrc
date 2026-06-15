@@ -73,10 +73,6 @@ autoload -U colors && colors
 # fi
 PS1="%B%{$fg[green]%}[ %{$fg[white]%}%~ %{$fg[green]%}]$%b "
 
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-  tmux setenv REMOTE_HOST "$(hostname)" 2>/dev/null
-fi
-
 # Man pager
 # export MANPAGER="nvim +'nnoremap <leader>f :Lines<cr>' +'set laststatus=0' +'set ft=man' -"
 
@@ -296,7 +292,7 @@ function preexec(){
 
 function set_terminal_title() {
   if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    print -Pn "%{\e]0;@$(hostname): %~\a%}"
+    print -Pn "%{\e]0;%~\a%} @ $(hostname)"
   else
     print -Pn "%{\e]0;%~\a%}"
   fi
