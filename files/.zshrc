@@ -120,7 +120,12 @@ zle -N down-line-or-beginning-search
 
 # ranger changing directory
 ranger_cd() {
-  ranger --choosedir="$ranger_choosedir_file" $@
+  # ranger --choosedir="$ranger_choosedir_file" $@
+  if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+    ranger --cmd="set hostname_in_titlebar true" --cmd="set colorscheme solarized" --choosedir="$ranger_choosedir_file" $@
+  else
+    ranger --choosedir="$ranger_choosedir_file" $@
+  fi
   lwd save "$(cat "$ranger_choosedir_file")"
   . lwd load
 }
