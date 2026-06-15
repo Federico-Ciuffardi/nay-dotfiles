@@ -332,7 +332,5 @@ fi
 # [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 # [ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
 # [[ -s /opt/esp-idf/export.sh ]] && source /opt/esp-idf/export.sh
-#
-alias get_idf=". /opt/esp-idf/export.sh"
 
 #}}}
