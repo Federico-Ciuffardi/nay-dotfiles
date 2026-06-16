@@ -65,8 +65,9 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 # Colors 
 autoload -U colors && colors
 
-if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-  PS1="%B%{$fg[cyan]%}[ %{$fg[white]%}%~ %{$fg[cyan]%}]$%b "
+# PS
+if [ "$(cat /etc/hostname)" = "server" ] ; then
+  PS1="%B%{$fg[red]%}[ %{$fg[white]%}%~ %{$fg[red]%}]$%b "
 else
   PS1="%B%{$fg[green]%}[ %{$fg[white]%}%~ %{$fg[green]%}]$%b "
 fi
@@ -119,12 +120,7 @@ zle -N down-line-or-beginning-search
 
 # ranger changing directory
 ranger_cd() {
-  # ranger --choosedir="$ranger_choosedir_file" $@
-  if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    ranger --cmd="set hostname_in_titlebar true" --choosedir="$ranger_choosedir_file" $@
-  else
-    ranger --choosedir="$ranger_choosedir_file" $@
-  fi
+  ranger --choosedir="$ranger_choosedir_file" $@
   lwd save "$(cat "$ranger_choosedir_file")"
   . lwd load
 }
@@ -278,25 +274,14 @@ function precmd(){
 #   [ -z $TMUX ] || echo -ne "\033k"$1"\033\\"
 # }
 #
-
 function preexec(){ 
   vi_preexec
+
   # title change (fixed)
-  if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    print -Pn "%{\e]0;${1} @ $(hostname)\a%}"
-  else
-    print -Pn "%{\e]0;${1}\a%}"
-  fi
+  print -Pn "%{\e]0;${1}\a%}"
+
   # title change for tmux
   [ -z $TMUX ] || echo -ne "\033k"$1"\033\\"
-}
-
-function set_terminal_title() {
-  if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-    print -Pn "%{\e]0;%~ @ $(hostname)\a%}"
-  else
-    print -Pn "%{\e]0;%~\a%}"
-  fi
 }
 
 #}}}
