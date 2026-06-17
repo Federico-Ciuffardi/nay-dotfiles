@@ -333,4 +333,6 @@ fi
 # [ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
 # [[ -s /opt/esp-idf/export.sh ]] && source /opt/esp-idf/export.sh
 
+export PATH="$HOME/.devcontainers/bin:$PATH"
+
 #}}}
