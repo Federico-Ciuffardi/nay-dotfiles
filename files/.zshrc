@@ -1,5 +1,3 @@
-export PATH="$HOME/.devcontainers/bin:$PATH"
-
 ##########
 # termux #
 ##########
@@ -310,7 +308,16 @@ function source_ros2(){
 # Load aliases
 [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc" ] && source "${XDG_CONFIG_HOME:-$HOME/.config}/aliasrc"
 
+
+# PyEnv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
+export PATH="$HOME/.devcontainers/bin:$PATH"
+
 #}}}
+
 
 ####################
 # execute at start #
