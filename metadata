@@ -30,7 +30,6 @@
 .config/newsboat/config 644
 .config/newsboat/urls 644
 .config/parcellite/parcelliterc 644
-.config/picom/picom.conf 644
 .config/polybar/config 644
 .config/qutebrowser/autoconfig.yml 644
 .config/qutebrowser/bookmarks/urls 644
@@ -104,10 +103,6 @@
 .local/share/wallpaper/wallpaper 644
 .local/share/wallpaper/wallpaper_1 644
 .local/share/wallpaper/wallpaper_2 644
-.config/picom/picom_noround.conf 644
-.config/picom/picom_round.conf 644
-.config/picom/.old/picom1.conf 644
-.config/picom/.old/picom.conf_0 644
 .local/share/wallpaper/wallpaper_8 644
 .config/btop/btop.conf 644
 .config/task/taskrc 644
@@ -121,7 +116,6 @@
 .config/task/completed.data 644
 .config/mutt/accounts/3-fciuffardi@irobot.com.muttrc 644
 .config/dunst/dunstrca 644
-.config/picom/picom1.conf 644
 .config/mutt/common.muttrc 664
 .config/task/hooks/shift-recurrence/__pycache__/pirate_add_shift_recurrence.cpython-38.pyc 644
 .gnupg/gpg-agent.conf 600
@@ -129,20 +123,7 @@
 .gnupg/dirmngr.conf 600
 .config/task/hooks/shift-recurrence/__pycache__/pirate_add_shift_recurrence.cpython-311.pyc 644
 .config/mutt/.mw-mailsynclastrun 664
-.config/picom/picom_.conf 644
-.config/picom/picom2.conf 644
-.config/picom/picom3.conf 644
-.config/picom/picom4.conf 644
-.config/picom/picom_xrender.conf 644
-.config/picom/.old/picom2.conf 644
-.config/picom/.old/picom_noround.conf 644
-.config/picom/.old/picom_.conf 644
-.config/picom/.old/picom3.conf 644
-.config/picom/.old/picom4.conf 644
-.config/picom/.old/picom1.conf_ 644
-.config/picom/.old/picom_round.conf 644
 .config/alacritty/alacritty.toml 600
-.config/picom/picom_bkp.conf 644
 .local/share/nvim/site/parser/printf.so 775
 .local/share/nvim/site/parser/luap.so 775
 .local/share/nvim/site/parser/json.so 775
@@ -202,3 +183,4 @@
 .local/share/nvim/site/spell/en.utf-8.add 664
 .local/share/nvim/site/parser/cpp.so 775
 .local/share/nvim/site/parser-info/cpp.revision 664
+.config/picom/picom_Arch.conf 644
