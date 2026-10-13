@@ -414,7 +414,7 @@ toolbarspring,
 
 #main-window #urlbar {
   z-index: 9999 !important;
-  opacity: 100 !important;
+  opacity: 1 !important;
   margin-top: 0 !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
@@ -423,15 +423,17 @@ toolbarspring,
 
 
 
+#main-window #urlbar:not([open]):not([focused]):not([popover-open]):not(:focus-within) {
+  z-index: -1000 !important;
+  opacity: 0 !important;
+  pointer-events: none; /* Disables input interaction */
+}
+#main-window #urlbar:is([open], [focused], [popover-open], :focus-within) {
+  z-index: 1000 !important;
+  opacity: 0.97 !important;
+  pointer-events: auto;
+}
 #main-window #urlbar {
-  &:not([open]) {
-    z-index: -1000 !important;
-    opacity: 0 !important;
-    pointer-events: none; /* Disables input interaction */
-  }
-  &[open] {
-    z-index: 1000 !important;
-  }
   position: fixed !important;
   top: 20vh !important;
   left: calc(50vw - (clamp(400px,64vw,800px)/2)) !important;
@@ -439,8 +441,6 @@ toolbarspring,
   width: clamp(400px,64vw,800px) !important;
 
   opacity: 0.97 !important;
-  left: 0;
-  right: 0;
   margin-left: auto !important;
   margin-right: auto !important;
 
@@ -448,7 +448,7 @@ toolbarspring,
 
   --urlbar-container-height: 34px !important;
 
-  #urlbar-input {
+  .urlbar-input {
     font-size: 16px !important;
   }    
 }
