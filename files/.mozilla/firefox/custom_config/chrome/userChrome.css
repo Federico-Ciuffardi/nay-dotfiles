@@ -362,6 +362,21 @@ toolbarspring,
 }
 
 /*
+ * @source Me
+ * @brief Fix for Firefox 157+: Firefox now stacks #navigator-toolbox
+ * (z-index 0, see --browser-area-z-index-toolbox) below #tabbrowser-tabbox
+ * (z-index 2, see --browser-area-z-index-tabbox). Our floating #urlbar
+ * (position:fixed inside the toolbox) was painted *behind* the web page,
+ * while its suggestions (a top-layer popover) stayed visible on top.
+ * Lift the toolbox above the content so the input is visible again.
+ * Value 3 ties with the sidebar splitter (later in DOM order, so the
+ * splitter still paints above) and stays below the hover sidebar (4).
+ */
+#navigator-toolbox {
+  z-index: 3 !important;
+}
+
+/*
  * @source https://codeberg.org/awwpotato/MiniFox
  * @brief urlbar hidden by default, only vissible when focused
  */
