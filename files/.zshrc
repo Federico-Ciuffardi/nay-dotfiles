@@ -343,3 +343,7 @@ fi
 # [[ -s /opt/esp-idf/export.sh ]] && source /opt/esp-idf/export.sh
 
 #}}}
+
+# st is patched to support OSC 8 hyperlinks, but programs cannot detect that
+# from TERM: ask them to emit links anyway (Claude Code, among others).
+export FORCE_HYPERLINK=1
